@@ -1572,10 +1572,10 @@ body {
     transform: translateX(0) !important;
   }
   .s-news__slider-wrapper .slider-btn._prev {
-    left: -24px;
+    left: -8px;
   }
   .s-news__slider-wrapper .slider-btn._next {
-    right: -24px;
+    right: -8px;
   }
 }
 .s-news__slider {
