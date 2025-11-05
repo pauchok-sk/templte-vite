@@ -48,5 +48,10 @@ export default defineConfig(({ command }) => {
         "@img": resolve(__dirname, "img"),
       },
     },
+    server: {
+      hmr: {
+        overlay: true,
+      },
+    },
   };
 });
