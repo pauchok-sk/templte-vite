@@ -346,7 +346,7 @@ body {
 .body {
   padding-left: 295px;
 }
-@media (max-width: 1365px) {
+@media (max-width: 1530px) {
   .body {
     padding-left: 65px;
   }
