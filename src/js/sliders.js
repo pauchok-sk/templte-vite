@@ -15,6 +15,10 @@ export default function sliders() {
         el: ".s-news .slider-pagination",
         clickable: true
       },
+      navigation: {
+        nextEl: ".s-news .slider-btn._next",
+        prevEl: ".s-news .slider-btn._prev",
+      },
       breakpoints: {
         992: {
           spaceBetween: 25,

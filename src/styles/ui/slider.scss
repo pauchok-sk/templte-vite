@@ -6,9 +6,6 @@
   justify-content: center;
   gap: 10px;
   margin-top: 25px;
-  @media (min-width: 992px) {
-    display: none;
-  }
 
   .swiper-pagination-bullet {
     display: flex !important;
@@ -18,24 +15,67 @@
     opacity: 1 !important;
     margin: 0 !important;
     border-radius: 50% !important;
-    width: 14px;
-    height: 14px;
     background-color: transparent;
     border: 1px solid transparent;
+    width: 20px;
+    height: 20px;
 
-    transition: border-color .3s ease;
-   
+    transition: border-color 0.3s ease;
+
+    @include tablet {
+      width: 14px;
+      height: 14px;
+    }
+
     &.swiper-pagination-bullet-active {
       border-color: var(--silver);
     }
-    
+
     &::before {
       position: absolute;
       content: "";
       background-color: var(--black);
       border-radius: 50%;
-      width: 4px;
-      height: 4px;
+      width: 6px;
+      height: 6px;
+      @include tablet {
+        width: 4px;
+        height: 4px;
+      }
+    }
+  }
+}
+
+.slider-btn {
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: color 0.3s ease, opacity 0.3s ease;
+  @include hover {
+    color: var(--primary);
+  }
+
+  @include tablet {
+    width: 30px;
+    height: 30px;
+  }
+
+  &.swiper-button-disabled {
+    pointer-events: none;
+    opacity: 0.8;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    @include tablet {
+      width: 12px;
+      height: 12px;
     }
   }
 }

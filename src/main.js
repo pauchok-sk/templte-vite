@@ -5,6 +5,7 @@ import headerToggle from "./js/headerToggle.js";
 import sliders from "./js/sliders.js";
 import spoller from "./js/spoller.js";
 import hasChildrenLists from "./js/hasChildrenLists.js";
+import positionSliderButtonsNews from "./js/positionSliderButtonsNews.js";
 
 spoller();
 hasChildrenLists();
@@ -12,3 +13,4 @@ headerToggle();
 burger();
 sliders();
 headerScroll();
+positionSliderButtonsNews();

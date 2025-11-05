@@ -67,7 +67,7 @@
     flex-shrink: 0;
     padding: 14px 8px;
     width: 65px;
-    @media (min-width: 1366px) {
+    @media (min-width: 1531px) {
       display: none;
     }
     @include laptop-min {
@@ -179,7 +179,7 @@
     width: 295px;
     height: 100%;
     z-index: 100;
-    @include laptop {
+    @include desktop {
       position: absolute;
       top: 0;
       bottom: 0;
@@ -410,7 +410,7 @@
     margin-top: 45px;
     padding-top: 45px;
     border-top: 1px solid rgba(255, 255, 255, 0.4);
-    @include laptop {
+    @include desktop {
       display: none;
     }
   }
