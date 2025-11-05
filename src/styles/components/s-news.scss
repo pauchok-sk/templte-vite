@@ -9,6 +9,11 @@
   &__slider-wrapper {
     position: relative;
 
+    @include tablet {
+      width: calc(100% - 48px);
+      margin: 0 auto;
+    }
+
     .slider-btn {
       position: absolute;
       top: calc(50% - 25px);
@@ -25,6 +30,13 @@
 
       @include laptop-min {
         transform: translateX(0) !important;
+
+        &._prev {
+          left: -24px;
+        }
+        &._next {
+          right: -24px;
+        }
       }
     }
   }
@@ -39,13 +51,13 @@
     .swiper-slide {
       height: auto !important;
       box-sizing: border-box;
-      @include laptop-min {
-        width: 375px !important;
-        max-width: 100%;
-      }
-      @include tablet-min {
-        width: 240px !important;
-      }
+      // @include laptop-min {
+      //   width: 375px !important;
+      //   max-width: 100%;
+      // }
+      // @include tablet-min {
+      //   width: 240px !important;
+      // }
     }
 
     .card-new {
