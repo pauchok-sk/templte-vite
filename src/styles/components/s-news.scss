@@ -1,0 +1,33 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-news {
+  @include laptop-min {
+    overflow: hidden;
+    padding-bottom: 15px;
+  }
+  &__slider {
+    padding: 12px !important;
+    margin: -12px !important;
+
+    @include laptop-min {
+      overflow: visible !important;
+    }
+
+    .swiper-slide {
+      height: auto !important;
+      box-sizing: border-box;
+      @include laptop-min {
+        width: 375px !important;
+        max-width: 100%;
+      }
+      @include tablet-min {
+        width: 240px !important;
+      }
+    }
+
+    .card-new {
+      height: 100%;
+    }
+  }
+}

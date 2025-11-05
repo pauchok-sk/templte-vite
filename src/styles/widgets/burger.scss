@@ -1,0 +1,202 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.burger-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 110;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+
+  &._active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.burger {
+  position: fixed;
+  padding: 10px 20px 20px 20px;
+  width: 375px;
+  max-width: 100%;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: var(--black);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 120;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100%);
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease,
+    transform 0.4s ease;
+
+  &._open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0)
+  }
+
+  &__head {
+    @include flex-between;
+    margin-bottom: 40px;
+    gap: 20px;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--primary);
+
+    img {
+      display: block;
+      width: 30px;
+    }
+    .title {
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+    .descr {
+      font-weight: 300;
+      font-size: 9px;
+      line-height: 100%;
+    }
+  }
+  &__close {
+    width: 20px;
+    height: 20px;
+
+    transition: color 0.3s ease;
+    @include hover {
+      color: var(--primary);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+
+    .menu-item-has-children {
+      .btn {
+        @include flex-between;
+        cursor: pointer;
+        gap: 10px;
+
+        transition: color 0.3s ease;
+        @include hover {
+          color: var(--primary);
+        }
+
+        &._active {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    a {
+      font-size: 15px;
+      text-transform: uppercase;
+
+      transition: color 0.3s ease;
+      @include hover {
+        color: var(--primary);
+      }
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+
+      transition: transform 0.3s ease;
+    }
+  }
+  &__sublist {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 0px 0px 20px;
+
+    a {
+      text-transform: none;
+    }
+  }
+  &__menu-subsublist {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0px 0px 40px;
+    gap: 12px;
+  }
+  &__info-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 35px;
+    gap: 35px;
+    row-gap: 20px;
+    padding: 15px 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    a {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      gap: 6px;
+
+      font-size: 14px;
+
+      transition: color 0.3s ease;
+      @include hover {
+        color: var(--primary);
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+      }
+    }
+  }
+  &__social {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  &__social-btn {
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    color: var(--alto);
+
+    transition: color 0.3s ease;
+    @include hover {
+      color: var(--primary);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

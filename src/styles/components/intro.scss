@@ -1,0 +1,152 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.intro {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 850px;
+  padding: 60px 0px;
+  color: white;
+  z-index: 1;
+  @include laptop {
+    min-height: 750px;
+  }
+  @include laptop-min {
+    padding: 120px 0px;
+    min-height: auto;
+  }
+  @include tablet {
+    padding: 60px 0px 90px 0px;
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    z-index: -2;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-position: top left;
+      object-fit: cover;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  }
+  &__head {
+    position: relative;
+    z-index: 1;
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      background-color: rgba(65, 29, 13, 0.4);
+      filter: blur(100px);
+      z-index: -1;
+      @include tablet {
+        background-color: rgba(65, 29, 13, 0.6);
+      }
+    }
+  }
+  &__title {
+    max-width: 555px;
+    margin: 0px 0px 20px 0px;
+
+    font-family: "Forum", sans-serif;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 111%;
+    text-transform: uppercase;
+
+    @include tablet {
+      font-size: 40px;
+      max-width: 360px;
+      margin-bottom: 10px;
+    }
+    @include mobile {
+      font-size: 30px;
+      line-height: 120%;
+      letter-spacing: -0.01em;
+      max-width: 270px;
+    }
+  }
+  &__subtitle {
+    font-size: 21px;
+    line-height: 127%;
+    @include tablet {
+      font-size: 16px;
+    }
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: "Forum", sans-serif;
+    margin-top: 130px;
+    z-index: 1;
+    @include laptop-min {
+      margin-top: 75px;
+    }
+    @include tablet {
+      margin-top: 45px;
+      gap: 10px;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      background-color: rgba(65, 29, 13, 0.4);
+      filter: blur(100px);
+      z-index: -1;
+      @include tablet {
+        background-color: rgba(65, 29, 13, 0.6);
+      }
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      padding-bottom: 9px;
+      width: 390px;
+      max-width: 100%;
+      // border-bottom: 1px solid white;
+      background: url("@img/arrow-right.png") left 0 bottom 0 / 100% auto
+        no-repeat;
+
+      font-size: 24px;
+      text-transform: uppercase;
+
+      @include laptop-min {
+        width: 370px;
+      }
+
+      @include tablet {
+        font-size: 15px;
+        width: 230px;
+      }
+
+      img {
+        display: block;
+        @include tablet {
+          width: 35px;
+        }
+      }
+    }
+  }
+}

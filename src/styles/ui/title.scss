@@ -1,0 +1,19 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-title {
+  font-family: "Forum", sans-serif;
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 111%;
+  margin: 0;
+
+  @include laptop-min {
+    font-size: 46px;
+    line-height: 109%;
+  }
+  @include tablet {
+    font-size: 30px;
+    line-height: 100%;
+  }
+}

@@ -1,0 +1,17 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.container {
+  --content-width: 1180px;
+  --offset-width: 24px;
+  --container-width: calc(var(--content-width) + (var(--offset-width) * 2));
+
+  max-width: var(--container-width);
+  width: 100%;
+  padding: 0 var(--offset-width);
+  margin: 0 auto;
+
+  @include tablet-min {
+    --offset-width: 15px;
+  }
+}

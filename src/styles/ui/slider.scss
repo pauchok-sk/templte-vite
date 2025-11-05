@@ -1,0 +1,41 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.slider-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+  @media (min-width: 992px) {
+    display: none;
+  }
+
+  .swiper-pagination-bullet {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 1 !important;
+    margin: 0 !important;
+    border-radius: 50% !important;
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    transition: border-color .3s ease;
+   
+    &.swiper-pagination-bullet-active {
+      border-color: var(--silver);
+    }
+    
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: var(--black);
+      border-radius: 50%;
+      width: 4px;
+      height: 4px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.simple-btn {
+  display: block;
+  width: fit-content;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+
+  transition: color 0.3s ease;
+  @include hover {
+    color: var(--primary);
+  }
+  @include tablet-min {
+    font-size: 14px;
+  }
+
+  &._mob {
+    margin: 15px 0px 0px auto;
+    @media (min-width: 576px) {
+      display: none;
+    }
+  }
+}

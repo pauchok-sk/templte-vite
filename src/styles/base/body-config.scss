@@ -1,0 +1,23 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.body-hidden {
+  overflow: hidden;
+  touch-action: none;
+}
+.body {
+  padding-left: 295px;
+  @include laptop {
+    padding-left: 65px;
+  }
+  @include laptop-min {
+    padding-left: 0;
+  }
+}
+
+.site-content {
+  width: 100%;
+}
+.main {
+  width: 100%;
+}
