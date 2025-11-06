@@ -72,7 +72,7 @@ export default function player() {
       seconds = Math.floor(seconds);
 
       const minutes = Math.floor(seconds / 60);
-      const secs = Math.floor(seconds % 60);
+      const secs = Math.round(seconds % 60);
 
       return `${minutes.toString().padStart(2, "0")}:${secs
         .toString()
