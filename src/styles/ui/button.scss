@@ -1,13 +1,54 @@
 @use "../base/templates" as *;
 @use "../base/media" as *;
 
-.btn {
+.btn-clear {
   cursor: pointer;
   background-color: transparent;
   border: none;
   border-radius: 0;
   padding: 0;
   color: inherit;
+}
+
+.btn-s {
+  --border-color: var(--black);
+  --background-color: var(--black);
+  --color: white;
+
+  --hover-border-color: var(--black-light);
+  --hover-background-color: var(--black-light);
+  --hover-color: white;
+
+  @include flex-center;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  padding: 17px 30px;
+  border-radius: 3px;
+  width: fit-content;
+
+  color: var(--color);
+  font-size: 16px;
+  text-align: center;
+
+  transition: color 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease;
+
+  @include hover {
+    border: 1px solid var(--hover-border-color);
+    background-color: var(--hover-background-color);
+    color: var(--hover-color);
+  }
+
+  &._outline {
+    --background-color: transparent;
+    --color: var(--black);
+
+    --hover-border-color: var(--black);
+    --hover-background-color: var(--black);
+    --hover-color: white;
+  }
 }
 
 .simple-btn {

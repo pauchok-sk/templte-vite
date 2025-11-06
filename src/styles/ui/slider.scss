@@ -5,7 +5,11 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 25px;
+  margin-top: 40px;
+  @include tablet {
+    margin-top: 25px;
+    gap: 5px;
+  }
 
   .swiper-pagination-bullet {
     display: flex !important;
@@ -36,8 +40,8 @@
       content: "";
       background-color: var(--black);
       border-radius: 50%;
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       @include tablet {
         width: 4px;
         height: 4px;
@@ -48,18 +52,38 @@
 
 .slider-btn {
   @include flex-center;
+  position: absolute;
   width: 40px;
   height: 40px;
   background-color: white;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
   border-radius: 50%;
   cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
 
   transition: color 0.3s ease, opacity 0.3s ease;
+
+  z-index: 10;
+
+  &._prev {
+    left: 15px;
+  }
+  &._next {
+    right: 15px;
+  }
 
   @include tablet {
     width: 30px;
     height: 30px;
+  }
+  @include mobile {
+    &._prev {
+      left: -23px;
+    }
+    &._next {
+      right: -23px;
+    }
   }
 
   &.swiper-button-disabled {

@@ -36,4 +36,39 @@ export default function sliders() {
       },
     });
   }
+
+  const gallerySlider = document.querySelector(".s-gallery__slider");
+
+  if (gallerySlider) {
+    const swiper = new Swiper(gallerySlider, {
+      speed: 900,
+      spaceBetween: 15,
+      slidesPerView: 1,
+      loop: true,
+      loopedSlides: 4,
+      loopAdditionalSlides: 2,
+      // autoplay: {
+      //   delay: 3400,
+      // },
+      initialSlide: 1,
+      pagination: {
+        el: ".s-gallery .slider-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".s-gallery .slider-btn._next",
+        prevEl: ".s-gallery .slider-btn._prev",
+      },
+      breakpoints: {
+        992: {
+          spaceBetween: 30,
+          slidesPerView: 2,
+        },
+        480: {
+          spaceBetween: 15,
+          slidesPerView: 2,
+        },
+      },
+    });
+  }
 }

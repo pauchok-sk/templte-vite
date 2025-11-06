@@ -311,6 +311,7 @@ template {
 :root {
   --primary: #e8a968;
   --black: #171717;
+  --black-light: #252424;
   --alto: #d9d9d9;
   --silver: #cdcdcd;
   --gray: rgba(23, 23, 23, 0.4);
@@ -337,6 +338,7 @@ img {
 
 body {
   font-family: "Montserrat", sans-serif;
+  font-size: 16px;
 }
 
 .body-hidden {
@@ -381,13 +383,57 @@ body {
   }
 }
 
-.btn {
+.btn-clear {
   cursor: pointer;
   background-color: transparent;
   border: none;
   border-radius: 0;
   padding: 0;
   color: inherit;
+}
+
+.btn-s {
+  --border-color: var(--black);
+  --background-color: var(--black);
+  --color: white;
+  --hover-border-color: var(--black-light);
+  --hover-background-color: var(--black-light);
+  --hover-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  padding: 17px 30px;
+  border-radius: 3px;
+  width: fit-content;
+  color: var(--color);
+  font-size: 16px;
+  text-align: center;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+@media (any-hover: hover) {
+  .btn-s:hover {
+    border: 1px solid var(--hover-border-color);
+    background-color: var(--hover-background-color);
+    color: var(--hover-color);
+  }
+}
+@media (hover: none) {
+  .btn-s:active {
+    border: 1px solid var(--hover-border-color);
+    background-color: var(--hover-background-color);
+    color: var(--hover-color);
+  }
+}
+.btn-s._outline {
+  --background-color: transparent;
+  --color: var(--black);
+  --hover-border-color: var(--black);
+  --hover-background-color: var(--black);
+  --hover-color: white;
 }
 
 .simple-btn {
@@ -451,7 +497,7 @@ body {
   gap: 20px;
   margin-bottom: 60px;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .sect-head {
     margin-bottom: 40px;
   }
@@ -597,7 +643,13 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 25px;
+  margin-top: 40px;
+}
+@media (max-width: 767px) {
+  .slider-pagination {
+    margin-top: 25px;
+    gap: 5px;
+  }
 }
 .slider-pagination .swiper-pagination-bullet {
   display: flex !important;
@@ -627,8 +679,8 @@ body {
   content: "";
   background-color: var(--black);
   border-radius: 50%;
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 @media (max-width: 767px) {
   .slider-pagination .swiper-pagination-bullet::before {
@@ -641,18 +693,36 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
   width: 40px;
   height: 40px;
   background-color: white;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
   border-radius: 50%;
   cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
   transition: color 0.3s ease, opacity 0.3s ease;
+  z-index: 10;
+}
+.slider-btn._prev {
+  left: 15px;
+}
+.slider-btn._next {
+  right: 15px;
 }
 @media (max-width: 767px) {
   .slider-btn {
     width: 30px;
     height: 30px;
+  }
+}
+@media (max-width: 479px) {
+  .slider-btn._prev {
+    left: -23px;
+  }
+  .slider-btn._next {
+    right: -23px;
   }
 }
 .slider-btn.swiper-button-disabled {
@@ -764,6 +834,10 @@ body {
   .dropdown-body__list a:active {
     text-decoration: underline;
   }
+}
+
+.menu-item-has-children .content[hidden] {
+  display: none;
 }
 
 .burger-overlay {
@@ -1814,21 +1888,21 @@ body {
 }
 .s-news__slider-wrapper .slider-btn._prev {
   left: 0;
-  transform: translateX(-50%);
+  transform: translateX(-50%) !important;
 }
 .s-news__slider-wrapper .slider-btn._next {
   right: 0;
-  transform: translateX(50%);
+  transform: translateX(50%) !important;
 }
 @media (max-width: 991px) {
   .s-news__slider-wrapper .slider-btn {
     transform: translateX(0) !important;
   }
   .s-news__slider-wrapper .slider-btn._prev {
-    left: -8px;
+    left: 5px;
   }
   .s-news__slider-wrapper .slider-btn._next {
-    right: -8px;
+    right: 5px;
   }
 }
 .s-news__slider {
@@ -1940,4 +2014,127 @@ body {
     margin-top: 10px;
     font-size: 12px;
   }
+}
+
+.s-help__wrapper {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 30px;
+}
+@media (max-width: 991px) {
+  .s-help__wrapper {
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+.s-help__info {
+  flex: 0 1 595px;
+}
+@media (max-width: 991px) {
+  .s-help__info {
+    flex: none;
+    width: 595px;
+    max-width: 100%;
+  }
+}
+.s-help__content {
+  margin: 0;
+}
+@media (max-width: 575px) {
+  .s-help__content {
+    font-size: 14px;
+  }
+}
+.s-help__info-btn {
+  margin-top: 45px;
+}
+@media (max-width: 991px) {
+  .s-help__info-btn {
+    display: none;
+  }
+}
+.s-help__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 375px;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+@media (max-width: 991px) {
+  .s-help__buttons {
+    width: 375px;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 575px) {
+  .s-help__buttons {
+    width: 100%;
+  }
+}
+.s-help__buttons .btn-s {
+  width: 100%;
+}
+.s-help__simple-btn-mob {
+  margin-top: 20px;
+}
+@media (min-width: 992px) {
+  .s-help__simple-btn-mob {
+    display: none;
+  }
+}
+@media (max-width: 575px) {
+  .s-help__simple-btn-mob {
+    margin-left: auto;
+  }
+}
+
+.s-gallery {
+  overflow: hidden;
+  padding: 5px 0px;
+}
+.s-gallery__slider {
+  overflow: visible !important;
+}
+@media (max-width: 767px) {
+  .s-gallery__slider {
+    width: calc(100% - 50px);
+    margin: 0 auto;
+  }
+}
+.s-gallery__slider .swiper-wrapper {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.s-gallery__slide {
+  display: block;
+  box-sizing: border-box;
+  border-radius: 2px;
+  overflow: hidden;
+  user-select: none;
+  outline: none;
+  aspect-ratio: 1/1;
+}
+@media (any-hover: hover) {
+  .s-gallery__slide:hover img {
+    transform: scale(1.08);
+  }
+}
+@media (hover: none) {
+  .s-gallery__slide:active img {
+    transform: scale(1.08);
+  }
+}
+@media (max-width: 479px) {
+  .s-gallery__slide {
+    aspect-ratio: 1/1.4;
+  }
+}
+.s-gallery__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s linear;
 }

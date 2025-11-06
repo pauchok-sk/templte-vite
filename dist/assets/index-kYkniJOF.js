@@ -142,6 +142,39 @@ function sliders() {
       }
     });
   }
+  const gallerySlider = document.querySelector(".s-gallery__slider");
+  if (gallerySlider) {
+    new Swiper(gallerySlider, {
+      speed: 900,
+      spaceBetween: 15,
+      slidesPerView: 1,
+      loop: true,
+      loopedSlides: 4,
+      loopAdditionalSlides: 2,
+      // autoplay: {
+      //   delay: 3400,
+      // },
+      initialSlide: 1,
+      pagination: {
+        el: ".s-gallery .slider-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".s-gallery .slider-btn._next",
+        prevEl: ".s-gallery .slider-btn._prev"
+      },
+      breakpoints: {
+        992: {
+          spaceBetween: 30,
+          slidesPerView: 2
+        },
+        480: {
+          spaceBetween: 15,
+          slidesPerView: 2
+        }
+      }
+    });
+  }
 }
 function spoller() {
   const spollersArray = document.querySelectorAll("[data-spollers]");
@@ -436,7 +469,6 @@ function hasChildrenLists() {
         items.forEach((item) => {
           const content = item.querySelector(".content");
           const btn = item.querySelector(".btn");
-          hide(content);
           btn.addEventListener("click", () => {
             if (btn.classList.contains("_active")) {
               hide(content);
@@ -457,7 +489,8 @@ function positionSliderButtonsNews() {
     let handelePosition2 = function() {
       const img = document.querySelector(".s-news .card-new__img");
       sliderButtons.forEach((btn) => {
-        const offsetTop = img.clientHeight / 2 - btn.clientHeight / 2;
+        const offsetTop = img.clientHeight / 2;
+        console.log(offsetTop);
         btn.style.top = `${offsetTop}px`;
       });
     };
@@ -591,4 +624,5 @@ document.addEventListener("DOMContentLoaded", () => {
   positionSliderButtonsNews();
   player();
   dropdown();
+  Fancybox.bind("[data-fancybox]");
 });

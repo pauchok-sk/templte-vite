@@ -11,7 +11,8 @@ export default function positionSliderButtonsNews() {
       const img = document.querySelector(".s-news .card-new__img");
 
       sliderButtons.forEach(btn => {
-        const offsetTop = (img.clientHeight / 2) - (btn.clientHeight / 2);
+        const offsetTop = img.clientHeight / 2;
+        console.log(offsetTop)
         btn.style.top = `${offsetTop}px`;
       })
     }

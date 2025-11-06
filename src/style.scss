@@ -14,6 +14,7 @@
 @use "./styles/ui/card-new";
 @use "./styles/ui/slider";
 @use "./styles/ui/dropdown";
+@use "./styles/ui/menu-item-has-children";
 
 // widgets
 @use "./styles/widgets/burger";
@@ -25,5 +26,7 @@
 @use "./styles/components/intro";
 @use "./styles/components/s-news";
 @use "./styles/components/s-offer";
+@use "./styles/components/s-help";
+@use "./styles/components/s-gallery";
 
 @use "./styles/components/footer";

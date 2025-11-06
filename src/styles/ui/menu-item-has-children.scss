@@ -1,0 +1,8 @@
+.menu-item-has-children {
+  .content {
+    
+    &[hidden] {
+      display: none;
+    }
+  }
+}

@@ -11,9 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./files/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="./files/fancybox/fancybox.min.css" />
     <title>pauchoo0k</title>
     
-    <link rel="stylesheet" href="./assets/index-CWvv3MBj.css">
+    <link rel="stylesheet" href="./assets/index-CUACY1so.css">
   </head>
   <body class="body" id="app">
     <header class="header">
@@ -58,7 +59,7 @@
             <div class="header__head">
               <a href="/" class="header__logo">
                 <img src="./img/logo.svg" alt="logo" />
-                <div class="content">
+                <div class="content" hidden>
                   <span class="title">
                     Храм
                     <br />
@@ -80,7 +81,7 @@
                       <use xlink:href="./icons.svg#icon-down"></use>
                     </svg>
                   </div>
-                  <div class="content">
+                  <div class="content" hidden>
                     <ul class="list header__sublist">
                       <li><a href="#">История</a></li>
                       <li><a href="#">Храм Сухопутных войск</a></li>
@@ -96,7 +97,7 @@
                             <use xlink:href="./icons.svg#icon-down"></use>
                           </svg>
                         </div>
-                        <div class="content">
+                        <div class="content" hidden>
                           <ul class="list header__sublist">
                             <li><a href="#">Центральный придел</a></li>
                             <li><a href="#">Правый придел</a></li>
@@ -107,7 +108,7 @@
                                   <use xlink:href="./icons.svg#icon-down"></use>
                                 </svg>
                               </div>
-                              <div class="content">
+                              <div class="content" hidden>
                                 <ul class="list header__sublist">
                                   <li><a href="#">Меню</a></li>
                                   <li><a href="#">Меню</a></li>
@@ -137,7 +138,7 @@
                       <use xlink:href="./icons.svg#icon-down"></use>
                     </svg>
                   </div>
-                  <div class="content">
+                  <div class="content" hidden>
                     <ul class="list header__sublist">
                       <li><a href="#">Маломобильным прихожанам</a></li>
                     </ul>
@@ -150,7 +151,7 @@
                       <use xlink:href="./icons.svg#icon-down"></use>
                     </svg>
                   </div>
-                  <div class="content">
+                  <div class="content" hidden>
                     <ul class="list header__sublist">
                       <li><a href="#">Ответы на вопросы с чаепитий</a></li>
                     </ul>
@@ -332,7 +333,7 @@
       <div class="burger__head">
         <a href="#" class="burger__logo">
           <img src="./img/logo.svg" alt="logo" />
-          <div class="content">
+          <div class="content" hidden>
             <div class="title">Храм преображения господня</div>
             <div class="descr">на Преображенской площади</div>
           </div>
@@ -351,7 +352,7 @@
               <use xlink:href="./icons.svg#icon-down"></use>
             </svg>
           </div>
-          <div class="content">
+          <div class="content" hidden>
             <ul class="list burger__sublist">
               <li><a href="#">История</a></li>
               <li><a href="#">Храм Сухопутных войск</a></li>
@@ -367,7 +368,7 @@
                     <use xlink:href="./icons.svg#icon-down"></use>
                   </svg>
                 </div>
-                <div class="content">
+                <div class="content" hidden>
                   <ul class="list burger__sublist">
                     <li><a href="#">Центральный придел</a></li>
                     <li><a href="#">Правый придел</a></li>
@@ -378,7 +379,7 @@
                           <use xlink:href="./icons.svg#icon-down"></use>
                         </svg>
                       </div>
-                      <div class="content">
+                      <div class="content" hidden>
                         <ul class="list header__sublist">
                           <li><a href="#">Меню</a></li>
                           <li><a href="#">Меню</a></li>
@@ -409,7 +410,7 @@
               <use xlink:href="./icons.svg#icon-down"></use>
             </svg>
           </div>
-          <div class="content">
+          <div class="content" hidden>
             <ul class="list header__sublist">
               <li><a href="#">Маломобильным прихожанам</a></li>
             </ul>
@@ -422,7 +423,7 @@
               <use xlink:href="./icons.svg#icon-down"></use>
             </svg>
           </div>
-          <div class="content">
+          <div class="content" hidden>
             <ul class="list header__sublist">
               <li><a href="#">Ответы на вопросы с чаепитий</a></li>
             </ul>
@@ -761,13 +762,116 @@
             <a href="#" class="simple-btn _mob">весь раздел</a>
           </div>
         </section>
+        <section class="s-help sect-m">
+          <div class="container">
+            <div class="sect-head">
+              <h2 class="s-title">Помощь храму</h2>
+            </div>
+            <div class="s-help__wrapper">
+              <div class="s-help__info">
+                <p class="s-help__content">
+                  Храм нуждается в помощи, чтобы помочь храму вы можете перевести
+                  разовое пожертвование или оформить ежемесячную подписку на
+                  пожертвования
+                </p>
+                <a href="#" class="simple-btn s-help__info-btn">подробнее</a>
+              </div>
+              <div class="s-help__buttons">
+                <a href="#" class="btn-s _outline">Пожертвовать на храм</a>
+                <a href="#" class="btn-s">Оформить подписку</a>
+              </div>
+              <a href="#" class="simple-btn s-help__simple-btn-mob">подробнее</a>
+            </div>
+          </div>
+        </section>
+        <section class="sect-m s-gallery">
+          <div class="container">
+            <div class="sect-head">
+              <h2 class="s-title">Галерея</h2>
+              <a href="#" class="simple-btn">весь раздел</a>
+            </div>
+            <div class="swiper s-gallery__slider">
+              <div class="slider-btn _prev">
+                <svg>
+                  <use xlink:href="./icons.svg#icon-prev"></use>
+                </svg>
+              </div>
+              <div class="slider-btn _next">
+                <svg>
+                  <use xlink:href="./icons.svg#icon-next"></use>
+                </svg>
+              </div>
+              <div class="swiper-wrapper">
+                <a
+                  href="./img/gallery-1.jpg"
+                  data-fancybox="gallery"
+                  class="swiper-slide s-gallery__slide"
+                >
+                  <img src="./img/gallery-1.jpg" alt="image" />
+                </a>
+                <a
+                  href="./img/gallery-2.jpg"
+                  data-fancybox="gallery"
+                  class="swiper-slide s-gallery__slide"
+                >
+                  <img src="./img/gallery-2.jpg" alt="image" />
+                </a>
+                <a
+                  href="./img/gallery-1.jpg"
+                  data-fancybox="gallery"
+                  class="swiper-slide s-gallery__slide"
+                >
+                  <img src="./img/gallery-1.jpg" alt="image" />
+                </a>
+                <a
+                  href="./img/gallery-2.jpg"
+                  data-fancybox="gallery"
+                  class="swiper-slide s-gallery__slide"
+                >
+                  <img src="./img/gallery-2.jpg" alt="image" />
+                </a>
+                <a
+                  href="./img/gallery-1.jpg"
+                  data-fancybox="gallery"
+                  class="swiper-slide s-gallery__slide"
+                >
+                  <img src="./img/gallery-1.jpg" alt="image" />
+                </a>
+                <a
+                  href="./img/gallery-2.jpg"
+                  data-fancybox="gallery"
+                  class="swiper-slide s-gallery__slide"
+                >
+                  <img src="./img/gallery-2.jpg" alt="image" />
+                </a>
+                <a
+                  href="./img/gallery-1.jpg"
+                  data-fancybox="gallery"
+                  class="swiper-slide s-gallery__slide"
+                >
+                  <img src="./img/gallery-1.jpg" alt="image" />
+                </a>
+                <a
+                  href="./img/gallery-2.jpg"
+                  data-fancybox="gallery"
+                  class="swiper-slide s-gallery__slide"
+                >
+                  <img src="./img/gallery-2.jpg" alt="image" />
+                </a>
+              </div>
+            </div>
+            <div class="slider-pagination"></div>
+            <a href="#" class="simple-btn _mob">весь раздел</a>
+          </div>
+        </section>
       </main>
 
     <footer class="footer">
     	<div class="container">
     	</div>
     </footer>
-    <script src="./files/swiper/swiper.min.js"></script>    
-    <script src="./assets/index-CXqUs365.js"></script>
+    <script src="./files/swiper/swiper.min.js"></script>
+    <script src="./files/fancybox/fancybox.min.js"></script>    
+    <script src="./assets/index-kYkniJOF.js"></script>
 </body>
 </html>

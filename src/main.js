@@ -20,4 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   positionSliderButtonsNews();
   player();
   dropdown();
+
+  Fancybox.bind("[data-fancybox]")
 })

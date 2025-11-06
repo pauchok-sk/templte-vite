@@ -1,0 +1,65 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-help {
+  &__wrapper {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 30px;
+    @include laptop-min {
+      flex-direction: column;
+      gap: 0px;
+    }
+  }
+  &__info {
+    flex: 0 1 595px;
+    @include laptop-min {
+      flex: none;
+      width: 595px;
+      max-width: 100%;
+    }
+  }
+  &__content {
+    margin: 0;
+    @include tablet-min {
+      font-size: 14px;
+    }
+  }
+  &__info-btn {
+    margin-top: 45px;
+    @include laptop-min {
+      display: none;
+    }
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 375px;
+    flex-shrink: 0;
+    max-width: 100%;
+
+    @include laptop-min {
+      width: 375px;
+      margin-top: 40px;
+    }
+    @include tablet-min {
+      width: 100%;
+    }
+
+    .btn-s {
+      width: 100%;
+    }
+  }
+  &__simple-btn-mob {
+    margin-top: 20px;
+    @media (min-width: 992px) {
+      display: none;
+    }
+    @include tablet-min {
+      margin-left: auto;
+    }
+  }
+}

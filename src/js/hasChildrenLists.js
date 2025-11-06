@@ -12,7 +12,7 @@ export default function hasChildrenLists() {
           const content = item.querySelector(".content");
           const btn = item.querySelector(".btn");
     
-          hide(content);
+          // hide(content);
     
           btn.addEventListener("click", () => {
             if (btn.classList.contains("_active")) {
