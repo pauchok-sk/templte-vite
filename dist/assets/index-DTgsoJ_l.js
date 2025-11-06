@@ -482,7 +482,6 @@ function player() {
     players.forEach((player2) => {
       const btn = player2.querySelector(".player-btn");
       const audio = player2.querySelector(".player-audio");
-      new Audio(audio.src);
       const circle = player2.querySelector(".player-timeline-circle");
       const input = player2.querySelector(".player-timeline-input");
       const time = player2.querySelector(".player-time");
@@ -505,8 +504,8 @@ function player() {
         isDragInput = false;
         if (!audio.paused) {
           const value = +e.target.value;
-          const videoCurrentTime = durationAudio * (value / 100);
-          audio.currentTime = videoCurrentTime;
+          const audioCurrentTime = durationAudio * (value / 100);
+          audio.currentTime = audioCurrentTime;
         }
       });
       input.addEventListener("input", (e) => {

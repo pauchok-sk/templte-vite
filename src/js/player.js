@@ -5,7 +5,6 @@ export default function player() {
     players.forEach((player) => {
       const btn = player.querySelector(".player-btn");
       const audio = player.querySelector(".player-audio");
-      const audioObj = new Audio(audio.src);
       const circle = player.querySelector(".player-timeline-circle");
       const input = player.querySelector(".player-timeline-input");
       const time = player.querySelector(".player-time");
@@ -34,9 +33,9 @@ export default function player() {
         isDragInput = false;
         if (!audio.paused) {
           const value = +e.target.value;
-          const videoCurrentTime = durationAudio * (value / 100);
+          const audioCurrentTime = durationAudio * (value / 100);
 
-          audio.currentTime = videoCurrentTime;
+          audio.currentTime = audioCurrentTime;
         }
       });
       input.addEventListener("input", (e) => {
