@@ -470,7 +470,7 @@ function player() {
   const players = document.querySelectorAll(".player");
   if (players.length) {
     let formatTime2 = function(seconds) {
-      if (isNaN(seconds) || !isFinite(seconds)) {
+      if (isNaN(seconds) || !isFinite(seconds) || seconds < 0) {
         return "00:00";
       }
       seconds = Math.floor(seconds);
@@ -485,34 +485,39 @@ function player() {
       const circle = player2.querySelector(".player-timeline-circle");
       const input = player2.querySelector(".player-timeline-input");
       const time = player2.querySelector(".player-time");
-      let durationAudio = audio.duration;
-      let durationAudioFormat = formatTime2(durationAudio);
       let isDragInput = false;
-      time.innerHTML = `00:00 / ${durationAudioFormat}`;
+      let durationAudio = 0;
+      let durationAudioFormat = "00:00";
+      audio.addEventListener("loadedmetadata", () => {
+        durationAudio = audio.duration;
+        durationAudioFormat = formatTime2(durationAudio);
+        time.innerHTML = `00:00 / ${durationAudioFormat}`;
+      });
       audio.addEventListener("timeupdate", (e) => {
         const currentTime = formatTime2(e.target.currentTime);
-        const progress = e.target.currentTime / e.target.duration * 100;
+        const progress = e.target.duration > 0 ? e.target.currentTime / e.target.duration * 100 : 0;
         if (!isDragInput) {
           circle.style.left = `${progress}%`;
+          input.value = progress;
         }
-        time.innerHTML = time.innerHTML = `${currentTime} / ${durationAudioFormat}`;
+        time.innerHTML = `${currentTime} / ${durationAudioFormat}`;
       });
       audio.addEventListener("ended", (e) => {
         btn.classList.remove("_active");
       });
       input.addEventListener("change", (e) => {
         isDragInput = false;
-        if (!audio.paused) {
+        if (audio.duration > 0 && isFinite(audio.duration)) {
           const value = +e.target.value;
-          const audioCurrentTime = durationAudio * (value / 100);
-          audio.currentTime = audioCurrentTime;
+          const audioCurrentTime = audio.duration * (value / 100);
+          if (isFinite(audioCurrentTime) && audioCurrentTime >= 0) {
+            audio.currentTime = audioCurrentTime;
+          }
         }
       });
       input.addEventListener("input", (e) => {
         isDragInput = true;
-        if (!audio.paused) {
-          circle.style.left = `${e.target.value}%`;
-        }
+        circle.style.left = `${e.target.value}%`;
       });
       btn.addEventListener("click", () => {
         if (btn.classList.contains("_active")) {
@@ -522,7 +527,9 @@ function player() {
         }
       });
       function handlePlay() {
-        audio.play();
+        audio.play().catch((error) => {
+          console.error("Ошибка воспроизведения:", error);
+        });
         btn.classList.add("_active");
       }
       function handlePause() {
