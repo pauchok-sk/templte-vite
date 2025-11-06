@@ -344,7 +344,7 @@ body {
 }
 
 .body {
-  padding-left: 295px;
+  padding-left: 360px;
 }
 @media (max-width: 1530px) {
   .body {
@@ -400,12 +400,14 @@ body {
 }
 @media (any-hover: hover) {
   .simple-btn:hover {
-    color: var(--primary);
+    color: rgba(23, 23, 23, 0.5);
+    text-decoration: none;
   }
 }
 @media (hover: none) {
   .simple-btn:active {
-    color: var(--primary);
+    color: rgba(23, 23, 23, 0.5);
+    text-decoration: none;
   }
 }
 @media (max-width: 575px) {
@@ -483,53 +485,69 @@ body {
 
 .card-new {
   display: flex;
+  border-radius: 3px;
+  overflow: hidden;
   flex-direction: column;
   background-color: white;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, box-shadow 0.3s ease;
 }
 @media (any-hover: hover) {
-  .card-new:hover {
-    color: var(--primary);
-  }
-  .card-new:hover .card-new__arrow {
-    transform: rotate(-45deg);
+  .card-new:hover .card-new__img {
+    transform: scale(1.08);
   }
 }
 @media (hover: none) {
-  .card-new:active {
-    color: var(--primary);
+  .card-new:active .card-new__img {
+    transform: scale(1.08);
   }
-  .card-new:active .card-new__arrow {
-    transform: rotate(-45deg);
-  }
+}
+.card-new__gallery {
+  display: block;
+  aspect-ratio: 1/1;
+  overflow: hidden;
 }
 .card-new__img {
   display: block;
-  width: 100%;
-  aspect-ratio: 1/1;
   object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s linear;
 }
 .card-new__body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 30px 30px 15px 30px;
 }
 @media (max-width: 575px) {
   .card-new__body {
-    padding: 22px;
+    padding: 22px 22px 14px 22px;
   }
 }
 .card-new__title {
   font-weight: 500;
+  width: fit-content;
   font-size: 16px;
   margin-bottom: 15px;
+  text-underline-offset: 3px;
+  transition: color 0.3s ease;
 }
 @media (max-width: 575px) {
   .card-new__title {
     font-size: 14px;
     margin-bottom: 10px;
+  }
+}
+@media (any-hover: hover) {
+  .card-new__title:hover {
+    text-decoration: underline;
+    color: var(--primary);
+  }
+}
+@media (hover: none) {
+  .card-new__title:active {
+    text-decoration: underline;
+    color: var(--primary);
   }
 }
 .card-new__date {
@@ -547,9 +565,31 @@ body {
 .card-new__arrow {
   margin: auto 0px 0px auto;
   display: block;
+  overflow: hidden;
   width: 18px;
   height: 18px;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+}
+@media (any-hover: hover) {
+  .card-new__arrow:hover {
+    animation: animationScale 0.3s linear forwards;
+  }
+}
+@media (hover: none) {
+  .card-new__arrow:active {
+    animation: animationScale 0.3s linear forwards;
+  }
+}
+@keyframes animationScale {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 .slider-pagination {
@@ -608,16 +648,6 @@ body {
   cursor: pointer;
   transition: color 0.3s ease, opacity 0.3s ease;
 }
-@media (any-hover: hover) {
-  .slider-btn:hover {
-    color: var(--primary);
-  }
-}
-@media (hover: none) {
-  .slider-btn:active {
-    color: var(--primary);
-  }
-}
 @media (max-width: 767px) {
   .slider-btn {
     width: 30px;
@@ -656,7 +686,7 @@ body {
 .burger {
   position: fixed;
   padding: 10px 20px 20px 20px;
-  width: 375px;
+  width: 600px;
   max-width: 100%;
   color: rgba(255, 255, 255, 0.9);
   background-color: var(--black);
@@ -870,7 +900,7 @@ body {
     max-height: 0px;
   }
   .header._open .header__main {
-    width: 295px;
+    width: 297px;
   }
 }
 @media (max-width: 991px) {
@@ -909,11 +939,6 @@ body {
   padding: 14px 8px;
   width: 65px;
 }
-@media (min-width: 1531px) {
-  .header__line {
-    display: none;
-  }
-}
 @media (max-width: 991px) {
   .header__line {
     display: none;
@@ -926,6 +951,11 @@ body {
   overflow: hidden;
   max-height: 50px;
   transition: max-height 0.3s ease;
+}
+@media (min-width: 1531px) {
+  .header__line-logo {
+    display: none;
+  }
 }
 .header__line-logo img {
   display: block;
@@ -950,6 +980,11 @@ body {
 @media (hover: none) {
   .header__line-btn-menu:active {
     color: var(--primary);
+  }
+}
+@media (min-width: 1531px) {
+  .header__line-btn-menu {
+    display: none;
   }
 }
 .header__line-btn-menu._close span {
@@ -1035,7 +1070,7 @@ body {
     right: 0;
     overflow: hidden;
     width: 0px;
-    transform: translateX(100%);
+    transform: translateX(calc(100% - 2px));
     transition: all 0.4s ease;
   }
 }
@@ -1508,6 +1543,7 @@ body {
   }
 }
 .intro__list li {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -1515,9 +1551,18 @@ body {
   padding-bottom: 9px;
   width: 390px;
   max-width: 100%;
-  background: url("../img/arrow-right.png") left 0 bottom 0/100% auto no-repeat;
   font-size: 24px;
   text-transform: uppercase;
+}
+@media (any-hover: hover) {
+  .intro__list li:hover::before {
+    transform: translateX(8px);
+  }
+}
+@media (hover: none) {
+  .intro__list li:active::before {
+    transform: translateX(8px);
+  }
 }
 @media (max-width: 991px) {
   .intro__list li {
@@ -1530,8 +1575,21 @@ body {
     width: 230px;
   }
 }
+.intro__list li::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: url("../img/arrow-right.png") left 0 bottom 0/100% auto no-repeat;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
 .intro__list li img {
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  transform: translateZ(0) scale(1);
+  -webkit-transform: translateZ(0);
 }
 @media (max-width: 767px) {
   .intro__list li img {
@@ -1579,8 +1637,8 @@ body {
   }
 }
 .s-news__slider {
-  padding: 12px !important;
-  margin: -12px !important;
+  padding: 20px !important;
+  margin: -20px !important;
 }
 @media (max-width: 991px) {
   .s-news__slider {
@@ -1590,6 +1648,9 @@ body {
 .s-news__slider .swiper-slide {
   height: auto !important;
   box-sizing: border-box;
+}
+.s-news__slider .swiper-slide.swiper-slide-prev .card-new, .s-news__slider .swiper-slide.swiper-slide-active .card-new, .s-news__slider .swiper-slide.swiper-slide-next .card-new {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
 }
 .s-news__slider .card-new {
   height: 100%;

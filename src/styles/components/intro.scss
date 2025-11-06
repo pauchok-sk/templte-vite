@@ -118,6 +118,7 @@
     }
 
     li {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -125,12 +126,15 @@
       padding-bottom: 9px;
       width: 390px;
       max-width: 100%;
-      // border-bottom: 1px solid white;
-      background: url("@img/arrow-right.png") left 0 bottom 0 / 100% auto
-        no-repeat;
 
       font-size: 24px;
       text-transform: uppercase;
+
+      @include hover {
+        &::before {
+          transform: translateX(8px);
+        }
+      }
 
       @include laptop-min {
         width: 370px;
@@ -141,8 +145,23 @@
         width: 230px;
       }
 
+      &::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: url("@img/arrow-right.png") left 0 bottom 0 / 100% auto
+          no-repeat;
+        z-index: -1;
+        transition: transform 0.3s ease;
+      }
+
       img {
         display: block;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+        transform: translateZ(0) scale(1);
+        -webkit-transform: translateZ(0);
         @include tablet {
           width: 35px;
         }

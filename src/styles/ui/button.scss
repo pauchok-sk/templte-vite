@@ -20,7 +20,8 @@
 
   transition: color 0.3s ease;
   @include hover {
-    color: var(--primary);
+    color: rgba(23, 23, 23, 0.5);
+    text-decoration: none;
   }
   @include tablet-min {
     font-size: 14px;

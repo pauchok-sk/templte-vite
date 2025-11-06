@@ -10,9 +10,7 @@
   background-color: var(--black);
   flex-shrink: 0;
 
-  transition:
-    padding 0.4s ease,
-    max-width 0.4s ease;
+  transition: padding 0.4s ease, max-width 0.4s ease;
   z-index: 100;
 
   @include laptop-min {
@@ -30,7 +28,7 @@
         max-height: 0px;
       }
       .header__main {
-        width: 295px;
+        width: 297px;
       }
     }
   }
@@ -67,9 +65,6 @@
     flex-shrink: 0;
     padding: 14px 8px;
     width: 65px;
-    @media (min-width: 1531px) {
-      display: none;
-    }
     @include laptop-min {
       display: none;
     }
@@ -81,6 +76,10 @@
     overflow: hidden;
     max-height: 50px;
     transition: max-height 0.3s ease;
+
+    @media (min-width: 1531px) {
+      display: none;
+    }
 
     img {
       display: block;
@@ -101,6 +100,10 @@
 
     @include hover {
       color: var(--primary);
+    }
+
+    @media (min-width: 1531px) {
+      display: none;
     }
 
     &._close {
@@ -186,7 +189,7 @@
       right: 0;
       overflow: hidden;
       width: 0px;
-      transform: translateX(100%);
+      transform: translateX(calc(100% - 2px));
 
       transition: all 0.4s ease;
     }
