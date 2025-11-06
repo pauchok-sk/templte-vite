@@ -493,7 +493,7 @@ body {
 }
 @media (any-hover: hover) {
   .card-new:hover {
-    box-shadow: none;
+    box-shadow: none !important;
   }
   .card-new:hover .card-new__img {
     transform: scale(1.08);
@@ -501,7 +501,7 @@ body {
 }
 @media (hover: none) {
   .card-new:active {
-    box-shadow: none;
+    box-shadow: none !important;
   }
   .card-new:active .card-new__img {
     transform: scale(1.08);
