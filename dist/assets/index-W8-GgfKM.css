@@ -492,11 +492,17 @@ body {
   transition: color 0.3s ease, box-shadow 0.3s ease;
 }
 @media (any-hover: hover) {
+  .card-new:hover {
+    box-shadow: none;
+  }
   .card-new:hover .card-new__img {
     transform: scale(1.08);
   }
 }
 @media (hover: none) {
+  .card-new:active {
+    box-shadow: none;
+  }
   .card-new:active .card-new__img {
     transform: scale(1.08);
   }
