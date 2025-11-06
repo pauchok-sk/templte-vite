@@ -550,12 +550,14 @@ function dropdown() {
     });
   }
 }
-spoller();
-hasChildrenLists();
-headerToggle();
-burger();
-sliders();
-headerScroll();
-positionSliderButtonsNews();
-player();
-dropdown();
+document.addEventListener("DOMContentLoaded", () => {
+  spoller();
+  hasChildrenLists();
+  headerToggle();
+  burger();
+  sliders();
+  headerScroll();
+  positionSliderButtonsNews();
+  player();
+  dropdown();
+});

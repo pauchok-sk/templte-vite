@@ -9,12 +9,15 @@ import positionSliderButtonsNews from "./js/positionSliderButtonsNews.js";
 import player from "./js/player.js";
 import dropdown from "./js/dropdown.js";
 
-spoller();
-hasChildrenLists();
-headerToggle();
-burger();
-sliders();
-headerScroll();
-positionSliderButtonsNews();
-player();
-dropdown();
+
+document.addEventListener("DOMContentLoaded", () => {
+  spoller();
+  hasChildrenLists();
+  headerToggle();
+  burger();
+  sliders();
+  headerScroll();
+  positionSliderButtonsNews();
+  player();
+  dropdown();
+})
