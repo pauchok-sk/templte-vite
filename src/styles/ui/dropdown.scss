@@ -1,0 +1,118 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.dropdown {
+  position: relative;
+
+  &._open {
+    .dropdown-body {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0px);
+    }
+    .dropdown-point-btn {
+      div {
+        animation: wave 0.4s ease-in-out;
+
+        &:nth-child(1) {
+          animation-delay: 0s;
+        }
+        &:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+        &:nth-child(3) {
+          animation-delay: 0.2s;
+        }
+      }
+    }
+  }
+}
+.dropdown-point-btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 25px;
+  height: 25px;
+
+  // @include hover {
+  //   div {
+  //     animation: wave 0.4s ease-in-out;
+
+  //     &:nth-child(1) {
+  //       animation-delay: 0s;
+  //     }
+  //     &:nth-child(2) {
+  //       animation-delay: 0.1s;
+  //     }
+  //     &:nth-child(3) {
+  //       animation-delay: 0.2s;
+  //     }
+  //   }
+  // }
+
+  div {
+    background-color: var(--black);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+
+    transition: background-color 0.3s ease;
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.dropdown-body {
+  position: absolute;
+  background-color: white;
+  box-shadow: 4px 4px 8px 8px rgba(239, 239, 239, 0.7);
+  padding: 25px;
+  width: fit-content;
+  right: 0;
+  top: 100%;
+  margin-top: 5px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+
+  z-index: 10;
+
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+
+  @include tablet-min {
+    padding: 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    @include tablet-min {
+      gap: 12px;
+    }
+
+    a {
+      white-space: nowrap;
+      font-size: 16px;
+      text-underline-offset: 3px;
+
+      @include tablet-min {
+        font-size: 14px;
+      }
+
+      @include hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

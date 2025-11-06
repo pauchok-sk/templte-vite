@@ -13,14 +13,17 @@
 @use "./styles/ui/title";
 @use "./styles/ui/card-new";
 @use "./styles/ui/slider";
+@use "./styles/ui/dropdown";
 
 // widgets
 @use "./styles/widgets/burger";
+@use "./styles/widgets/player";
 
 // components
 @use "./styles/components/header";
 
 @use "./styles/components/intro";
 @use "./styles/components/s-news";
+@use "./styles/components/s-offer";
 
 @use "./styles/components/footer";

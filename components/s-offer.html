@@ -1,0 +1,50 @@
+<section class="s-offer">
+  <div class="container">
+    <div class="s-offer__head">
+      <div class="s-offer__date">09.02.2025</div>
+      <div class="dropdown">
+        <div class="dropdown-point-btn dropdown-btn">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="dropdown-body">
+          <ul class="list dropdown-body__list">
+            <li><a href="#">Все видеозаписи проповедей</a></li>
+            <li><a href="#">Все аудиозаписи проповедей</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="s-offer__wrapper">
+      <div class="s-offer__info">
+        <div class="s-offer__title">
+          Проповедь в неделю о мытаре и фарисее. Собор новомучеников и
+          исповедников Церкви Русской и если будет в 3 строчки
+        </div>
+        <div class="s-offer__author">Протоиерей Борис Потапов</div>
+      </div>
+      <div class="player">
+        <audio
+          preload="metadata"
+          src="/music/media.mp3"
+          controls
+          class="player-audio"
+        ></audio>
+        <div class="player-btn">
+          <svg>
+            <use xlink:href="@svg/icons.svg#icon-play"></use>
+          </svg>
+          <svg>
+            <use xlink:href="@svg/icons.svg#icon-pause"></use>
+          </svg>
+        </div>
+        <div class="player-timeline">
+          <input type="range" min="0" max="100" class="player-timeline-input" />
+          <div class="player-timeline-circle"></div>
+        </div>
+        <div class="player-time">00:00 / 00:00</div>
+      </div>
+    </div>
+  </div>
+</section>

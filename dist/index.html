@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./files/swiper/swiper.min.css" />
     <title>pauchoo0k</title>
     
-    <link rel="stylesheet" href="./assets/index-UpaXgQEt.css">
+    <link rel="stylesheet" href="./assets/index-CWvv3MBj.css">
   </head>
   <body class="body" id="app">
     <header class="header">
@@ -130,11 +130,31 @@
                 <li>
                   <a href="#">молодежка</a>
                 </li>
-                <li>
-                  <a href="#">прихожанам</a>
+                <li class="menu-item-has-children">
+                  <div class="btn">
+                    <a href="#">ПРИХОЖАНАМ</a>
+                    <svg>
+                      <use xlink:href="./icons.svg#icon-down"></use>
+                    </svg>
+                  </div>
+                  <div class="content">
+                    <ul class="list header__sublist">
+                      <li><a href="#">Маломобильным прихожанам</a></li>
+                    </ul>
+                  </div>
                 </li>
-                <li>
-                  <a href="#">медиа</a>
+                <li class="menu-item-has-children">
+                  <div class="btn">
+                    <a href="#">МЕДИА</a>
+                    <svg>
+                      <use xlink:href="./icons.svg#icon-down"></use>
+                    </svg>
+                  </div>
+                  <div class="content">
+                    <ul class="list header__sublist">
+                      <li><a href="#">Ответы на вопросы с чаепитий</a></li>
+                    </ul>
+                  </div>
                 </li>
                 <li>
                   <a href="#">контакты</a>
@@ -159,23 +179,6 @@
                 </a>
               </li>
             </ul>
-            <!-- <div class="header__main-social">
-              <a href="#" target="_blank" class="header__main-social-btn">
-                <img src="./img/tg.svg" alt="icon" />
-              </a>
-              <a href="#" target="_blank" class="header__main-social-btn">
-                <img src="./img/yt.svg" alt="icon" />
-              </a>
-              <a href="#" target="_blank" class="header__main-social-btn">
-                <img src="./img/vk.svg" alt="icon" />
-              </a>
-              <a href="#" target="_blank" class="header__main-social-btn">
-                <img src="./img/ter.svg" alt="icon" />
-              </a>
-              <a href="#" target="_blank" class="header__main-social-btn">
-                <img src="./img/rt.svg" alt="icon" />
-              </a>
-            </div> -->
             <div class="header__mob">
               <ul class="list header__mob-list">
                 <li>
@@ -399,11 +402,31 @@
         <li>
           <a href="#">молодежка</a>
         </li>
-        <li>
-          <a href="#">прихожанам</a>
+        <li class="menu-item-has-children">
+          <div class="btn">
+            <a href="#">ПРИХОЖАНАМ</a>
+            <svg>
+              <use xlink:href="./icons.svg#icon-down"></use>
+            </svg>
+          </div>
+          <div class="content">
+            <ul class="list header__sublist">
+              <li><a href="#">Маломобильным прихожанам</a></li>
+            </ul>
+          </div>
         </li>
-        <li>
-          <a href="#">медиа</a>
+        <li class="menu-item-has-children">
+          <div class="btn">
+            <a href="#">МЕДИА</a>
+            <svg>
+              <use xlink:href="./icons.svg#icon-down"></use>
+            </svg>
+          </div>
+          <div class="content">
+            <ul class="list header__sublist">
+              <li><a href="#">Ответы на вопросы с чаепитий</a></li>
+            </ul>
+          </div>
         </li>
         <li>
           <a href="#">контакты</a>
@@ -572,6 +595,56 @@
             </div>
           </div>
         </section>
+        <section class="s-offer">
+          <div class="container">
+            <div class="s-offer__head">
+              <div class="s-offer__date">09.02.2025</div>
+              <div class="dropdown">
+                <div class="dropdown-point-btn dropdown-btn">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+                <div class="dropdown-body">
+                  <ul class="list dropdown-body__list">
+                    <li><a href="#">Все видеозаписи проповедей</a></li>
+                    <li><a href="#">Все аудиозаписи проповедей</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="s-offer__wrapper">
+              <div class="s-offer__info">
+                <div class="s-offer__title">
+                  Проповедь в неделю о мытаре и фарисее. Собор новомучеников и
+                  исповедников Церкви Русской и если будет в 3 строчки
+                </div>
+                <div class="s-offer__author">Протоиерей Борис Потапов</div>
+              </div>
+              <div class="player">
+                <audio
+                  preload="metadata"
+                  src="./music/media.mp3"
+                  controls
+                  class="player-audio"
+                ></audio>
+                <div class="player-btn">
+                  <svg>
+                    <use xlink:href="./icons.svg#icon-play"></use>
+                  </svg>
+                  <svg>
+                    <use xlink:href="./icons.svg#icon-pause"></use>
+                  </svg>
+                </div>
+                <div class="player-timeline">
+                  <input type="range" min="0" max="100" class="player-timeline-input" />
+                  <div class="player-timeline-circle"></div>
+                </div>
+                <div class="player-time">00:00 / 00:00</div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section class="s-news sect-m">
           <div class="container">
             <div class="sect-head">
@@ -695,6 +768,6 @@
     	</div>
     </footer>
     <script src="./files/swiper/swiper.min.js"></script>    
-    <script src="./assets/index-ZSRw4i_r.js"></script>
+    <script src="./assets/index-ZGDt-KnK.js"></script>
 </body>
 </html>
