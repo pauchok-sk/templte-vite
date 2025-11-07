@@ -849,8 +849,10 @@ body {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  border-radius: 3px;
+  overflow: hidden;
   user-select: none;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
 }
 .card-team__gallery {
   width: 100%;
@@ -929,6 +931,28 @@ body {
 @media (hover: none) {
   .card-team__arrow:active {
     animation: animationScale 0.3s linear forwards;
+  }
+}
+
+@media (max-width: 575px) {
+  .content {
+    font-size: 14px;
+  }
+}
+.content p {
+  margin: 0;
+}
+.content p:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+@media (any-hover: hover) {
+  .content p a:hover {
+    text-decoration: underline;
+  }
+}
+@media (hover: none) {
+  .content p a:active {
+    text-decoration: underline;
   }
 }
 
@@ -2348,6 +2372,9 @@ body {
 .s-clergy__slider .swiper-slide {
   height: auto !important;
 }
+.s-clergy__slider .swiper-slide.swiper-slide-active .card-team, .s-clergy__slider .swiper-slide.swiper-slide-next .card-team, .s-clergy__slider .swiper-slide.swiper-slide-next + .swiper-slide .card-team {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
 .s-clergy__slider .card-team {
   height: 100%;
 }
@@ -2422,4 +2449,96 @@ body {
   .s-clergy__slide-arrow:active {
     animation: animationScale 0.3s linear forwards;
   }
+}
+
+.s-chart__wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 65px;
+}
+@media (max-width: 767px) {
+  .s-chart__wrapper {
+    gap: 30px;
+  }
+}
+@media (max-width: 575px) {
+  .s-chart__wrapper {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .s-chart__item {
+    font-size: 14px;
+  }
+}
+@media (max-width: 575px) {
+  .s-chart__item {
+    width: 100%;
+  }
+}
+.s-chart__item-title {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.s-chart__item-content {
+  margin: 0;
+}
+.s-chart__spollers {
+  margin-top: 40px;
+}
+@media (max-width: 991px) {
+  .s-chart__spollers {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 575px) {
+  .s-chart__spollers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.s-chart__spoller:not(:last-child) {
+  border-bottom: 1px solid var(--silver);
+}
+.s-chart__spoller-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  .s-chart__spoller-btn {
+    padding: 15px 0px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 575px) {
+  .s-chart__spoller-btn {
+    font-size: 14px;
+  }
+}
+.s-chart__spoller-btn._spoller-active svg {
+  transform: rotate(-90deg);
+}
+.s-chart__spoller-btn svg {
+  width: 10px;
+  height: 10px;
+  transition: transform 0.3s ease;
+}
+.s-chart__spoller-body {
+  padding-bottom: 24px;
+}
+@media (max-width: 767px) {
+  .s-chart__spoller-body {
+    padding-bottom: 15px;
+  }
+}
+.s-chart__spoller-body .simple-btn {
+  margin: 12px 0px 0px auto;
 }

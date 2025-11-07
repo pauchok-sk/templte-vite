@@ -115,7 +115,7 @@ function sliders() {
       loop: true,
       loopedSlides: 3,
       centeredSlides: true,
-      autplay: {
+      autoplay: {
         delay: 3500
       },
       pagination: {
@@ -181,6 +181,10 @@ function sliders() {
       speed: 900,
       spaceBetween: 15,
       slidesPerView: 1,
+      loop: true,
+      loopedSlides: 4,
+      loopAdditionalSlides: 2,
+      centeredSlides: true,
       // autoplay: {
       //   delay: 3000,
       // },
@@ -195,11 +199,13 @@ function sliders() {
       breakpoints: {
         992: {
           spaceBetween: 25,
-          slidesPerView: 3
+          slidesPerView: 3,
+          centeredSlides: false
         },
         480: {
           spaceBetween: 15,
-          slidesPerView: 2
+          slidesPerView: 2,
+          centeredSlides: false
         }
       }
     });
@@ -512,20 +518,23 @@ function hasChildrenLists() {
     });
   }
 }
-function positionSliderButtonsNews() {
-  const sliderButtons = document.querySelectorAll(".s-news .slider-btn");
-  if (sliderButtons.length) {
-    let handelePosition2 = function() {
-      const img = document.querySelector(".s-news .card-new__img");
-      sliderButtons.forEach((btn) => {
-        const offsetTop = img.clientHeight / 2;
-        console.log(offsetTop);
-        btn.style.top = `${offsetTop}px`;
-      });
-    };
-    var handelePosition = handelePosition2;
-    handelePosition2();
-    window.addEventListener("resize", handelePosition2);
+function positionSliderButtons() {
+  const sliderButtonsNews = document.querySelectorAll(".s-news .slider-btn");
+  if (sliderButtonsNews.length) {
+    handelePosition(".s-news .card-new__img", sliderButtonsNews);
+    window.addEventListener("resize", () => handelePosition(".s-news .card-new__img", sliderButtonsNews));
+  }
+  const sliderButtonsClergy = document.querySelectorAll(".s-clergy .slider-btn");
+  if (sliderButtonsClergy.length) {
+    handelePosition(".s-clergy .card-team__gallery", sliderButtonsClergy);
+    window.addEventListener("resize", () => handelePosition(".s-clergy .card-team__gallery", sliderButtonsClergy));
+  }
+  function handelePosition(targetSelector, arr) {
+    const target = document.querySelector(`${targetSelector}`);
+    arr.forEach((btn) => {
+      const offsetTop = target.clientHeight / 2;
+      btn.style.top = `${offsetTop}px`;
+    });
   }
 }
 function player() {
@@ -650,7 +659,7 @@ document.addEventListener("DOMContentLoaded", () => {
   burger();
   sliders();
   headerScroll();
-  positionSliderButtonsNews();
+  positionSliderButtons();
   player();
   dropdown();
   Fancybox.bind("[data-fancybox]");

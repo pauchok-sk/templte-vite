@@ -1,0 +1,87 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-chart {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 65px;
+    @include tablet {
+      gap: 30px;
+    }
+    @include tablet-min {
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+  }
+  &__item {
+    @include tablet {
+      font-size: 14px;
+    }
+    @include tablet-min {
+      width: 100%;
+    }
+  }
+  &__item-title {
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  &__item-content {
+    margin: 0;
+  }
+  &__spollers {
+    margin-top: 40px;
+    @include laptop-min {
+      margin-top: 25px;
+    }
+    @include tablet-min {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  &__spoller {
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--silver);
+    }
+  }
+  &__spoller-btn {
+    @include flex-between;
+    gap: 20px;
+    padding: 24px 0px;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 20px;
+
+    @include tablet {
+      padding: 15px 0px;
+      font-size: 16px;
+    }
+    @include tablet-min {
+      font-size: 14px;
+    }
+
+    &._spoller-active {
+      svg {
+        transform: rotate(-90deg);
+      }
+    }
+
+    svg {
+      width: 10px;
+      height: 10px;
+
+      transition: transform 0.3s ease;
+    }
+  }
+  &__spoller-body {
+    padding-bottom: 24px;
+    @include tablet {
+      padding-bottom: 15px;
+    }
+    .simple-btn {
+      margin: 12px 0px 0px auto;
+    }
+  }
+}

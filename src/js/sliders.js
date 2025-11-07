@@ -9,7 +9,7 @@ export default function sliders() {
       loop: true,
       loopedSlides: 3,
       centeredSlides: true,
-      autplay: {
+      autoplay: {
         delay: 3500,
       },
       pagination: {
@@ -79,6 +79,10 @@ export default function sliders() {
       speed: 900,
       spaceBetween: 15,
       slidesPerView: 1,
+      loop: true,
+      loopedSlides: 4,
+      loopAdditionalSlides: 2,
+      centeredSlides: true,
       // autoplay: {
       //   delay: 3000,
       // },
@@ -94,10 +98,12 @@ export default function sliders() {
         992: {
           spaceBetween: 25,
           slidesPerView: 3,
+          centeredSlides: false
         },
         480: {
           spaceBetween: 15,
           slidesPerView: 2,
+          centeredSlides: false
         },
       },
     });

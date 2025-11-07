@@ -9,8 +9,10 @@
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  border-radius: 3px;
+  overflow: hidden;
   user-select: none;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow .3s ease;
   &__gallery {
     width: 100%;
     aspect-ratio: 1/1.4;

@@ -22,6 +22,12 @@
 
     .swiper-slide {
       height: auto !important;
+
+      &.swiper-slide-active, &.swiper-slide-next, &.swiper-slide-next + .swiper-slide {
+        .card-team {
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+        }
+      }
     }
     .card-team {
       height: 100%;

@@ -5,7 +5,7 @@ import headerToggle from "./js/headerToggle.js";
 import sliders from "./js/sliders.js";
 import spoller from "./js/spoller.js";
 import hasChildrenLists from "./js/hasChildrenLists.js";
-import positionSliderButtonsNews from "./js/positionSliderButtonsNews.js";
+import positionSliderButtons from "./js/positionSliderButtons.js";
 import player from "./js/player.js";
 import dropdown from "./js/dropdown.js";
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   burger();
   sliders();
   headerScroll();
-  positionSliderButtonsNews();
+  positionSliderButtons();
   player();
   dropdown();
 
