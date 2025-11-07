@@ -1,0 +1,32 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-schedule {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      @include tablet-min {
+        font-size: 14px;
+      }
+
+      span {
+        &:nth-child(1) {
+          flex: 0 1 160px;
+          @include tablet-min {
+            width: 140px;
+          }
+        }
+        &:nth-child(2) {
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

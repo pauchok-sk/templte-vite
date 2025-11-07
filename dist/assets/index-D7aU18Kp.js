@@ -151,9 +151,9 @@ function sliders() {
       loop: true,
       loopedSlides: 4,
       loopAdditionalSlides: 2,
-      // autoplay: {
-      //   delay: 3400,
-      // },
+      autoplay: {
+        delay: 3400
+      },
       initialSlide: 1,
       pagination: {
         el: ".s-gallery .slider-pagination",
@@ -167,6 +167,35 @@ function sliders() {
         992: {
           spaceBetween: 30,
           slidesPerView: 2
+        },
+        480: {
+          spaceBetween: 15,
+          slidesPerView: 2
+        }
+      }
+    });
+  }
+  const clergySlider = document.querySelector(".s-clergy__slider");
+  if (clergySlider) {
+    new Swiper(clergySlider, {
+      speed: 900,
+      spaceBetween: 15,
+      slidesPerView: 1,
+      // autoplay: {
+      //   delay: 3000,
+      // },
+      pagination: {
+        el: ".s-clergy .slider-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".s-clergy .slider-btn._next",
+        prevEl: ".s-clergy .slider-btn._prev"
+      },
+      breakpoints: {
+        992: {
+          spaceBetween: 25,
+          slidesPerView: 3
         },
         480: {
           spaceBetween: 15,

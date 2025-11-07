@@ -11,6 +11,10 @@
     gap: 5px;
   }
 
+  &.swiper-pagination-lock {
+    display: none;
+  }
+
   .swiper-pagination-bullet {
     display: flex !important;
     align-items: center;
@@ -88,7 +92,7 @@
 
   &.swiper-button-disabled {
     pointer-events: none;
-    opacity: 0.8;
+    opacity: 0;
   }
 
   svg {

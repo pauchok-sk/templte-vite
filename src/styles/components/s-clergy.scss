@@ -1,0 +1,93 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-clergy {
+  @include laptop-min {
+    overflow: hidden;
+    padding: 20px 0px;
+  }
+  &__slider {
+    padding: 20px;
+    margin: 0 -20px;
+
+    @include laptop-min {
+      padding: 0;
+      margin: 0;
+      overflow: visible !important;
+    }
+    @include mobile {
+      width: calc(100% - 50px);
+      margin: 0 auto;
+    }
+
+    .swiper-slide {
+      height: auto !important;
+    }
+    .card-team {
+      height: 100%;
+    }
+  }
+  &__slide {
+    position: relative;
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 25px;
+
+    color: white;
+
+    @media (min-width: 768px) {
+      @include hover {
+        img {
+          transform: scale(1.08);
+        }
+      }
+    }
+    @include tablet-min {
+      padding: 20px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 150px;
+      filter: blur(100px);
+      background-color: rgba(65, 29, 13, 0.3);
+      z-index: -1;
+    }
+  }
+  &__slide-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
+
+    transition: transform 0.3s linear;
+  }
+  &__slide-title {
+    font-weight: 500;
+    font-size: 22px;
+    @include tablet-min {
+      font-size: 14px;
+    }
+  }
+  &__slide-arrow {
+    display: block;
+    margin-left: auto;
+    width: 18px;
+    height: 18px;
+
+    @include hover {
+      animation: animationScale 0.3s linear forwards;
+    }
+  }
+}

@@ -10,9 +10,7 @@
   opacity: 0;
   visibility: hidden;
 
-  transition:
-    opacity 0.4s ease,
-    visibility 0.4s ease;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 
   &._active {
     opacity: 1;
@@ -36,15 +34,12 @@
   visibility: hidden;
   transform: translateX(-100%);
 
-  transition:
-    opacity 0.4s ease,
-    visibility 0.4s ease,
-    transform 0.4s ease;
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
 
   &._open {
     opacity: 1;
     visibility: visible;
-    transform: translateX(0)
+    transform: translateX(0);
   }
 
   &__head {
@@ -129,21 +124,71 @@
       transition: transform 0.3s ease;
     }
   }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+
+    .menu-item-has-children {
+      .btn {
+        @include flex-between;
+        cursor: pointer;
+        gap: 10px;
+
+        transition: color 0.3s ease;
+        @include hover {
+          color: var(--primary);
+        }
+
+        &._active {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    a {
+      font-size: 14px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.9);
+
+      transition: color 0.3s ease;
+      @include hover {
+        color: var(--primary);
+      }
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+
+      transition: transform 0.3s ease;
+    }
+  }
   &__sublist {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 20px 0px 0px 20px;
+    padding: 20px 0px 0px 35px;
+    
+    a {
+      text-transform: none;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+  &__subsublist {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 15px 0px 0px 35px;
 
     a {
       text-transform: none;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.75);
     }
-  }
-  &__menu-subsublist {
-    display: flex;
-    flex-direction: column;
-    padding: 15px 0px 0px 40px;
-    gap: 12px;
   }
   &__info-list {
     display: flex;

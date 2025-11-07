@@ -126,6 +126,10 @@
       padding-bottom: 9px;
       width: 390px;
       max-width: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
 
       font-size: 24px;
       text-transform: uppercase;

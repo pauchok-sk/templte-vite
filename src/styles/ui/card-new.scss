@@ -1,5 +1,6 @@
 @use "../base/templates" as *;
 @use "../base/media" as *;
+@use "../base/animation" as *;
 
 .card-new {
   display: flex;
@@ -11,13 +12,14 @@
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
-  // box-shadow: 0 0 12.5px rgba(0, 0, 0, 0.05);
 
   transition: color 0.3s ease, box-shadow 0.3s ease;
 
-  @include hover {
-    .card-new__img {
-      transform: scale(1.08);
+  @media (min-width: 768px) {
+    @include hover {
+      .card-new__img {
+        transform: scale(1.08);
+      }
     }
   }
 
@@ -74,7 +76,6 @@
   &__arrow {
     margin: auto 0px 0px auto;
     display: block;
-    overflow: hidden;
     width: 18px;
     height: 18px;
 
@@ -82,18 +83,6 @@
 
     @include hover {
       animation: animationScale 0.3s linear forwards;
-    }
-
-    @keyframes animationScale {
-      0% {
-        transform: scaleX(1);
-      }
-      50% {
-        transform: scaleX(0);
-      }
-      100% {
-        transform: scaleX(1);
-      }
     }
   }
 }

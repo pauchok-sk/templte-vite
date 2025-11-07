@@ -56,8 +56,8 @@
   width: fit-content;
   font-weight: 500;
   font-size: 16px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--black);
 
   transition: color 0.3s ease;
   @include hover {
