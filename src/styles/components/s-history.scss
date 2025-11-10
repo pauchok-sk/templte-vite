@@ -3,11 +3,35 @@
 
 .s-history {
   &__head {
-    padding: 60px;
+    overflow: hidden;
+    padding: 60px 0px;
     background: linear-gradient(180deg, #f9f9f9 0%, #fff 100%);
+
+    @include tablet {
+      padding: 50px 0px;
+    }
+  }
+  &__line-wrapper {
+    overflow-x: auto;
+    margin: 0 -24px;
+    padding: 0 24px;
+
+    @include tablet-min {
+      margin: 0 -12px;
+      padding: 0 12px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
   }
   &__line {
     display: flex;
+    min-width: 1125px;
+    @include tablet {
+      min-width: 900px;
+    }
   }
   &__line-item {
     flex: 1;
@@ -17,6 +41,11 @@
     align-items: center;
 
     text-align: center;
+
+    @include laptop-min {
+      text-align: start;
+      align-items: start;
+    }
 
     &:not(:last-child) {
       padding-right: 20px;
@@ -32,6 +61,10 @@
       .circle {
         &::after {
           right: 50%;
+
+          @include laptop-min {
+            display: none;
+          }
         }
       }
     }
@@ -58,13 +91,20 @@
       line-height: 133%;
       text-transform: uppercase;
       margin-bottom: 25px;
+      @include tablet-min {
+        max-width: 170px;
+        margin-bottom: 5px;
+      }
     }
     .circle {
       position: relative;
       display: flex;
       align-items: center;
       width: 100%;
-      margin-bottom: 40px;
+      margin-bottom: 25px;
+      @include tablet {
+        margin-bottom: 20px;
+      }
 
       &::after {
         position: absolute;
@@ -73,14 +113,22 @@
         left: 50%;
         height: 1px;
         background-color: var(--primary);
+
+        @include laptop-min {
+          left: 0;
+        }
       }
-      
+
       div {
         position: relative;
         width: 9px;
         height: 9px;
         margin: 0 auto;
         z-index: 1;
+
+        @include laptop-min {
+          margin: 0;
+        }
 
         &::after {
           position: absolute;

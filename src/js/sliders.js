@@ -108,7 +108,6 @@ export default function sliders() {
       slidesPerView: "auto",
       loop: true,
       loopedSlides: 4,
-      loopAdditionalSlides: 2,
       centeredSlides: true,
       pagination: {
         el: ".s-useful .slider-pagination",
@@ -122,7 +121,6 @@ export default function sliders() {
         992: {
           spaceBetween: 25,
           slidesPerView: 3,
-          initialSlide: 0,
           centeredSlides: false
         },
       },

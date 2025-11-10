@@ -1,0 +1,15 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.video {
+  @include flex-center;
+  position: relative;
+  width: 100%;
+  height: 620px;
+  @include laptop-min {
+    height: 315px;
+  }
+  @include tablet-min {
+    height: 210px;
+  }
+}
