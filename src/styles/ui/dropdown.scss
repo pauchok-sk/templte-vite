@@ -27,6 +27,14 @@
     }
   }
 }
+.dropdown-btn {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -webkit-appearance: none !important;
+  user-select: none !important;
+  outline: none !important;
+}
 .dropdown-point-btn {
   cursor: pointer;
   display: flex;
@@ -34,22 +42,6 @@
   justify-content: space-between;
   width: 25px;
   height: 25px;
-
-  // @include hover {
-  //   div {
-  //     animation: wave 0.4s ease-in-out;
-
-  //     &:nth-child(1) {
-  //       animation-delay: 0s;
-  //     }
-  //     &:nth-child(2) {
-  //       animation-delay: 0.1s;
-  //     }
-  //     &:nth-child(3) {
-  //       animation-delay: 0.2s;
-  //     }
-  //   }
-  // }
 
   div {
     background-color: var(--black);

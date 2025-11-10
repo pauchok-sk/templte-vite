@@ -1,0 +1,48 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-faq {
+  &__spollers {
+    width: 615px;
+    max-width: 100%;
+  }
+  &__spoller {
+    border-bottom: 1px solid var(--silver);
+
+    .content {
+      padding-bottom: 20px;
+    }
+  }
+  &__spoller-btn {
+    @include flex-between;
+    @include selectNone;
+    gap: 10px;
+    padding: 24px 0px;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 20px;
+
+    @include tablet {
+      font-size: 16px;
+      padding: 20px 0px;
+    }
+    @include tablet-min {
+      font-size: 14px;
+    }
+
+    &._spoller-active {
+      svg {
+        transform: rotate(45deg);
+      }
+    }
+
+    svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+
+      transition: transform 0.3s ease;
+    }
+  }
+}

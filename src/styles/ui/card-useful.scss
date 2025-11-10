@@ -2,20 +2,16 @@
 @use "../base/media" as *;
 @use "../base/animation" as *;
 
-.card-team {
+.card-useful {
   display: flex;
   flex-direction: column;
-  background-color: white;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
   border-radius: 3px;
   overflow: hidden;
-  user-select: none;
-  transition: box-shadow .3s ease;
+
+  transition: box-shadow 0.3s ease;
   &__gallery {
     width: 100%;
-    aspect-ratio: 1/1.4;
+    aspect-ratio: 1/1;
     overflow: hidden;
 
     @media (min-width: 992px) {
@@ -32,46 +28,38 @@
       height: 100%;
       object-fit: cover;
 
-      transition: transform .3s linear;
+      transition: transform 0.3s linear;
     }
   }
   &__body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 30px 25px 15px 25px;
-    @include mobile {
-      padding: 25px 20px 15px 20px;
+    background-color: white;
+    padding: 30px 20px 10px 20px;
+    @include tablet {
+      padding: 20px 20px 10px 20px;
     }
   }
   &__title {
+    width: fit-content;
+
     font-weight: 500;
     font-size: 20px;
-    margin: 0px 0px 12px 0px;
-    max-width: 200px;
-
-    transition: color 0.3s ease;
 
     @include hover {
       text-decoration: underline;
+    }
+    @include tablet {
+      font-size: 16px;
     }
     @include tablet-min {
       font-size: 14px;
     }
   }
-  &__status {
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--gray);
-    @include tablet-min {
-      font-size: 12px;
-    }
-  }
   &__arrow {
-    margin: auto 0px 0px auto;
     display: block;
     width: 18px;
     height: 18px;
+    margin: 5px 0px 0px auto;
+
     @include hover {
       animation: animationScale 0.3s linear forwards;
     }

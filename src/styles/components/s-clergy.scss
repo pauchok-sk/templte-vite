@@ -85,6 +85,10 @@
     @include tablet-min {
       font-size: 14px;
     }
+
+    @include hover {
+      text-decoration: underline;
+    }
   }
   &__slide-arrow {
     display: block;

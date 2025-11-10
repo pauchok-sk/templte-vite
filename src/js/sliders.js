@@ -9,9 +9,9 @@ export default function sliders() {
       loop: true,
       loopedSlides: 3,
       centeredSlides: true,
-      autoplay: {
-        delay: 3500,
-      },
+      // autoplay: {
+      //   delay: 3500,
+      // },
       pagination: {
         el: ".s-news .slider-pagination",
         clickable: true,
@@ -47,9 +47,6 @@ export default function sliders() {
       loop: true,
       loopedSlides: 4,
       loopAdditionalSlides: 2,
-      autoplay: {
-        delay: 3400,
-      },
       initialSlide: 1,
       pagination: {
         el: ".s-gallery .slider-pagination",
@@ -83,9 +80,6 @@ export default function sliders() {
       loopedSlides: 4,
       loopAdditionalSlides: 2,
       centeredSlides: true,
-      // autoplay: {
-      //   delay: 3000,
-      // },
       pagination: {
         el: ".s-clergy .slider-pagination",
         clickable: true,
@@ -98,11 +92,41 @@ export default function sliders() {
         992: {
           spaceBetween: 25,
           slidesPerView: 3,
-          centeredSlides: false
+          centeredSlides: false,
         },
         480: {
           spaceBetween: 15,
           slidesPerView: 2,
+          centeredSlides: false,
+        },
+      },
+    });
+  }
+
+  const usefulSlider = document.querySelector(".s-useful__slider");
+
+  if (usefulSlider) {
+    const swiper = new Swiper(usefulSlider, {
+      speed: 900,
+      spaceBetween: 15,
+      slidesPerView: "auto",
+      loop: true,
+      loopedSlides: 4,
+      loopAdditionalSlides: 2,
+      centeredSlides: true,
+      pagination: {
+        el: ".s-useful .slider-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".s-useful .slider-btn._next",
+        prevEl: ".s-useful .slider-btn._prev",
+      },
+      breakpoints: {
+        992: {
+          spaceBetween: 25,
+          slidesPerView: 3,
+          initialSlide: 0,
           centeredSlides: false
         },
       },

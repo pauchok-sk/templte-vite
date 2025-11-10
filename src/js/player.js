@@ -8,6 +8,7 @@ export default function player() {
       const circle = player.querySelector(".player-timeline-circle");
       const input = player.querySelector(".player-timeline-input");
       const time = player.querySelector(".player-time");
+      const track = player.querySelector(".player-timeline-track");
 
       let isDragInput = false;
       let finalDuration = null; // Фиксированная длительность
@@ -35,7 +36,7 @@ export default function player() {
         const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
         if (!isDragInput) {
-          circle.style.left = `${progress}%`;
+          stylesChange(progress);
           input.value = progress;
         }
 
@@ -50,6 +51,8 @@ export default function player() {
 
       audio.addEventListener("ended", (e) => {
         btn.classList.remove("_active");
+        btn.classList.add("_refresh");
+        stylesChange(0);
         // При окончании устанавливаем точное конечное время
         if (finalDuration !== null) {
           time.innerHTML = `${formatTime(finalDuration)} / ${formatTime(
@@ -75,7 +78,7 @@ export default function player() {
 
       input.addEventListener("input", (e) => {
         isDragInput = true;
-        circle.style.left = `${e.target.value}%`;
+        stylesChange(e.target.value);
 
         // Обновляем отображение времени при перетаскивании
         const duration =
@@ -97,11 +100,17 @@ export default function player() {
         }
       });
 
+      function stylesChange(progress) {
+        circle.style.left = `${progress}%`;
+        track.style.width = `${progress}%`;
+      }
+
       function handlePlay() {
         audio.play().catch((error) => {
           console.error("Ошибка воспроизведения:", error);
         });
         btn.classList.add("_active");
+        btn.classList.remove("_refresh");
       }
 
       function handlePause() {

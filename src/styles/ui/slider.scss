@@ -66,6 +66,13 @@
   top: 50%;
   transform: translateY(-50%);
 
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -webkit-appearance: none !important;
+  user-select: none !important;
+  outline: none !important;
+
   transition: color 0.3s ease, opacity 0.3s ease;
 
   z-index: 10;

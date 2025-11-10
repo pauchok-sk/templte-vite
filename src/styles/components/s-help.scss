@@ -29,7 +29,7 @@
   &__info-btn {
     margin-top: 45px;
     @include laptop-min {
-      display: none;
+      margin-top: 20px;
     }
   }
   &__buttons {

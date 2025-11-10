@@ -21,8 +21,7 @@
   }
   &__date {
     font-weight: 500;
-    font-size: 14px;
-    color: var(--gray);
+    font-size: 16px;
   }
   &__wrapper {
     display: flex;
@@ -52,10 +51,7 @@
   }
   &__title {
     font-weight: 500;
-    font-size: 20px;
-    @include tablet {
-      font-size: 16px;
-    }
+    font-size: 16px;
     @include tablet-min {
       font-size: 14px;
     }

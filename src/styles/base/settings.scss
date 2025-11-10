@@ -8,9 +8,17 @@ html {
   box-sizing: inherit;
 }
 
-a {
+a,
+button, [data-spoller] {
   color: inherit;
   text-decoration: none;
+
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -webkit-appearance: none !important;
+  user-select: none !important;
+  outline: none !important;
 }
 
 img {

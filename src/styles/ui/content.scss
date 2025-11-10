@@ -18,3 +18,9 @@
     }
   }
 }
+.contnet-min {
+  font-size: 14px;
+  @include tablet-min {
+    font-size: 12px;
+  }
+}

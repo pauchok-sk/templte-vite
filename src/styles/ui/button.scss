@@ -15,8 +15,8 @@
   --background-color: var(--black);
   --color: white;
 
-  --hover-border-color: var(--black-light);
-  --hover-background-color: var(--black-light);
+  --hover-border-color: var(--chalice);
+  --hover-background-color: var(--chalice);
   --hover-color: white;
 
   @include flex-center;
@@ -39,15 +39,19 @@
     border: 1px solid var(--hover-border-color);
     background-color: var(--hover-background-color);
     color: var(--hover-color);
+
+    span {
+      transform: scale(1.05);
+    }
   }
 
   &._outline {
     --background-color: transparent;
     --color: var(--black);
+  }
 
-    --hover-border-color: var(--black);
-    --hover-background-color: var(--black);
-    --hover-color: white;
+  span {
+    transition: transform .3s ease;
   }
 }
 

@@ -1,0 +1,33 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-tea {
+  @include tablet-min {
+    font-size: 14px
+  }
+  &__wrapper {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 45px;
+    @include tablet-min {
+      gap: 25px;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    li {
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+  &__content {
+    flex: 0 1 545px;
+    margin: 0;
+  }
+}

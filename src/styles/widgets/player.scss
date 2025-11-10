@@ -18,15 +18,64 @@
 }
 .player-btn {
   @include flex-center;
+  position: relative;
   cursor: pointer;
   width: 75px;
   height: 75px;
   border-radius: 50%;
   border: 1px solid var(--silver);
 
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -webkit-appearance: none !important;
+  user-select: none !important;
+  outline: none !important;
+
+  transition: border-color 0.3s ease;
+
   @include tablet {
     width: 50px;
     height: 50px;
+  }
+
+  @include hover {
+    &::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &._refresh {
+    border-color: transparent;
+    &::after {
+      opacity: 1;
+    }
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid var(--black);
+    transform: scale(0.5);
+    opacity: 0;
+
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    inset: -1px;
+    background: url("@img/refresh.svg") center/ 100% auto no-repeat;
+    opacity: 0;
+    z-index: 1;
+
+    transition: opacity 0.3s ease;
   }
 
   &._active {
@@ -45,7 +94,7 @@
     width: 25px;
     height: 25px;
 
-    transition: opacity .3s ease;
+    transition: opacity 0.3s ease;
 
     &:nth-child(2) {
       opacity: 0;
@@ -75,6 +124,13 @@
   height: 100%;
   opacity: 0;
   z-index: 1;
+}
+.player-timeline-track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--silver);
 }
 .player-timeline-circle {
   position: absolute;
