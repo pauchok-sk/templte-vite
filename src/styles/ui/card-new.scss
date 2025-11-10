@@ -73,16 +73,22 @@
       margin-bottom: 5px;
     }
   }
-  &__arrow {
-    margin: auto 0px 0px auto;
-    display: block;
+  &__wrapper-arrow {
     width: 18px;
     height: 18px;
-
-    transition: all 0.3s ease;
+    overflow: hidden;
+    margin: auto 0px 0px auto;
 
     @include hover {
-      animation: animationScale 0.3s linear forwards;
+      .card-new__arrow {
+        animation: animationTranslate 0.4s linear forwards;
+      }
     }
+  }
+  &__arrow {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 }

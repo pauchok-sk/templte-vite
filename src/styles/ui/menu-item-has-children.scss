@@ -1,4 +1,10 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
 .menu-item-has-children {
+  .btn {
+    @include selectNone;
+  }
   .content {
     
     &[hidden] {

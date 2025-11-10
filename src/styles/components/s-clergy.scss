@@ -6,6 +6,13 @@
     overflow: hidden;
     padding: 20px 0px;
   }
+  &__slider-wrapper {
+    position: relative;
+    @include tablet {
+      width: calc(100% - 50px);
+      margin: 0 auto;
+    }
+  }
   &__slider {
     padding: 20px;
     margin: 0 -20px;
@@ -15,15 +22,13 @@
       margin: 0;
       overflow: visible !important;
     }
-    @include mobile {
-      width: calc(100% - 50px);
-      margin: 0 auto;
-    }
 
     .swiper-slide {
       height: auto !important;
 
-      &.swiper-slide-active, &.swiper-slide-next, &.swiper-slide-next + .swiper-slide {
+      &.swiper-slide-active,
+      &.swiper-slide-next,
+      &.swiper-slide-next + .swiper-slide {
         .card-team {
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
         }
@@ -81,7 +86,7 @@
   }
   &__slide-title {
     font-weight: 500;
-    font-size: 22px;
+    font-size: 16px;
     @include tablet-min {
       font-size: 14px;
     }

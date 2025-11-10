@@ -13,32 +13,6 @@
       width: calc(100% - 48px);
       margin: 0 auto;
     }
-
-    .slider-btn {
-      position: absolute;
-      top: calc(50% - 25px);
-      z-index: 10;
-
-      &._prev {
-        left: 0;
-        transform: translateX(-50%) !important;
-      }
-      &._next {
-        right: 0;
-        transform: translateX(50%) !important;
-      }
-
-      @include laptop-min {
-        transform: translateX(0) !important;
-
-        &._prev {
-          left: 5px;
-        }
-        &._next {
-          right: 5px;
-        }
-      }
-    }
   }
   &__slider {
     padding: 20px !important;
@@ -46,14 +20,17 @@
 
     @include laptop-min {
       overflow: visible !important;
+      padding: 0 !important;
+      margin: 0 auto !important;
     }
 
     .swiper-slide {
       height: auto !important;
       box-sizing: border-box;
-      
 
-      &.swiper-slide-prev, &.swiper-slide-active, &.swiper-slide-next {
+      &.swiper-slide-prev,
+      &.swiper-slide-active,
+      &.swiper-slide-next {
         .card-new {
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
         }

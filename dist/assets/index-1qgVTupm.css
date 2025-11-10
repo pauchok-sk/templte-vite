@@ -553,6 +553,17 @@ body {
     transform: scaleX(1);
   }
 }
+@keyframes animationTranslate {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .card-new {
   display: flex;
   border-radius: 3px;
@@ -634,22 +645,27 @@ body {
     margin-bottom: 5px;
   }
 }
-.card-new__arrow {
-  margin: auto 0px 0px auto;
-  display: block;
+.card-new__wrapper-arrow {
   width: 18px;
   height: 18px;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  margin: auto 0px 0px auto;
 }
 @media (any-hover: hover) {
-  .card-new__arrow:hover {
-    animation: animationScale 0.3s linear forwards;
+  .card-new__wrapper-arrow:hover .card-new__arrow {
+    animation: animationTranslate 0.4s linear forwards;
   }
 }
 @media (hover: none) {
-  .card-new__arrow:active {
-    animation: animationScale 0.3s linear forwards;
+  .card-new__wrapper-arrow:active .card-new__arrow {
+    animation: animationTranslate 0.4s linear forwards;
   }
+}
+.card-new__arrow {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .slider-pagination {
@@ -713,7 +729,7 @@ body {
   width: 40px;
   height: 40px;
   background-color: white;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
   top: 50%;
@@ -728,18 +744,19 @@ body {
   z-index: 10;
 }
 .slider-btn._prev {
-  left: 15px;
+  left: 0;
+  transform: translateX(-50%);
 }
 .slider-btn._next {
-  right: 15px;
+  right: 0;
+  transform: translateX(50%);
 }
 @media (max-width: 767px) {
   .slider-btn {
     width: 30px;
     height: 30px;
+    transform: translateX(0) !important;
   }
-}
-@media (max-width: 479px) {
   .slider-btn._prev {
     left: -23px;
   }
@@ -867,6 +884,14 @@ body {
   }
 }
 
+.menu-item-has-children .btn {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -webkit-appearance: none !important;
+  user-select: none !important;
+  outline: none !important;
+}
 .menu-item-has-children .content[hidden] {
   display: none;
 }
@@ -918,9 +943,8 @@ body {
 }
 .card-team__title {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   margin: 0px 0px 12px 0px;
-  max-width: 200px;
   transition: color 0.3s ease;
 }
 @media (any-hover: hover) {
@@ -948,21 +972,27 @@ body {
     font-size: 12px;
   }
 }
-.card-team__arrow {
-  margin: auto 0px 0px auto;
-  display: block;
+.card-team__wrapper-arrow {
   width: 18px;
   height: 18px;
+  overflow: hidden;
+  margin: auto 0px 0px auto;
 }
 @media (any-hover: hover) {
-  .card-team__arrow:hover {
-    animation: animationScale 0.3s linear forwards;
+  .card-team__wrapper-arrow:hover .card-team__arrow {
+    animation: animationTranslate 0.4s linear forwards;
   }
 }
 @media (hover: none) {
-  .card-team__arrow:active {
-    animation: animationScale 0.3s linear forwards;
+  .card-team__wrapper-arrow:active .card-team__arrow {
+    animation: animationTranslate 0.4s linear forwards;
   }
+}
+.card-team__arrow {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 575px) {
@@ -1059,21 +1089,32 @@ body {
     font-size: 14px;
   }
 }
-.card-useful__arrow {
-  display: block;
+.card-useful__wrapper-arrow {
   width: 18px;
   height: 18px;
+  overflow: hidden;
   margin: 5px 0px 0px auto;
 }
 @media (any-hover: hover) {
-  .card-useful__arrow:hover {
-    animation: animationScale 0.3s linear forwards;
+  .card-useful__wrapper-arrow:hover .card-new__arrow {
+    animation: animationTranslate 0.4s linear forwards;
   }
 }
 @media (hover: none) {
-  .card-useful__arrow:active {
-    animation: animationScale 0.3s linear forwards;
+  .card-useful__wrapper-arrow:active .card-new__arrow {
+    animation: animationTranslate 0.4s linear forwards;
   }
+}
+.card-useful__arrow {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+[data-panzoom-action=toggleFull],
+[data-fullscreen-action=toggle] {
+  display: none !important;
 }
 
 .burger-overlay {
@@ -2237,30 +2278,6 @@ body {
     margin: 0 auto;
   }
 }
-.s-news__slider-wrapper .slider-btn {
-  position: absolute;
-  top: calc(50% - 25px);
-  z-index: 10;
-}
-.s-news__slider-wrapper .slider-btn._prev {
-  left: 0;
-  transform: translateX(-50%) !important;
-}
-.s-news__slider-wrapper .slider-btn._next {
-  right: 0;
-  transform: translateX(50%) !important;
-}
-@media (max-width: 991px) {
-  .s-news__slider-wrapper .slider-btn {
-    transform: translateX(0) !important;
-  }
-  .s-news__slider-wrapper .slider-btn._prev {
-    left: 5px;
-  }
-  .s-news__slider-wrapper .slider-btn._next {
-    right: 5px;
-  }
-}
 .s-news__slider {
   padding: 20px !important;
   margin: -20px !important;
@@ -2268,6 +2285,8 @@ body {
 @media (max-width: 991px) {
   .s-news__slider {
     overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
   }
 }
 .s-news__slider .swiper-slide {
@@ -2522,6 +2541,15 @@ body {
     padding: 20px 0px;
   }
 }
+.s-clergy__slider-wrapper {
+  position: relative;
+}
+@media (max-width: 767px) {
+  .s-clergy__slider-wrapper {
+    width: calc(100% - 50px);
+    margin: 0 auto;
+  }
+}
 .s-clergy__slider {
   padding: 20px;
   margin: 0 -20px;
@@ -2531,12 +2559,6 @@ body {
     padding: 0;
     margin: 0;
     overflow: visible !important;
-  }
-}
-@media (max-width: 479px) {
-  .s-clergy__slider {
-    width: calc(100% - 50px);
-    margin: 0 auto;
   }
 }
 .s-clergy__slider .swiper-slide {
@@ -2597,7 +2619,7 @@ body {
 }
 .s-clergy__slide-title {
   font-weight: 500;
-  font-size: 22px;
+  font-size: 16px;
 }
 @media (max-width: 575px) {
   .s-clergy__slide-title {
@@ -2690,12 +2712,11 @@ body {
   padding: 24px 0px;
   cursor: pointer;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
 }
 @media (max-width: 767px) {
   .s-chart__spoller-btn {
     padding: 15px 0px;
-    font-size: 16px;
   }
 }
 @media (max-width: 575px) {
@@ -2806,6 +2827,15 @@ body {
     padding: 20px 0px;
   }
 }
+.s-useful__slider-wrapper {
+  position: relative;
+}
+@media (max-width: 767px) {
+  .s-useful__slider-wrapper {
+    width: calc(100% - 50px);
+    margin: 0 auto;
+  }
+}
 .s-useful__slider {
   margin: 0 -20px;
   padding: 20px;
@@ -2815,11 +2845,6 @@ body {
     overflow: visible !important;
     margin: 0 auto !important;
     padding: 0;
-  }
-}
-@media (max-width: 479px) {
-  .s-useful__slider {
-    width: calc(100% - 50px);
   }
 }
 .s-useful__slider .swiper-slide {

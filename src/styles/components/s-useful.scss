@@ -6,6 +6,14 @@
     overflow: hidden;
     padding: 20px 0px;
   }
+  &__slider-wrapper {
+    position: relative;
+
+    @include tablet {
+      width: calc(100% - 50px);
+      margin: 0 auto;
+    }
+  }
   &__slider {
     margin: 0 -20px;
     padding: 20px;
@@ -13,9 +21,6 @@
       overflow: visible !important;
       margin: 0 auto !important;
       padding: 0;
-    }
-    @include mobile {
-      width: calc(100% - 50px);
     }
     .swiper-slide {
       height: auto !important;

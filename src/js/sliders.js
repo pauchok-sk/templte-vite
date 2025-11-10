@@ -5,13 +5,10 @@ export default function sliders() {
     const swiper = new Swiper(newsSlider, {
       speed: 900,
       spaceBetween: 15,
-      slidesPerView: 1.1,
+      slidesPerView: 1,
       loop: true,
       loopedSlides: 3,
       centeredSlides: true,
-      // autoplay: {
-      //   delay: 3500,
-      // },
       pagination: {
         el: ".s-news .slider-pagination",
         clickable: true,
@@ -77,8 +74,7 @@ export default function sliders() {
       spaceBetween: 15,
       slidesPerView: 1,
       loop: true,
-      loopedSlides: 4,
-      loopAdditionalSlides: 2,
+      loopedSlides: 3,
       centeredSlides: true,
       pagination: {
         el: ".s-clergy .slider-pagination",

@@ -111,13 +111,10 @@ function sliders() {
     new Swiper(newsSlider, {
       speed: 900,
       spaceBetween: 15,
-      slidesPerView: 1.1,
+      slidesPerView: 1,
       loop: true,
       loopedSlides: 3,
       centeredSlides: true,
-      // autoplay: {
-      //   delay: 3500,
-      // },
       pagination: {
         el: ".s-news .slider-pagination",
         clickable: true
@@ -179,8 +176,7 @@ function sliders() {
       spaceBetween: 15,
       slidesPerView: 1,
       loop: true,
-      loopedSlides: 4,
-      loopAdditionalSlides: 2,
+      loopedSlides: 3,
       centeredSlides: true,
       pagination: {
         el: ".s-clergy .slider-pagination",
@@ -710,5 +706,14 @@ document.addEventListener("DOMContentLoaded", () => {
   positionSliderButtons();
   player();
   dropdown();
-  Fancybox.bind("[data-fancybox]");
+  Fancybox.bind("[data-fancybox]", {
+    infobar: false,
+    // скрыть информационную панель (счетчик)
+    arrows: false,
+    // скрыть стрелки навигации
+    Thumbs: {
+      showOnStart: false
+      // скрыть миниатюры
+    }
+  });
 });
