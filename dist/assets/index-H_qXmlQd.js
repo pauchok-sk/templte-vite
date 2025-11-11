@@ -111,7 +111,7 @@ function sliders() {
     new Swiper(newsSlider, {
       speed: 900,
       spaceBetween: 15,
-      slidesPerView: 1,
+      slidesPerView: "auto",
       loop: true,
       loopedSlides: 3,
       centeredSlides: true,
@@ -127,14 +127,6 @@ function sliders() {
         992: {
           spaceBetween: 25,
           slidesPerView: 3
-        },
-        768: {
-          spaceBetween: 15,
-          slidesPerView: 3
-        },
-        480: {
-          spaceBetween: 15,
-          slidesPerView: 2
         }
       }
     });
@@ -174,7 +166,7 @@ function sliders() {
     new Swiper(clergySlider, {
       speed: 900,
       spaceBetween: 15,
-      slidesPerView: 1,
+      slidesPerView: "auto",
       loop: true,
       loopedSlides: 3,
       centeredSlides: true,
@@ -192,11 +184,19 @@ function sliders() {
           slidesPerView: 3,
           centeredSlides: false
         },
-        480: {
+        768: {
           spaceBetween: 15,
-          slidesPerView: 2,
+          slidesPerView: "auto",
           centeredSlides: false
         }
+        // 768: {
+        //   spaceBetween: 15,
+        //   slidesPerView: 3,
+        // },
+        // 480: {
+        //   spaceBetween: 15,
+        //   slidesPerView: 2,
+        // },
       }
     });
   }
@@ -828,10 +828,6 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollables();
   map();
   Fancybox.bind("[data-fancybox]", {
-    infobar: false,
-    // скрыть информационную панель (счетчик)
-    arrows: false,
-    // скрыть стрелки навигации
     Thumbs: {
       showOnStart: false
       // скрыть миниатюры

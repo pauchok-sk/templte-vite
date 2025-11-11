@@ -5,7 +5,7 @@ export default function sliders() {
     const swiper = new Swiper(newsSlider, {
       speed: 900,
       spaceBetween: 15,
-      slidesPerView: 1,
+      slidesPerView: "auto",
       loop: true,
       loopedSlides: 3,
       centeredSlides: true,
@@ -21,14 +21,6 @@ export default function sliders() {
         992: {
           spaceBetween: 25,
           slidesPerView: 3,
-        },
-        768: {
-          spaceBetween: 15,
-          slidesPerView: 3,
-        },
-        480: {
-          spaceBetween: 15,
-          slidesPerView: 2,
         },
       },
     });
@@ -72,7 +64,7 @@ export default function sliders() {
     const swiper = new Swiper(clergySlider, {
       speed: 900,
       spaceBetween: 15,
-      slidesPerView: 1,
+      slidesPerView: "auto",
       loop: true,
       loopedSlides: 3,
       centeredSlides: true,
@@ -90,11 +82,19 @@ export default function sliders() {
           slidesPerView: 3,
           centeredSlides: false,
         },
-        480: {
+        768: {
           spaceBetween: 15,
-          slidesPerView: 2,
+          slidesPerView: "auto",
           centeredSlides: false,
         },
+        // 768: {
+        //   spaceBetween: 15,
+        //   slidesPerView: 3,
+        // },
+        // 480: {
+        //   spaceBetween: 15,
+        //   slidesPerView: 2,
+        // },
       },
     });
   }

@@ -25,8 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   map();
 
   Fancybox.bind("[data-fancybox]", {
-    infobar: false, // скрыть информационную панель (счетчик)
-    arrows: false, // скрыть стрелки навигации
+
     Thumbs: {
       showOnStart: false, // скрыть миниатюры
     },

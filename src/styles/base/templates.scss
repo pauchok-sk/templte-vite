@@ -52,4 +52,13 @@
   -webkit-appearance: none !important;
   user-select: none !important;
   outline: none !important;
+
+  @include hover() {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -webkit-appearance: none !important;
+    user-select: none !important;
+    outline: none !important;
+  }
 }
