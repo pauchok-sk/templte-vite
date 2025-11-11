@@ -347,6 +347,7 @@ img {
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
+  line-height: 120%;
 }
 @media (max-width: 767px) {
   body {
@@ -547,6 +548,15 @@ body {
 @media (max-width: 767px) {
   .sect-m {
     margin: 80px 0px;
+  }
+}
+
+.sect-p {
+  padding: 60px 0px;
+}
+@media (max-width: 767px) {
+  .sect-p {
+    padding: 45px 0px;
   }
 }
 
@@ -1084,12 +1094,30 @@ body {
 }
 
 .content-min {
+  font-weight: 500;
   font-size: 14px;
 }
 @media (max-width: 575px) {
   .content-min {
     font-size: 12px;
   }
+}
+.content-min a {
+  transition: color 0.3s ease;
+}
+@media (any-hover: hover) {
+  .content-min a:hover {
+    text-decoration: underline;
+  }
+}
+@media (hover: none) {
+  .content-min a:active {
+    text-decoration: underline;
+  }
+}
+
+.text-gray {
+  color: var(--gray);
 }
 
 .card-useful {
@@ -1214,6 +1242,106 @@ body {
   .video {
     height: 210px;
   }
+}
+
+.input-control {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0px 0px 19px 0px;
+  border-bottom: 1px solid var(--silver);
+}
+@media (max-width: 575px) {
+  .input {
+    padding-bottom: 11px;
+  }
+}
+.input::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(23, 23, 23, 0.3);
+}
+@media (max-width: 575px) {
+  .input::placeholder {
+    font-size: 11px;
+  }
+}
+
+textarea.input {
+  resize: none;
+  height: 65px;
+}
+
+.card-diocese {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  padding: 30px;
+  transition: box-shadow 0.3s ease;
+}
+@media (max-width: 767px) {
+  .card-diocese {
+    padding: 25px;
+  }
+}
+.card-diocese__title {
+  font-weight: 500;
+  margin: 0px 0px 30px 0px;
+}
+@media (max-width: 767px) {
+  .card-diocese__title {
+    margin-bottom: 15px;
+  }
+}
+@media (any-hover: hover) {
+  .card-diocese__title:hover span {
+    background-size: 100% 100%;
+  }
+}
+@media (hover: none) {
+  .card-diocese__title:active span {
+    background-size: 100% 100%;
+  }
+}
+.card-diocese__title span {
+  display: inline !important;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(transparent calc(100% - 1px), currentColor 1px);
+  transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  background-size: 0 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card-diocese__content {
+  margin: 0px 0px 5px 0px;
+}
+.card-diocese__wrapper-arrow {
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  margin: auto 0px 0px auto;
+}
+@media (any-hover: hover) {
+  .card-diocese__wrapper-arrow:hover .card-diocese__arrow {
+    animation: animationTranslate 0.4s linear forwards;
+  }
+}
+@media (hover: none) {
+  .card-diocese__wrapper-arrow:active .card-diocese__arrow {
+    animation: animationTranslate 0.4s linear forwards;
+  }
+}
+.card-diocese__arrow {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .burger-overlay {
@@ -1626,6 +1754,16 @@ body {
 @media (max-width: 767px) {
   .player-time {
     font-size: 12px;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 430px;
+}
+@media (max-width: 479px) {
+  .map {
+    height: 420px;
   }
 }
 
@@ -3158,4 +3296,112 @@ body {
 .s-history__author {
   font-weight: 500;
   color: var(--gray);
+}
+
+.s-question {
+  background: linear-gradient(180deg, #f9f9f9 0%, #fff 100%);
+}
+.s-question__wrapper {
+  display: flex;
+  align-items: start;
+  gap: 85px;
+}
+@media (max-width: 1199px) {
+  .s-question__wrapper {
+    gap: 40px;
+  }
+}
+@media (max-width: 991px) {
+  .s-question__wrapper {
+    flex-direction: column-reverse;
+  }
+}
+.s-question__form {
+  display: flex;
+  flex-direction: column;
+  width: 555px;
+  max-width: 100%;
+  gap: 20px;
+}
+@media (max-width: 991px) {
+  .s-question__form {
+    width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  .s-question__form {
+    gap: 15px;
+  }
+}
+.s-question__form .btn-s {
+  width: 375px;
+  max-width: 100%;
+}
+@media (max-width: 575px) {
+  .s-question__form .btn-s {
+    width: 100%;
+  }
+}
+.s-question__form .privacy-policy-content {
+  order: 4;
+}
+.s-question__content {
+  margin: 0;
+  max-width: 540px;
+}
+@media (max-width: 991px) {
+  .s-question__content {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .s-diocese {
+    overflow: hidden;
+  }
+}
+.s-diocese__slider-wrapper {
+  position: relative;
+}
+@media (max-width: 767px) {
+  .s-diocese__slider-wrapper {
+    width: calc(100% - 50px);
+    margin: 0 auto;
+  }
+}
+.s-diocese__slider-wrapper .slider-btn {
+  top: calc(50% - 20px);
+}
+.s-diocese__slider {
+  padding: 20px;
+  margin: -20px;
+}
+@media (max-width: 991px) {
+  .s-diocese__slider {
+    margin: 0;
+    padding: 0;
+    overflow: visible !important;
+  }
+}
+.s-diocese__slider .swiper-slide {
+  box-sizing: border-box;
+  height: auto !important;
+}
+@media (max-width: 991px) {
+  .s-diocese__slider .swiper-slide {
+    width: 375px !important;
+    max-width: 100%;
+  }
+}
+.s-diocese__slider .swiper-slide.swiper-slide-active .card-diocese, .s-diocese__slider .swiper-slide.swiper-slide-next .card-diocese, .s-diocese__slider .swiper-slide.swiper-slide-next + .swiper-slide .card-diocese {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+.s-diocese__slider .swiper-slide .card-diocese {
+  height: 100%;
+}
+@media (max-width: 991px) {
+  .s-diocese__slider .swiper-slide .card-diocese {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  }
 }

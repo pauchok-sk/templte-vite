@@ -32,6 +32,7 @@ img {
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
+  line-height: 120%;
   @include tablet {
     font-size: 14px;
   }

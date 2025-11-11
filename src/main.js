@@ -9,6 +9,7 @@ import positionSliderButtons from "./js/positionSliderButtons.js";
 import player from "./js/player.js";
 import dropdown from "./js/dropdown.js";
 import scrollables from "./js/scrollables.js";
+import map from "./js/map.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   spoller();
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   player();
   dropdown();
   scrollables();
+  map();
 
   Fancybox.bind("[data-fancybox]", {
     infobar: false, // скрыть информационную панель (счетчик)

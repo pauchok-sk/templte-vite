@@ -19,8 +19,20 @@
   }
 }
 .content-min {
+  font-weight: 500;
   font-size: 14px;
   @include tablet-min {
     font-size: 12px;
   }
+
+  a {
+    transition: color .3s ease;
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.text-gray {
+  color: var(--gray);
 }

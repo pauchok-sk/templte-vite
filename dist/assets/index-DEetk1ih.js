@@ -132,7 +132,7 @@ function sliders() {
           spaceBetween: 15,
           slidesPerView: 3
         },
-        400: {
+        480: {
           spaceBetween: 15,
           slidesPerView: 2
         }
@@ -221,6 +221,36 @@ function sliders() {
         992: {
           spaceBetween: 25,
           slidesPerView: 3,
+          centeredSlides: false
+        }
+      }
+    });
+  }
+  const dioceseSlider = document.querySelector(".s-diocese__slider");
+  if (dioceseSlider) {
+    new Swiper(dioceseSlider, {
+      speed: 900,
+      spaceBetween: 15,
+      slidesPerView: "auto",
+      loop: true,
+      centeredSlides: true,
+      pagination: {
+        el: ".s-diocese .slider-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".s-diocese .slider-btn._next",
+        prevEl: ".s-diocese .slider-btn._prev"
+      },
+      breakpoints: {
+        1200: {
+          spaceBetween: 25,
+          slidesPerView: 3,
+          centeredSlides: false
+        },
+        992: {
+          spaceBetween: 25,
+          slidesPerView: 2,
           centeredSlides: false
         }
       }
@@ -750,6 +780,41 @@ class Scrollable {
 function scrollables() {
   new Scrollable(".s-history__line-wrapper");
 }
+function map() {
+  const maps = document.querySelectorAll(".map");
+  if (maps.length) {
+    maps.forEach((map2) => {
+      const center = JSON.parse(map2.dataset.center);
+      const zoom = Number(map2.dataset.zoom);
+      const iconHref = map2.dataset.icon;
+      let objectMark = {};
+      if (iconHref) {
+        objectMark = {
+          iconLayout: "default#image",
+          iconImageHref: iconHref,
+          iconImageSize: [50, 50],
+          iconImageOffset: [-25, -35]
+        };
+      }
+      function init() {
+        const htmlMap = new ymaps.Map(map2, {
+          center,
+          zoom
+        });
+        const placemark = new ymaps.Placemark(center, {}, objectMark);
+        htmlMap.geoObjects.add(placemark);
+        htmlMap.controls.remove("geolocationControl");
+        htmlMap.controls.remove("searchControl");
+        htmlMap.controls.remove("trafficControl");
+        htmlMap.controls.remove("typeSelector");
+        htmlMap.controls.remove("fullscreenControl");
+        htmlMap.controls.remove("rulerControl");
+        htmlMap.behaviors.disable(["scrollZoom"]);
+      }
+      ymaps.ready(init);
+    });
+  }
+}
 document.addEventListener("DOMContentLoaded", () => {
   spoller();
   hasChildrenLists();
@@ -761,6 +826,7 @@ document.addEventListener("DOMContentLoaded", () => {
   player();
   dropdown();
   scrollables();
+  map();
   Fancybox.bind("[data-fancybox]", {
     infobar: false,
     // скрыть информационную панель (счетчик)

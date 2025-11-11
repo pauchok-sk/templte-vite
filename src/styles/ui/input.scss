@@ -1,0 +1,32 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.input-control {
+  width: 100%;
+}
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0px 0px 19px 0px;
+  border-bottom: 1px solid var(--silver);
+
+  @include tablet-min {
+    padding-bottom: 11px;
+  }
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(23, 23, 23, 0.3);
+
+    @include tablet-min {
+      font-size: 11px;
+    }
+  }
+}
+textarea.input {
+  resize: none;
+  height: 65px;
+}

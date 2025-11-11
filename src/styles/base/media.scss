@@ -13,6 +13,11 @@
     @content;
   }
 }
+@mixin laptop-middle {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
 @mixin laptop-min {
   @media (max-width: 991px) {
     @content;

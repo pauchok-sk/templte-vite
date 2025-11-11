@@ -1,0 +1,50 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-question {
+  background: linear-gradient(180deg, #f9f9f9 0%, #fff 100%);
+  &__wrapper {
+    display: flex;
+    align-items: start;
+    gap: 85px;
+
+    @include laptop-middle {
+      gap: 40px;
+    }
+    @include laptop-min {
+      flex-direction: column-reverse;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 555px;
+    max-width: 100%;
+    gap: 20px;
+    @include laptop-min {
+      width: 100%;
+    }
+    @include tablet-min {
+      gap: 15px;
+    }
+
+    .btn-s {
+      width: 375px;
+      max-width: 100%;
+      @include tablet-min {
+        width: 100%;
+      }
+    }
+    .privacy-policy-content {
+      order: 4;
+    }
+  }
+  &__content {
+    margin: 0;
+    max-width: 540px;
+    @include laptop-min {
+      max-width: none;
+      width: 100%;
+    }
+  }
+}

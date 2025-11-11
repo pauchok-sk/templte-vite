@@ -1,0 +1,53 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-diocese {
+  @include laptop-min {
+    overflow: hidden;
+  }
+  &__slider-wrapper {
+    position: relative;
+    @include tablet {
+      width: calc(100% - 50px);
+      margin: 0 auto;
+    }
+
+    .slider-btn {
+      top: calc(50% - 20px);
+    }
+  }
+  &__slider {
+    padding: 20px;
+    margin: -20px;
+    @include laptop-min {
+      margin: 0;
+      padding: 0;
+      overflow: visible !important;
+    }
+
+    .swiper-slide {
+      box-sizing: border-box;
+      height: auto !important;
+
+      @include laptop-min {
+        width: 375px !important;
+        max-width: 100%;
+      }
+
+      &.swiper-slide-active,
+      &.swiper-slide-next,
+      &.swiper-slide-next + .swiper-slide {
+        .card-diocese {
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+        }
+      }
+
+      .card-diocese {
+        height: 100%;
+        @include laptop-min {
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+        }
+      }
+    }
+  }
+}

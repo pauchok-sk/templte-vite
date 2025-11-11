@@ -26,7 +26,7 @@ export default function sliders() {
           spaceBetween: 15,
           slidesPerView: 3,
         },
-        400: {
+        480: {
           spaceBetween: 15,
           slidesPerView: 2,
         },
@@ -121,7 +121,39 @@ export default function sliders() {
         992: {
           spaceBetween: 25,
           slidesPerView: 3,
-          centeredSlides: false
+          centeredSlides: false,
+        },
+      },
+    });
+  }
+
+  const dioceseSlider = document.querySelector(".s-diocese__slider");
+
+  if (dioceseSlider) {
+    const swiper = new Swiper(dioceseSlider, {
+      speed: 900,
+      spaceBetween: 15,
+      slidesPerView: "auto",
+      loop: true,
+      centeredSlides: true,
+      pagination: {
+        el: ".s-diocese .slider-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".s-diocese .slider-btn._next",
+        prevEl: ".s-diocese .slider-btn._prev",
+      },
+      breakpoints: {
+        1200: {
+          spaceBetween: 25,
+          slidesPerView: 3,
+          centeredSlides: false,
+        },
+        992: {
+          spaceBetween: 25,
+          slidesPerView: 2,
+          centeredSlides: false,
         },
       },
     });

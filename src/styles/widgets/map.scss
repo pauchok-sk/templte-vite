@@ -1,0 +1,10 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.map {
+  width: 100%;
+  height: 430px;
+  @include mobile {
+    height: 420px;
+  }
+}
