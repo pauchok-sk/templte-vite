@@ -954,18 +954,34 @@ body {
   -webkit-tap-highlight-color: transparent !important;
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
-  -webkit-appearance: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
   user-select: none !important;
-  outline: none !important;
+  outline: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  /* Новые свойства для Safari */
+  -webkit-appearance: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 @media (any-hover: hover) {
   .menu-item-has-children .btn:hover {
     -webkit-tap-highlight-color: transparent !important;
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
-    -webkit-appearance: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
     user-select: none !important;
-    outline: none !important;
+    outline: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    /* Новые свойства для Safari */
+    -webkit-appearance: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
   }
 }
 @media (hover: none) {
@@ -973,9 +989,17 @@ body {
     -webkit-tap-highlight-color: transparent !important;
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
-    -webkit-appearance: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
     user-select: none !important;
-    outline: none !important;
+    outline: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    /* Новые свойства для Safari */
+    -webkit-appearance: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
   }
 }
 .menu-item-has-children .content[hidden] {
@@ -2432,18 +2456,34 @@ textarea.input {
   -webkit-tap-highlight-color: transparent !important;
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
-  -webkit-appearance: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
   user-select: none !important;
-  outline: none !important;
+  outline: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  /* Новые свойства для Safari */
+  -webkit-appearance: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 @media (any-hover: hover) {
   .intro__list:hover {
     -webkit-tap-highlight-color: transparent !important;
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
-    -webkit-appearance: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
     user-select: none !important;
-    outline: none !important;
+    outline: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    /* Новые свойства для Safari */
+    -webkit-appearance: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
   }
 }
 @media (hover: none) {
@@ -2451,9 +2491,17 @@ textarea.input {
     -webkit-tap-highlight-color: transparent !important;
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
-    -webkit-appearance: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
     user-select: none !important;
-    outline: none !important;
+    outline: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    /* Новые свойства для Safari */
+    -webkit-appearance: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
   }
 }
 .intro__list {
@@ -2493,18 +2541,34 @@ textarea.input {
   -webkit-tap-highlight-color: transparent !important;
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
-  -webkit-appearance: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
   user-select: none !important;
-  outline: none !important;
+  outline: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  /* Новые свойства для Safari */
+  -webkit-appearance: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 @media (any-hover: hover) {
   .intro__list li:hover {
     -webkit-tap-highlight-color: transparent !important;
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
-    -webkit-appearance: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
     user-select: none !important;
-    outline: none !important;
+    outline: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    /* Новые свойства для Safari */
+    -webkit-appearance: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
   }
 }
 @media (hover: none) {
@@ -2512,27 +2576,51 @@ textarea.input {
     -webkit-tap-highlight-color: transparent !important;
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
-    -webkit-appearance: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
     user-select: none !important;
-    outline: none !important;
+    outline: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    /* Новые свойства для Safari */
+    -webkit-appearance: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
   }
 }
 .intro__list a {
   -webkit-tap-highlight-color: transparent !important;
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
-  -webkit-appearance: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
   user-select: none !important;
-  outline: none !important;
+  outline: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  /* Новые свойства для Safari */
+  -webkit-appearance: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 @media (any-hover: hover) {
   .intro__list a:hover {
     -webkit-tap-highlight-color: transparent !important;
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
-    -webkit-appearance: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
     user-select: none !important;
-    outline: none !important;
+    outline: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    /* Новые свойства для Safari */
+    -webkit-appearance: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
   }
 }
 @media (hover: none) {
@@ -2540,9 +2628,17 @@ textarea.input {
     -webkit-tap-highlight-color: transparent !important;
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
-    -webkit-appearance: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
     user-select: none !important;
-    outline: none !important;
+    outline: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    /* Новые свойства для Safari */
+    -webkit-appearance: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
   }
 }
 .intro__list a {
@@ -3160,18 +3256,34 @@ textarea.input {
   -webkit-tap-highlight-color: transparent !important;
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
-  -webkit-appearance: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
   user-select: none !important;
-  outline: none !important;
+  outline: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  /* Новые свойства для Safari */
+  -webkit-appearance: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 @media (any-hover: hover) {
   .s-faq__spoller-btn:hover {
     -webkit-tap-highlight-color: transparent !important;
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
-    -webkit-appearance: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
     user-select: none !important;
-    outline: none !important;
+    outline: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    /* Новые свойства для Safari */
+    -webkit-appearance: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
   }
 }
 @media (hover: none) {
@@ -3179,9 +3291,17 @@ textarea.input {
     -webkit-tap-highlight-color: transparent !important;
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
-    -webkit-appearance: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
     user-select: none !important;
-    outline: none !important;
+    outline: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    /* Новые свойства для Safari */
+    -webkit-appearance: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
   }
 }
 .s-faq__spoller-btn {
