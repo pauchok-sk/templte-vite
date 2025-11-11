@@ -27,9 +27,11 @@
     outline: none;
     aspect-ratio: 1/1;
 
-    @include hover {
-      img {
-        transform: scale(1.08);
+    @media (min-width: 992px) {
+      @include hover {
+        img {
+          transform: scale(1.08);
+        }
       }
     }
     @include mobile {

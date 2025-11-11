@@ -11,6 +11,10 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 45px;
+    padding-bottom: 60px;
+    @include tablet-min {
+      padding-bottom: 45px;
+    }
     @include tablet-min {
       gap: 25px;
     }
