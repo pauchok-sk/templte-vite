@@ -1,3 +1,7 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+
 html {
   box-sizing: border-box;
 }
@@ -28,4 +32,7 @@ img {
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
+  @include tablet {
+    font-size: 14px;
+  }
 }

@@ -132,7 +132,7 @@ function sliders() {
           spaceBetween: 15,
           slidesPerView: 3
         },
-        480: {
+        400: {
           spaceBetween: 15,
           slidesPerView: 2
         }

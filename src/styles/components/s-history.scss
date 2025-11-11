@@ -145,4 +145,45 @@
       color: var(--gray);
     }
   }
+  &__quote {
+    padding: 35px 0px;
+    text-align: center;
+    width: 805px;
+    max-width: 100%;
+    margin: 0 auto;
+    @include tablet {
+      padding: 25px 0px;
+    }
+  }
+  &__quote-tag {
+    @include flex-center;
+    position: relative;
+    font-family: "Playfair Display SC", sans-serif;
+    font-size: 64px;
+    line-height: 32px;
+    margin-bottom: 30px;
+
+    @include tablet {
+      font-size: 48px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+
+    &::before {
+      content: "“";
+      transform: translateY(50%);
+    }
+  }
+  &__quote-content {
+    margin: 0px 0px 30px 0px;
+    font-weight: 300;
+    @include tablet {
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+  }
+  &__author {
+    font-weight: 500;
+    color: var(--gray);
+  }
 }
