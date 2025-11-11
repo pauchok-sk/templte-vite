@@ -1265,6 +1265,10 @@ body {
   display: none !important;
 }
 
+.fancybox__thumbs {
+  display: none !important;
+}
+
 .f-html {
   padding: 0 !important;
 }
@@ -2919,6 +2923,7 @@ textarea.input {
   transform-style: preserve-3d;
 }
 .s-gallery__slide {
+  cursor: pointer;
   display: block;
   box-sizing: border-box;
   border-radius: 2px;

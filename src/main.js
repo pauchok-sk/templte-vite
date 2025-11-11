@@ -10,6 +10,7 @@ import player from "./js/player.js";
 import dropdown from "./js/dropdown.js";
 import scrollables from "./js/scrollables.js";
 import map from "./js/map.js";
+import galleryClickedSlide from "./js/galleryClickedSlide.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   spoller();
@@ -23,11 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
   dropdown();
   scrollables();
   map();
+  galleryClickedSlide();
 
   Fancybox.bind("[data-fancybox]", {
-
-    Thumbs: {
-      showOnStart: false, // скрыть миниатюры
-    },
+    thumbs: false,
   });
 });

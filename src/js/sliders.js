@@ -87,14 +87,6 @@ export default function sliders() {
           slidesPerView: "auto",
           centeredSlides: false,
         },
-        // 768: {
-        //   spaceBetween: 15,
-        //   slidesPerView: 3,
-        // },
-        // 480: {
-        //   spaceBetween: 15,
-        //   slidesPerView: 2,
-        // },
       },
     });
   }

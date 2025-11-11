@@ -189,14 +189,6 @@ function sliders() {
           slidesPerView: "auto",
           centeredSlides: false
         }
-        // 768: {
-        //   spaceBetween: 15,
-        //   slidesPerView: 3,
-        // },
-        // 480: {
-        //   spaceBetween: 15,
-        //   slidesPerView: 2,
-        // },
       }
     });
   }
@@ -815,6 +807,17 @@ function map() {
     });
   }
 }
+function galleryClickedSlide() {
+  const slides = document.querySelectorAll(".s-gallery__slide");
+  if (slides.length) {
+    const buttons = document.querySelector("#gallery-buttons").querySelectorAll("a");
+    slides.forEach((slide, index) => {
+      slide.addEventListener("click", () => {
+        buttons[index].click();
+      });
+    });
+  }
+}
 document.addEventListener("DOMContentLoaded", () => {
   spoller();
   hasChildrenLists();
@@ -827,10 +830,8 @@ document.addEventListener("DOMContentLoaded", () => {
   dropdown();
   scrollables();
   map();
+  galleryClickedSlide();
   Fancybox.bind("[data-fancybox]", {
-    Thumbs: {
-      showOnStart: false
-      // скрыть миниатюры
-    }
+    thumbs: false
   });
 });
