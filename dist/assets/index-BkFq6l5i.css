@@ -2526,7 +2526,6 @@ textarea.input {
 }
 .intro__list::before {
   position: absolute;
-  content: "";
   inset: 0;
   background-color: rgba(65, 29, 13, 0.4);
   filter: blur(100px);
