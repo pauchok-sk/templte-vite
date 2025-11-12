@@ -29,7 +29,6 @@ export default function positionSliderButtons() {
     handelePosition(".s-useful .card-useful__gallery", sliderButtonsUseful);
 
     window.addEventListener("resize", () => {
-      console.log("fa");
       handelePosition(".s-useful .card-useful__gallery", sliderButtonsUseful);
     });
   }
@@ -37,7 +36,7 @@ export default function positionSliderButtons() {
   function handelePosition(targetSelector, arr) {
     setTimeout(() => {
       const target = document.querySelector(`${targetSelector}`);
-      console.log(target, target.clientHeight);
+  
       arr.forEach((btn) => {
         const offsetTop = target.clientHeight / 2;
         btn.style.top = `${offsetTop}px`;

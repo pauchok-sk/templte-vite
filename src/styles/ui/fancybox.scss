@@ -1,5 +1,7 @@
 [data-panzoom-action="toggleFull"],
-[data-fullscreen-action="toggle"] {
+[data-fullscreen-action="toggle"],
+[data-autoplay-action="toggle"],
+[data-thumbs-action="toggle"] {
   display: none !important;
 }
 .fancybox__thumbs {

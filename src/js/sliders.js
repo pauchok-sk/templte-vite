@@ -55,6 +55,14 @@ export default function sliders() {
           slidesPerView: 2,
         },
       },
+      on: {
+        transitionStart: () => {
+          gallerySlider.querySelector(".swiper-wrapper").style.willChange = "transform";
+        },
+        transitionEnd: () => {
+          gallerySlider.querySelector(".swiper-wrapper").style.willChange = "";
+        },
+      },
     });
   }
 
@@ -68,6 +76,7 @@ export default function sliders() {
       // loop: true,
       // loopedSlides: 3,
       centeredSlides: true,
+      initialSlide: 1,
       pagination: {
         el: ".s-clergy .slider-pagination",
         clickable: true,
@@ -81,11 +90,13 @@ export default function sliders() {
           spaceBetween: 25,
           slidesPerView: 3,
           centeredSlides: false,
+          initialSlide: 0,
         },
         768: {
           spaceBetween: 15,
           slidesPerView: "auto",
-          centeredSlides: false,
+          centeredSlides: true,
+          initialSlide: 1,
         },
       },
     });

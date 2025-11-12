@@ -158,6 +158,14 @@ function sliders() {
           spaceBetween: 15,
           slidesPerView: 2
         }
+      },
+      on: {
+        transitionStart: () => {
+          gallerySlider.querySelector(".swiper-wrapper").style.willChange = "transform";
+        },
+        transitionEnd: () => {
+          gallerySlider.querySelector(".swiper-wrapper").style.willChange = "";
+        }
       }
     });
   }
@@ -170,6 +178,7 @@ function sliders() {
       // loop: true,
       // loopedSlides: 3,
       centeredSlides: true,
+      initialSlide: 1,
       pagination: {
         el: ".s-clergy .slider-pagination",
         clickable: true
@@ -182,12 +191,14 @@ function sliders() {
         992: {
           spaceBetween: 25,
           slidesPerView: 3,
-          centeredSlides: false
+          centeredSlides: false,
+          initialSlide: 0
         },
         768: {
           spaceBetween: 15,
           slidesPerView: "auto",
-          centeredSlides: false
+          centeredSlides: true,
+          initialSlide: 1
         }
       }
     });
@@ -581,14 +592,12 @@ function positionSliderButtons() {
   if (sliderButtonsUseful.length) {
     handelePosition(".s-useful .card-useful__gallery", sliderButtonsUseful);
     window.addEventListener("resize", () => {
-      console.log("fa");
       handelePosition(".s-useful .card-useful__gallery", sliderButtonsUseful);
     });
   }
   function handelePosition(targetSelector, arr) {
     setTimeout(() => {
       const target = document.querySelector(`${targetSelector}`);
-      console.log(target, target.clientHeight);
       arr.forEach((btn) => {
         const offsetTop = target.clientHeight / 2;
         btn.style.top = `${offsetTop}px`;

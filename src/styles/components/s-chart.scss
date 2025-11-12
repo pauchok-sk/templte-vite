@@ -41,9 +41,7 @@
     }
   }
   &__spoller {
-    &:not(:last-child) {
-      border-bottom: 1px solid var(--silver);
-    }
+    border-bottom: 1px solid var(--silver);
   }
   &__spoller-btn {
     @include flex-between;

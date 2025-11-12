@@ -21,14 +21,15 @@
     cursor: pointer;
 
     font-weight: 500;
-    font-size: 20px;
 
     @include tablet {
-      font-size: 16px;
       padding: 20px 0px;
     }
-    @include tablet-min {
-      font-size: 14px;
+
+    @include hover {
+      span {
+        background-size: 100% 100%;
+      }
     }
 
     &._spoller-active {
@@ -37,6 +38,18 @@
       }
     }
 
+    span {
+      display: inline !important;
+      background-repeat: no-repeat;
+      background-image: linear-gradient(
+        transparent calc(100% - 1px),
+        currentColor 1px
+      );
+      transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+      background-size: 0 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
     svg {
       width: 17px;
       height: 17px;
