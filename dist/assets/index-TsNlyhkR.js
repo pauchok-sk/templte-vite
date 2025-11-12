@@ -580,17 +580,20 @@ function positionSliderButtons() {
   );
   if (sliderButtonsUseful.length) {
     handelePosition(".s-useful .card-useful__gallery", sliderButtonsUseful);
-    window.addEventListener(
-      "resize",
-      () => handelePosition(".s-useful .card-useful__gallery", sliderButtonsUseful)
-    );
+    window.addEventListener("resize", () => {
+      console.log("fa");
+      handelePosition(".s-useful .card-useful__gallery", sliderButtonsUseful);
+    });
   }
   function handelePosition(targetSelector, arr) {
-    const target = document.querySelector(`${targetSelector}`);
-    arr.forEach((btn) => {
-      const offsetTop = target.clientHeight / 2;
-      btn.style.top = `${offsetTop}px`;
-    });
+    setTimeout(() => {
+      const target = document.querySelector(`${targetSelector}`);
+      console.log(target, target.clientHeight);
+      arr.forEach((btn) => {
+        const offsetTop = target.clientHeight / 2;
+        btn.style.top = `${offsetTop}px`;
+      });
+    }, 10);
   }
 }
 function player() {
