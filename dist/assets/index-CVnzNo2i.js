@@ -818,6 +818,16 @@ function galleryClickedSlide() {
     });
   }
 }
+function ctxNone() {
+  const buttons = document.querySelectorAll(".ctx-none");
+  if (buttons.length) {
+    buttons.forEach((btn) => {
+      btn.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+      });
+    });
+  }
+}
 document.addEventListener("DOMContentLoaded", () => {
   spoller();
   hasChildrenLists();
@@ -831,6 +841,7 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollables();
   map();
   galleryClickedSlide();
+  ctxNone();
   Fancybox.bind("[data-fancybox]", {
     thumbs: false
   });

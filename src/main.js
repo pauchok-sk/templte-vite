@@ -11,6 +11,7 @@ import dropdown from "./js/dropdown.js";
 import scrollables from "./js/scrollables.js";
 import map from "./js/map.js";
 import galleryClickedSlide from "./js/galleryClickedSlide.js";
+import ctxNone from "./js/ctxNone.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   spoller();
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollables();
   map();
   galleryClickedSlide();
+  ctxNone();
 
   Fancybox.bind("[data-fancybox]", {
     thumbs: false,
