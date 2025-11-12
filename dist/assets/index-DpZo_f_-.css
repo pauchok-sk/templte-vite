@@ -2456,6 +2456,34 @@ textarea.input {
     font-size: 12px;
   }
 }
+.intro__wrapper-list {
+  position: relative;
+  overflow: visible !important;
+  margin-top: 130px;
+  z-index: 1;
+}
+@media (max-width: 991px) {
+  .intro__wrapper-list {
+    margin-top: 75px;
+  }
+}
+@media (max-width: 767px) {
+  .intro__wrapper-list {
+    margin-top: 45px;
+  }
+}
+.intro__wrapper-list .shadow {
+  position: absolute;
+  inset: -10px;
+  background-color: rgba(65, 29, 13, 0.4);
+  filter: blur(100px);
+  z-index: -1;
+}
+@media (max-width: 767px) {
+  .intro__wrapper-list .shadow {
+    background-color: rgba(65, 29, 13, 0.6);
+  }
+}
 .intro__list {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   -webkit-touch-callout: none !important;
@@ -2509,37 +2537,14 @@ textarea.input {
   }
 }
 .intro__list {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 25px;
-  overflow: visible !important;
   font-family: "Forum", sans-serif;
-  margin-top: 130px;
-  z-index: 1;
-}
-@media (max-width: 991px) {
-  .intro__list {
-    margin-top: 75px;
-  }
 }
 @media (max-width: 767px) {
   .intro__list {
-    margin-top: 45px;
     gap: 10px;
-  }
-}
-.intro__list::before {
-  position: absolute;
-  content: "";
-  inset: -10px;
-  background-color: rgba(65, 29, 13, 0.4);
-  filter: blur(100px);
-  z-index: -1;
-}
-@media (max-width: 767px) {
-  .intro__list::before {
-    background-color: rgba(65, 29, 13, 0.6);
   }
 }
 .intro__list li {
@@ -2594,59 +2599,8 @@ textarea.input {
     touch-action: manipulation;
   }
 }
-.intro__list a {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-  -webkit-touch-callout: none !important;
-  -webkit-user-select: none !important;
-  -khtml-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
-  outline: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-  -webkit-appearance: none !important;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-  touch-action: manipulation;
-}
-@media (any-hover: hover) {
-  .intro__list a:hover {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-    -webkit-touch-callout: none !important;
-    -webkit-user-select: none !important;
-    -khtml-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    user-select: none !important;
-    outline: 0 !important;
-    border: 0 !important;
-    background: transparent !important;
-    -webkit-appearance: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    touch-action: manipulation;
-  }
-}
-@media (hover: none) {
-  .intro__list a:active {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-    -webkit-touch-callout: none !important;
-    -webkit-user-select: none !important;
-    -khtml-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    user-select: none !important;
-    outline: 0 !important;
-    border: 0 !important;
-    background: transparent !important;
-    -webkit-appearance: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    touch-action: manipulation;
-  }
-}
-.intro__list a {
+.intro__list li {
+  cursor: pointer;
   position: relative;
   display: flex;
   align-items: center;
@@ -2659,27 +2613,27 @@ textarea.input {
   text-transform: uppercase;
 }
 @media (any-hover: hover) {
-  .intro__list a:hover::before {
+  .intro__list li:hover::before {
     transform: translateX(8px);
   }
 }
 @media (hover: none) {
-  .intro__list a:active::before {
+  .intro__list li:active::before {
     transform: translateX(8px);
   }
 }
 @media (max-width: 991px) {
-  .intro__list a {
+  .intro__list li {
     width: 370px;
   }
 }
 @media (max-width: 767px) {
-  .intro__list a {
+  .intro__list li {
     font-size: 15px;
     width: 230px;
   }
 }
-.intro__list a::before {
+.intro__list li::before {
   position: absolute;
   content: "";
   inset: 0;
@@ -2687,7 +2641,7 @@ textarea.input {
   z-index: -1;
   transition: transform 0.3s ease;
 }
-.intro__list a img {
+.intro__list li img {
   display: block;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
@@ -2696,7 +2650,7 @@ textarea.input {
   -webkit-transform: translateZ(0);
 }
 @media (max-width: 767px) {
-  .intro__list a img {
+  .intro__list li img {
     width: 35px;
   }
 }

@@ -819,11 +819,22 @@ function galleryClickedSlide() {
   }
 }
 function ctxNone() {
-  const buttons = document.querySelectorAll(".ctx-none");
+  const buttons = document.querySelectorAll("a");
   if (buttons.length) {
     buttons.forEach((btn) => {
       btn.addEventListener("contextmenu", (e) => {
         e.preventDefault();
+      });
+    });
+  }
+}
+function redirect() {
+  const buttons = document.querySelectorAll("[data-to]");
+  if (buttons.length) {
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const to = btn.dataset.to;
+        window.location.href = to;
       });
     });
   }
@@ -842,6 +853,7 @@ document.addEventListener("DOMContentLoaded", () => {
   map();
   galleryClickedSlide();
   ctxNone();
+  redirect();
   Fancybox.bind("[data-fancybox]", {
     thumbs: false
   });

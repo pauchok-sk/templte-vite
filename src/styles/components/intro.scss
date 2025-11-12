@@ -90,14 +90,9 @@
       font-size: 12px;
     }
   }
-  &__list {
-    @include selectNone;
+  &__wrapper-list {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
     overflow: visible !important;
-    font-family: "Forum", sans-serif;
     margin-top: 130px;
     z-index: 1;
     @include laptop-min {
@@ -105,11 +100,11 @@
     }
     @include tablet {
       margin-top: 45px;
-      gap: 10px;
     }
-    &::before {
+
+    .shadow {
       position: absolute;
-      content: "";
+      // content: "";
       inset: -10px;
       background-color: rgba(65, 29, 13, 0.4);
       filter: blur(100px);
@@ -118,12 +113,20 @@
         background-color: rgba(65, 29, 13, 0.6);
       }
     }
+  }
+  &__list {
+    @include selectNone;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: "Forum", sans-serif;
+    @include tablet {
+      gap: 10px;
+    }
 
     li {
       @include selectNone;
-    }
-    a {
-      @include selectNone;
+      cursor: pointer;
       position: relative;
       display: flex;
       align-items: center;

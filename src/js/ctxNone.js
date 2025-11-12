@@ -1,5 +1,5 @@
 export default function ctxNone() {
-  const buttons = document.querySelectorAll(".ctx-none");
+  const buttons = document.querySelectorAll("a");
 
   if (buttons.length) {
     buttons.forEach((btn) => {
