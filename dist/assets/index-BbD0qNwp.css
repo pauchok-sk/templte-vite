@@ -1862,7 +1862,7 @@ textarea.input {
 }
 @media (max-width: 767px) {
   .header {
-    padding: 15px 14px !important;
+    padding: 10px 14px !important;
   }
 }
 .header__wrapper {
@@ -2073,6 +2073,12 @@ textarea.input {
   }
   .header__logo br:nth-child(2) {
     display: none;
+  }
+}
+@media (max-width: 767px) {
+  .header__logo {
+    width: 40px;
+    height: 40px;
   }
 }
 @media (max-width: 575px) {

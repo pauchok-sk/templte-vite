@@ -43,7 +43,7 @@
     transition: transform 0.4s ease;
   }
   @include tablet {
-    padding: 15px 14px !important;
+    padding: 10px 14px !important;
   }
 
   &__wrapper {
@@ -242,6 +242,10 @@
           display: none;
         }
       }
+    }
+    @include tablet {
+      width: 40px;
+      height: 40px;
     }
     @include tablet-min {
       gap: 7px;
