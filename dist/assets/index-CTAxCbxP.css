@@ -2358,6 +2358,7 @@ textarea.input {
   position: relative;
   display: flex;
   align-items: center;
+  overflow: hidden;
   min-height: 850px;
   padding: 60px 0px;
   color: white;
@@ -2532,7 +2533,7 @@ textarea.input {
 .intro__list::before {
   position: absolute;
   content: "";
-  inset: -30px;
+  inset: 0;
   background-color: rgba(65, 29, 13, 0.4);
   filter: blur(100px);
   z-index: -1;
@@ -2657,6 +2658,16 @@ textarea.input {
   max-width: 100%;
   font-size: 24px;
   text-transform: uppercase;
+}
+@media (min-width: 992px) and (any-hover: hover) {
+  .intro__list a:hover::before {
+    transform: translateX(8px);
+  }
+}
+@media (min-width: 992px) and (hover: none) {
+  .intro__list a:active::before {
+    transform: translateX(8px);
+  }
 }
 @media (max-width: 991px) {
   .intro__list a {

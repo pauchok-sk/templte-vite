@@ -5,6 +5,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  overflow: hidden;
   min-height: 850px;
   padding: 60px 0px;
   color: white;
@@ -110,7 +111,7 @@
     &::before {
       position: absolute;
       content: "";
-      inset: -30px;
+      inset: 0;
       background-color: rgba(65, 29, 13, 0.4);
       filter: blur(100px);
       z-index: -1;
@@ -136,11 +137,13 @@
       font-size: 24px;
       text-transform: uppercase;
 
-      // @include hover {
-      //   &::before {
-      //     transform: translateX(8px);
-      //   }
-      // }
+      @media (min-width: 992px) {
+        @include hover {
+          &::before {
+            transform: translateX(8px);
+          }
+        }
+      }
 
       @include laptop-min {
         width: 370px;
