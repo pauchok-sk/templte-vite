@@ -73,7 +73,7 @@
   user-select: none !important;
   outline: none !important;
 
-  transition: color 0.3s ease, opacity 0.3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease, visibility .3s ease;
 
   z-index: 10;
 
@@ -101,7 +101,11 @@
 
   &.swiper-button-disabled {
     pointer-events: none;
+    opacity: 0.7;
+  }
+  &.swiper-button-lock {
     opacity: 0;
+    visibility: hidden;
   }
 
   svg {

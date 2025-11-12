@@ -65,8 +65,8 @@ export default function sliders() {
       speed: 900,
       spaceBetween: 15,
       slidesPerView: "auto",
-      loop: true,
-      loopedSlides: 3,
+      // loop: true,
+      // loopedSlides: 3,
       centeredSlides: true,
       pagination: {
         el: ".s-clergy .slider-pagination",
