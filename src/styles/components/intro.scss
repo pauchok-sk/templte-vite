@@ -112,7 +112,7 @@
       content: "";
       inset: -30px;
       background-color: rgba(65, 29, 13, 0.4);
-      // filter: blur(100px);
+      filter: blur(100px);
       z-index: -1;
       @include tablet {
         background-color: rgba(65, 29, 13, 0.6);
@@ -136,11 +136,11 @@
       font-size: 24px;
       text-transform: uppercase;
 
-      @include hover {
-        &::before {
-          transform: translateX(8px);
-        }
-      }
+      // @include hover {
+      //   &::before {
+      //     transform: translateX(8px);
+      //   }
+      // }
 
       @include laptop-min {
         width: 370px;

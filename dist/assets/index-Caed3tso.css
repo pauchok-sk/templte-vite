@@ -2534,6 +2534,7 @@ textarea.input {
   content: "";
   inset: -30px;
   background-color: rgba(65, 29, 13, 0.4);
+  filter: blur(100px);
   z-index: -1;
 }
 @media (max-width: 767px) {
@@ -2656,16 +2657,6 @@ textarea.input {
   max-width: 100%;
   font-size: 24px;
   text-transform: uppercase;
-}
-@media (any-hover: hover) {
-  .intro__list a:hover::before {
-    transform: translateX(8px);
-  }
-}
-@media (hover: none) {
-  .intro__list a:active::before {
-    transform: translateX(8px);
-  }
 }
 @media (max-width: 991px) {
   .intro__list a {
