@@ -2513,6 +2513,7 @@ textarea.input {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  overflow: visible !important;
   font-family: "Forum", sans-serif;
   margin-top: 130px;
   z-index: 1;
@@ -2531,7 +2532,7 @@ textarea.input {
 .intro__list::before {
   position: absolute;
   content: "";
-  inset: 0;
+  inset: -10px;
   background-color: rgba(65, 29, 13, 0.4);
   filter: blur(100px);
   z-index: -1;
