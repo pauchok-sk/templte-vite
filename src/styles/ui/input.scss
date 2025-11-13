@@ -8,9 +8,15 @@
   width: 100%;
   border: none;
   outline: none;
+  border-radius: 0px;
   background-color: transparent;
   padding: 0px 0px 19px 0px;
   border-bottom: 1px solid var(--silver);
+  transform: scale(1);
+
+  font-size: 16px;
+
+  transition: border-color 0.3s ease;
 
   @include tablet-min {
     padding-bottom: 11px;
@@ -20,13 +26,25 @@
     font-weight: 400;
     font-size: 14px;
     color: rgba(23, 23, 23, 0.3);
+  }
+  &:focus {
+    border-color: var(--black);
+  }
 
-    @include tablet-min {
-      font-size: 11px;
+  &.just-validate-error-field {
+    &::placeholder {
+      color: var(--red);
     }
+    border-color: var(--red);
   }
 }
 textarea.input {
   resize: none;
   height: 65px;
+}
+
+.just-validate-error-label {
+  display: none;
+  margin-top: 5px;
+  color: var(--red) !important;
 }

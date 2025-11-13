@@ -57,7 +57,8 @@ export default function sliders() {
       },
       on: {
         transitionStart: () => {
-          gallerySlider.querySelector(".swiper-wrapper").style.willChange = "transform";
+          gallerySlider.querySelector(".swiper-wrapper").style.willChange =
+            "transform";
         },
         transitionEnd: () => {
           gallerySlider.querySelector(".swiper-wrapper").style.willChange = "";
@@ -73,8 +74,6 @@ export default function sliders() {
       speed: 900,
       spaceBetween: 15,
       slidesPerView: "auto",
-      // loop: true,
-      // loopedSlides: 3,
       centeredSlides: true,
       initialSlide: 1,
       pagination: {
@@ -97,6 +96,17 @@ export default function sliders() {
           slidesPerView: "auto",
           centeredSlides: true,
           initialSlide: 1,
+        },
+      },
+      on: {
+        resize: function () {
+          const isLaptop = window.matchMedia("(max-width: 991px)").matches;
+
+          if (isLaptop && this.activeIndex !== 1) {
+            setTimeout(() => {
+              this.slideTo(1, 300);
+            }, 50);
+          }
         },
       },
     });

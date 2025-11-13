@@ -13,6 +13,7 @@ import map from "./js/map.js";
 import galleryClickedSlide from "./js/galleryClickedSlide.js";
 import ctxNone from "./js/ctxNone.js";
 import redirect from "./js/redirect.js";
+import formValid from "./js/formValid.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   spoller();
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   headerToggle();
   burger();
   sliders();
-  headerScroll();
+  // headerScroll();
   positionSliderButtons();
   player();
   dropdown();
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   galleryClickedSlide();
   ctxNone();
   redirect();
+  formValid();
 
   Fancybox.bind("[data-fancybox]", {
     thumbs: false,

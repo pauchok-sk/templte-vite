@@ -14,11 +14,11 @@
   &__line-wrapper {
     overflow-x: auto;
     margin: 0 -24px;
-    padding: 0 24px;
+    padding: 0 24px 4px 24px;
 
     @include tablet-min {
       margin: 0 -12px;
-      padding: 0 12px;
+      padding: 0 12px 4px 12px;
     }
 
     &::-webkit-scrollbar {

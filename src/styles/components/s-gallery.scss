@@ -22,6 +22,7 @@
     }
   }
   &__slide {
+    @include selectNone;
     cursor: pointer;
     display: block;
     box-sizing: border-box;

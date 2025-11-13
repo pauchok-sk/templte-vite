@@ -36,7 +36,9 @@
       }
     }
     .privacy-policy-content {
-      order: 4;
+      @include laptop-min {
+        order: 4;
+      }
     }
   }
   &__content {

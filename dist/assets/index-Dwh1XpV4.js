@@ -63,21 +63,6 @@ function handlerBurgerClose() {
   burgerOverlay.classList.remove("_active");
   document.body.classList.remove("body-hidden");
 }
-function headerScroll() {
-  const header = document.querySelector(".header");
-  if (header && window.matchMedia("(max-width: 991px)").matches) {
-    let lastScrollTop = 0;
-    window.addEventListener("scroll", () => {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > header.clientHeight && scrollTop > lastScrollTop) {
-        header.classList.add("_hide");
-      } else {
-        header.classList.remove("_hide");
-      }
-      lastScrollTop = scrollTop;
-    });
-  }
-}
 function headerToggle() {
   const header = document.querySelector(".header");
   if (header) {
@@ -175,8 +160,6 @@ function sliders() {
       speed: 900,
       spaceBetween: 15,
       slidesPerView: "auto",
-      // loop: true,
-      // loopedSlides: 3,
       centeredSlides: true,
       initialSlide: 1,
       pagination: {
@@ -199,6 +182,16 @@ function sliders() {
           slidesPerView: "auto",
           centeredSlides: true,
           initialSlide: 1
+        }
+      },
+      on: {
+        resize: function() {
+          const isLaptop = window.matchMedia("(max-width: 991px)").matches;
+          if (isLaptop && this.activeIndex !== 1) {
+            setTimeout(() => {
+              this.slideTo(1, 300);
+            }, 50);
+          }
         }
       }
     });
@@ -851,13 +844,37 @@ function redirect() {
     });
   }
 }
+function formValid() {
+  const formQuestion = document.querySelector("#form-question");
+  if (formQuestion) {
+    const inputName = formQuestion.querySelector("#form-question-name");
+    const inputEmail = formQuestion.querySelector("#form-question-email");
+    const validate = new window.JustValidate("#form-question", {
+      tooltip: false
+    });
+    validate.addField(inputName, [
+      {
+        rule: "required"
+      }
+    ]).addField(inputEmail, [
+      {
+        rule: "required"
+      },
+      {
+        rule: "email"
+      }
+    ]).onSuccess((e) => {
+      e.target.reset();
+      console.log("Форма отправлена");
+    });
+  }
+}
 document.addEventListener("DOMContentLoaded", () => {
   spoller();
   hasChildrenLists();
   headerToggle();
   burger();
   sliders();
-  headerScroll();
   positionSliderButtons();
   player();
   dropdown();
@@ -866,6 +883,7 @@ document.addEventListener("DOMContentLoaded", () => {
   galleryClickedSlide();
   ctxNone();
   redirect();
+  formValid();
   Fancybox.bind("[data-fancybox]", {
     thumbs: false
   });

@@ -61,7 +61,7 @@
   }
   &__title {
     max-width: 555px;
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 5px 0px;
 
     font-family: "Forum", sans-serif;
     font-weight: 400;
@@ -72,7 +72,6 @@
     @include tablet {
       font-size: 40px;
       max-width: 360px;
-      margin-bottom: 10px;
     }
     @include mobile {
       font-size: 30px;
@@ -129,21 +128,22 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 10px;
+      gap: 14px;
       padding-bottom: 9px;
       width: 390px;
       max-width: 100%;
 
+      line-height: 130%;
       font-size: 24px;
       text-transform: uppercase;
 
-      @media (min-width: 992px) {
-        @include hover {
-          &::before {
-            transform: translateX(8px);
-          }
-        }
-      }
+      // @media (min-width: 992px) {
+      //   @include hover {
+      //     &::before {
+      //       transform: translateX(8px);
+      //     }
+      //   }
+      // }
 
       @include laptop-min {
         width: 370px;
@@ -152,6 +152,7 @@
       @include tablet {
         font-size: 15px;
         width: 230px;
+        gap: 8px;
       }
 
       &::before {
