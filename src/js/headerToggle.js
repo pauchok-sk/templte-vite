@@ -1,3 +1,5 @@
+import { closeHasChildrenMenu } from "./hasChildrenLists";
+
 export default function headerToggle() {
   const header = document.querySelector(".header");
 
@@ -23,6 +25,7 @@ export default function headerToggle() {
     function handleClose() {
       btn.classList.remove("_close");
       header.classList.remove("_open");
+      closeHasChildrenMenu();
     }
 
     function handleOpen() {

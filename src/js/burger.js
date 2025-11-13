@@ -1,3 +1,5 @@
+import { closeHasChildrenMenu } from "./hasChildrenLists";
+
 export default function burger() {
   const burgerOpen = document.querySelector("#burger-open");
   const burgerClose = document.querySelector("#burger-close");
@@ -42,4 +44,6 @@ export function handlerBurgerClose() {
   burger.classList.remove("_open");
   burgerOverlay.classList.remove("_active");
   document.body.classList.remove("body-hidden");
+
+  closeHasChildrenMenu();
 }

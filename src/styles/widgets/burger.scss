@@ -20,7 +20,7 @@
 .burger {
   position: fixed;
   padding: 10px 20px 20px 20px;
-  width: 600px;
+  width: 320px;
   max-width: 100%;
   color: rgba(255, 255, 255, 0.9);
   background-color: var(--black);
@@ -40,6 +40,9 @@
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
+  }
+  @media (max-width: 469px) {
+    width: 100%;
   }
 
   &__head {
