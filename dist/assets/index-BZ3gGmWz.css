@@ -3801,11 +3801,16 @@ textarea.input {
 }
 
 .footer {
-  padding: 50px 0px;
+  padding: 35px 0px;
   background-color: var(--black);
   color: white;
 }
 @media (max-width: 767px) {
+  .footer {
+    padding: 35px 0px;
+  }
+}
+@media (max-width: 479px) {
   .footer {
     padding: 45px 0px;
   }
@@ -3818,26 +3823,42 @@ textarea.input {
 }
 @media (max-width: 1199px) {
   .footer__nav {
-    grid-template-columns: repeat(4, 1fr);
+    display: block;
+    column-count: 4;
+    column-gap: 45px;
   }
 }
 @media (max-width: 991px) {
   .footer__nav {
-    grid-template-columns: repeat(3, 1fr);
+    column-count: 3;
   }
 }
 @media (max-width: 575px) {
   .footer__nav {
+    column-count: 2;
     gap: 15px;
   }
 }
 @media (max-width: 479px) {
   .footer__nav {
+    display: grid;
     grid-template-columns: 1fr;
   }
 }
 .footer__nav-item {
   width: 100%;
+  padding: 15px 0px;
+}
+@media (max-width: 1199px) {
+  .footer__nav-item {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+  }
+}
+@media (max-width: 479px) {
+  .footer__nav-item {
+    padding: 0;
+  }
 }
 .footer__nav-title {
   font-size: 14px;
