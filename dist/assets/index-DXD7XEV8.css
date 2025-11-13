@@ -1438,7 +1438,7 @@ textarea.input {
 
 .burger {
   position: fixed;
-  padding: 10px 20px 20px 20px;
+  padding: 10px 14px 20px 14px;
   width: 320px;
   max-width: 100%;
   color: rgba(255, 255, 255, 0.9);
@@ -1461,6 +1461,7 @@ textarea.input {
 @media (max-width: 469px) {
   .burger {
     width: 100%;
+    transform: translateX(0) !important;
   }
 }
 .burger__head {
@@ -1468,6 +1469,7 @@ textarea.input {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 40px;
+  padding-top: 7px;
   gap: 20px;
 }
 .burger__logo {
@@ -1475,6 +1477,11 @@ textarea.input {
   align-items: center;
   gap: 7px;
   color: var(--primary);
+}
+@media (max-width: 469px) {
+  .burger__logo {
+    display: none;
+  }
 }
 .burger__logo img {
   display: block;
@@ -1490,8 +1497,12 @@ textarea.input {
   line-height: 100%;
 }
 .burger__close {
-  width: 20px;
-  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
   transition: color 0.3s ease;
 }
 @media (any-hover: hover) {
@@ -1505,8 +1516,8 @@ textarea.input {
   }
 }
 .burger__close svg {
-  width: 100%;
-  height: 100%;
+  width: 20px;
+  height: 20px;
 }
 .burger__list {
   display: flex;
@@ -2056,6 +2067,7 @@ textarea.input {
 @media (max-width: 991px) {
   .header__main {
     position: static;
+    padding-right: 0;
     width: 100%;
     transform: translateX(0);
   }

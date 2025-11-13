@@ -200,6 +200,7 @@
     }
     @include laptop-min {
       position: static;
+      padding-right: 0;
       width: 100%;
       transform: translateX(0);
     }
