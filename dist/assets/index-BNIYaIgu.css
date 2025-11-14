@@ -1522,6 +1522,9 @@ textarea.input {
   gap: 17px;
   color: rgba(255, 255, 255, 0.9);
 }
+.burger__list .menu-item-has-children {
+  padding-right: 0 !important;
+}
 .burger__list .menu-item-has-children .btn {
   display: flex;
   align-items: center;
@@ -1570,8 +1573,11 @@ textarea.input {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 20px 30px 0px 35px;
+  padding: 20px 0px 0px 35px;
   color: rgba(255, 255, 255, 0.8);
+}
+.burger__sublist > li {
+  padding-right: 20px;
 }
 .burger__sublist a {
   text-transform: none;
@@ -1580,8 +1586,11 @@ textarea.input {
   display: flex;
   flex-direction: column;
   gap: 13px;
-  padding: 15px 20px 25px 35px;
+  padding: 15px 0px 25px 35px;
   color: rgba(255, 255, 255, 0.75);
+}
+.burger__subsublist > li {
+  padding-right: 20px;
 }
 .burger__subsublist a {
   text-transform: none;
@@ -2094,6 +2103,9 @@ textarea.input {
   .header__logo .title {
     font-size: 14px;
   }
+  .header__logo .title br {
+    display: none;
+  }
 }
 @media (max-width: 575px) {
   .header__logo .title {
@@ -2152,6 +2164,9 @@ textarea.input {
     display: none;
   }
 }
+.header__list .menu-item-has-children {
+  padding-right: 0 !important;
+}
 .header__list .menu-item-has-children .btn {
   display: flex;
   align-items: center;
@@ -2201,8 +2216,11 @@ textarea.input {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 20px 20px 0px 12px;
+  padding: 20px 0px 0px 12px;
   color: rgba(255, 255, 255, 0.8);
+}
+.header__sublist > li {
+  padding-right: 20px;
 }
 .header__sublist a {
   text-transform: none;
@@ -2211,8 +2229,11 @@ textarea.input {
   display: flex;
   flex-direction: column;
   gap: 13px;
-  padding: 15px 20px 0px 35px;
+  padding: 15px 0px 0px 15px;
   color: rgba(255, 255, 255, 0.75);
+}
+.header__subsublist > li {
+  padding-right: 20px;
 }
 .header__subsublist a {
   text-transform: none;

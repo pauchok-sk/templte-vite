@@ -20,30 +20,20 @@ export default function hasChildrenLists() {
               btn.classList.remove("_active");
               item.classList.remove("_open");
 
-              const childrenItemsOpen = item.querySelectorAll(
-                ".menu-item-has-children._open"
-              );
-              if (childrenItemsOpen) {
-                childrenItemsOpen.forEach((children) => {
-                  const contentChildren = children.querySelector(".content");
-                  const btn = children.querySelector(".btn");
-
-                  hide(contentChildren);
-                  btn.classList.remove("_active");
-                  children.classList.remove("_open");
-                });
-              }
+              // закрываем дочерние спойлеры при закрытии родительского
+              handleCloseChildren(item);
             } else {
-              const openMenu = btn
+              const itemScope = btn
                 .closest("ul")
                 .querySelector(".menu-item-has-children._open");
+              if (itemScope) {
+                const scopeBtn = itemScope.querySelector(".btn");
+                const scopeContent = itemScope.querySelector(".content");
+                itemScope.classList.remove("_open");
+                scopeBtn.classList.remove("_active");
+                hide(scopeContent);
 
-              if (openMenu) {
-                const openMenuBtn = openMenu.querySelector(".btn");
-                const openMenuContent = openMenu.querySelector(".content");
-                openMenu.classList.remove("_open");
-                openMenuBtn.classList.remove("_active");
-                hide(openMenuContent);
+                handleCloseChildren(itemScope);
               }
 
               show(content);
@@ -51,6 +41,23 @@ export default function hasChildrenLists() {
               item.classList.add("_open");
             }
           });
+
+          function handleCloseChildren(parent) {
+            const childrenItemsOpen = parent.querySelectorAll(
+              ".menu-item-has-children._open"
+            );
+            if (childrenItemsOpen.length) {
+              console.log(childrenItemsOpen);
+              childrenItemsOpen.forEach((children) => {
+                const contentChildren = children.querySelector(".content");
+                const btnChildren = children.querySelector(".btn");
+
+                hide(contentChildren);
+                btnChildren.classList.remove("_active");
+                children.classList.remove("_open");
+              });
+            }
+          }
         });
       }
     });
