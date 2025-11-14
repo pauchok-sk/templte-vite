@@ -76,6 +76,8 @@ export default function sliders() {
       slidesPerView: "auto",
       centeredSlides: true,
       initialSlide: 1,
+      loop: true,
+      loopedSlides: 2,
       pagination: {
         el: ".s-clergy .slider-pagination",
         clickable: true,

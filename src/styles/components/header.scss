@@ -93,6 +93,8 @@
   &__line-btn-menu {
     cursor: pointer;
 
+    @include selectNone;
+
     @include flex-center;
     flex-direction: column;
     gap: 10px;

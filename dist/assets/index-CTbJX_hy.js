@@ -303,6 +303,8 @@ function sliders() {
       slidesPerView: "auto",
       centeredSlides: true,
       initialSlide: 1,
+      loop: true,
+      loopedSlides: 2,
       pagination: {
         el: ".s-clergy .slider-pagination",
         clickable: true
@@ -897,6 +899,7 @@ function formValid() {
   if (formQuestion) {
     const inputName = formQuestion.querySelector("#form-question-name");
     const inputEmail = formQuestion.querySelector("#form-question-email");
+    const inputText = formQuestion.querySelector("#form-question-text");
     const validate = new window.JustValidate("#form-question", {
       tooltip: false
     });
@@ -910,6 +913,10 @@ function formValid() {
       },
       {
         rule: "email"
+      }
+    ]).addField(inputText, [
+      {
+        rule: "required"
       }
     ]).onSuccess((e) => {
       e.target.reset();

@@ -22,10 +22,11 @@
   padding: 10px 14px 20px 14px;
   width: 320px;
   max-width: 100%;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 228, 228, 0.9);
   background-color: var(--black);
   top: 0;
-  bottom: 0;
+  // bottom: 0;
+  height: 100vh;
   left: 0;
   overflow-y: auto;
   z-index: 120;

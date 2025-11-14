@@ -4,6 +4,7 @@ export default function formValid() {
   if (formQuestion) {
     const inputName = formQuestion.querySelector("#form-question-name");
     const inputEmail = formQuestion.querySelector("#form-question-email");
+    const inputText = formQuestion.querySelector("#form-question-text");
     const validate = new window.JustValidate("#form-question", {
       tooltip: false,
     });
@@ -22,9 +23,14 @@ export default function formValid() {
           rule: "email",
         },
       ])
+      .addField(inputText, [
+        {
+          rule: "required",
+        },
+      ])
       .onSuccess((e) => {
         e.target.reset();
-        console.log("Форма отправлена")
+        console.log("Форма отправлена");
       });
   }
 }
