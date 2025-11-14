@@ -4,6 +4,9 @@
 .body-hidden {
   overflow: hidden;
   touch-action: none;
+
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: auto;
 }
 .body {
   padding-left: 360px;

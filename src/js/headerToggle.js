@@ -2,6 +2,7 @@ import { closeHasChildrenMenu } from "./hasChildrenLists";
 
 export default function headerToggle() {
   const header = document.querySelector(".header");
+  const headerLine = document.querySelector(".header__line");
 
   if (header) {
     const btn = document.querySelector("#header-toggle-btn");
@@ -25,12 +26,14 @@ export default function headerToggle() {
     function handleClose() {
       btn.classList.remove("_close");
       header.classList.remove("_open");
+      document.body.classList.remove("body-hidden");
       closeHasChildrenMenu();
     }
 
     function handleOpen() {
       btn.classList.add("_close");
       header.classList.add("_open");
+      document.body.classList.add("body-hidden");
     }
   }
 }

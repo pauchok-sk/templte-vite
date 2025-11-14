@@ -30,10 +30,10 @@ export default function burger() {
       burger.style.maxHeight = `${window.visualViewport.height}px`;
     }
 
-    window.visualViewport.addEventListener("resize", updateHeightBurger);
-    window.visualViewport.addEventListener("scroll", updateHeightBurger);
+    // window.visualViewport.addEventListener("resize", updateHeightBurger);
+    // window.visualViewport.addEventListener("scroll", updateHeightBurger);
 
-    updateHeightBurger();
+    // updateHeightBurger();
   }
 }
 

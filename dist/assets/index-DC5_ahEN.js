@@ -164,10 +164,8 @@ function burger() {
       burger2.classList.add("_open");
       burgerOverlay.classList.add("_active");
       document.body.classList.add("body-hidden");
-    }, updateHeightBurger2 = function() {
-      burger2.style.maxHeight = `${window.visualViewport.height}px`;
     };
-    var handlerBurgerOpen = handlerBurgerOpen2, updateHeightBurger = updateHeightBurger2;
+    var handlerBurgerOpen = handlerBurgerOpen2;
     burger2.addEventListener("click", (e) => e.stopPropagation());
     burgerOverlay.addEventListener("click", handlerBurgerClose);
     burgerOpen.addEventListener("click", (e) => {
@@ -178,9 +176,6 @@ function burger() {
       e.stopPropagation();
       handlerBurgerClose();
     });
-    window.visualViewport.addEventListener("resize", updateHeightBurger2);
-    window.visualViewport.addEventListener("scroll", updateHeightBurger2);
-    updateHeightBurger2();
   }
 }
 function handlerBurgerClose() {
@@ -193,14 +188,17 @@ function handlerBurgerClose() {
 }
 function headerToggle() {
   const header = document.querySelector(".header");
+  document.querySelector(".header__line");
   if (header) {
     let handleClose2 = function() {
       btn.classList.remove("_close");
       header.classList.remove("_open");
+      document.body.classList.remove("body-hidden");
       closeHasChildrenMenu();
     }, handleOpen2 = function() {
       btn.classList.add("_close");
       header.classList.add("_open");
+      document.body.classList.add("body-hidden");
     };
     var handleClose = handleClose2, handleOpen = handleOpen2;
     const btn = document.querySelector("#header-toggle-btn");
