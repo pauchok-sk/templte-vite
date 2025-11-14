@@ -27,7 +27,7 @@
   }
 
   .simple-btn {
-    @include tablet-min {
+    @media (max-width: 679px) {
       display: none;
     }
   }

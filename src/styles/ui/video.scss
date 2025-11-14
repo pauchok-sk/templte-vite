@@ -9,7 +9,7 @@
   @include laptop-min {
     height: 315px;
   }
-  @include tablet-min {
+  @include mobile {
     height: 210px;
   }
 }

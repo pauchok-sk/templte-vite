@@ -50,7 +50,7 @@ export default function sliders() {
           spaceBetween: 30,
           slidesPerView: 2,
         },
-        480: {
+        576: {
           spaceBetween: 15,
           slidesPerView: 2,
         },

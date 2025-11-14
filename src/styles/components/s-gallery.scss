@@ -39,7 +39,7 @@
         }
       }
     }
-    @include mobile {
+    @include tablet-min {
       aspect-ratio: 1/1.4;
     }
 
