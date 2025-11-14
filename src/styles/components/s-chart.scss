@@ -9,7 +9,7 @@
     @include tablet {
       gap: 30px;
     }
-    @include tablet-min {
+    @media (max-width: 679px) {
       flex-wrap: wrap;
       gap: 40px;
     }
@@ -18,7 +18,7 @@
     @include tablet {
       font-size: 14px;
     }
-    @include tablet-min {
+    @media (max-width: 679px) {
       width: 100%;
     }
   }

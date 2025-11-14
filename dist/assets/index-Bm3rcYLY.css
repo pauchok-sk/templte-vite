@@ -596,12 +596,6 @@ body {
   line-height: 111%;
   margin: 0;
 }
-@media (max-width: 991px) {
-  .s-title {
-    font-size: 46px;
-    line-height: 109%;
-  }
-}
 @media (max-width: 479px) {
   .s-title {
     font-size: 30px;
@@ -3263,7 +3257,7 @@ textarea.input {
     gap: 30px;
   }
 }
-@media (max-width: 575px) {
+@media (max-width: 679px) {
   .s-chart__wrapper {
     flex-wrap: wrap;
     gap: 40px;
@@ -3274,7 +3268,7 @@ textarea.input {
     font-size: 14px;
   }
 }
-@media (max-width: 575px) {
+@media (max-width: 679px) {
   .s-chart__item {
     width: 100%;
   }
