@@ -304,7 +304,8 @@ function sliders() {
       centeredSlides: true,
       initialSlide: 1,
       loop: true,
-      loopedSlides: 2,
+      // loopedSlides: 1,
+      // loopAdditionalSlides: 1,
       pagination: {
         el: ".s-clergy .slider-pagination",
         clickable: true
@@ -318,13 +319,17 @@ function sliders() {
           spaceBetween: 25,
           slidesPerView: 3,
           centeredSlides: false,
-          initialSlide: 0
+          initialSlide: 0,
+          loop: false
         },
         768: {
           spaceBetween: 15,
           slidesPerView: "auto",
           centeredSlides: true,
-          initialSlide: 1
+          // initialSlide: 1,
+          loop: true
+          // loopedSlides: 2,
+          // loopAdditionalSlides: 2,
         }
       },
       on: {

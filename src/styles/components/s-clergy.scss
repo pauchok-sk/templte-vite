@@ -68,8 +68,14 @@
         }
       }
     }
+    @include laptop-min {
+      width: 375px !important;
+    }
     @include tablet-min {
       padding: 20px;
+    }
+    @include mobile {
+      width: 100% !important;
     }
 
     &::before {

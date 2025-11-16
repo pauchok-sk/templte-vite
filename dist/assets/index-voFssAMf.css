@@ -3175,9 +3175,19 @@ textarea.input {
     transform: scale(1.08);
   }
 }
+@media (max-width: 991px) {
+  .s-clergy__slide {
+    width: 375px !important;
+  }
+}
 @media (max-width: 575px) {
   .s-clergy__slide {
     padding: 20px;
+  }
+}
+@media (max-width: 479px) {
+  .s-clergy__slide {
+    width: 100% !important;
   }
 }
 .s-clergy__slide::before {
