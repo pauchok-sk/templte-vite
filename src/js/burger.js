@@ -7,6 +7,15 @@ export default function burger() {
   const burgerOverlay = document.querySelector("#burger-overlay");
 
   if (burger) {
+    window.addEventListener("resize", () => {
+      if (
+        window.matchMedia("(min-width: 992px)").matches &&
+        burger.classList.contains("_open")
+      ) {
+        handlerBurgerClose();
+      }
+    });
+
     burger.addEventListener("click", (e) => e.stopPropagation());
 
     burgerOverlay.addEventListener("click", handlerBurgerClose);

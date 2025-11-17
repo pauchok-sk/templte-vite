@@ -667,7 +667,7 @@ body {
 }
 @media (max-width: 575px) {
   .card-new__body {
-    padding: 22px 22px 14px 22px;
+    padding: 22px 22px 15px 22px;
   }
 }
 .card-new__title {
@@ -1203,11 +1203,11 @@ body {
 }
 .card-useful__body {
   background-color: white;
-  padding: 30px 20px 10px 20px;
+  padding: 30px 20px 15px 20px;
 }
 @media (max-width: 767px) {
   .card-useful__body {
-    padding: 20px 20px 10px 20px;
+    padding: 20px 20px 15px 20px;
   }
 }
 .card-useful__title {
@@ -2080,7 +2080,7 @@ textarea.input {
   }
 }
 .header__main-container {
-  padding: 24px;
+  padding: 24px 19px 24px 24px;
   width: 100%;
   overflow-y: auto;
   height: 100%;
@@ -2096,10 +2096,11 @@ textarea.input {
   }
 }
 .header__main-container::-webkit-scrollbar {
-  width: 5px; /* Ширина всего элемента навигации */
+  width: 11px; /* Ширина всего элемента навигации */
 }
 .header__main-container::-webkit-scrollbar-thumb {
   border: 1px solid rgba(69, 69, 69, 0.7);
+  border: 3px solid var(--black);
   background-color: #535252;
   border-radius: 10px;
 }
@@ -2275,12 +2276,13 @@ textarea.input {
   flex-direction: column;
   gap: 13px;
   padding: 15px 0px 0px 15px;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.7);
 }
 .header__subsublist > li {
   padding-right: 20px;
 }
 .header__subsublist a {
+  font-size: 14px;
   text-transform: none;
 }
 .header__info-list {
@@ -3384,17 +3386,14 @@ textarea.input {
   margin: 0;
 }
 
-.s-faq__spollers {
+.s-faq__body {
   width: 615px;
   max-width: 100%;
 }
-.s-faq__spoller {
+.s-faq__wrapper-btn {
   border-bottom: 1px solid var(--silver);
 }
-.s-faq__spoller .content {
-  padding-bottom: 20px;
-}
-.s-faq__spoller-btn {
+.s-faq__btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3414,7 +3413,7 @@ textarea.input {
   touch-action: manipulation;
 }
 @media (any-hover: hover) {
-  .s-faq__spoller-btn:hover {
+  .s-faq__btn:hover {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
@@ -3432,7 +3431,7 @@ textarea.input {
   }
 }
 @media (hover: none) {
-  .s-faq__spoller-btn:active {
+  .s-faq__btn:active {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
@@ -3449,31 +3448,31 @@ textarea.input {
     touch-action: manipulation;
   }
 }
-.s-faq__spoller-btn {
+.s-faq__btn {
   gap: 10px;
   padding: 24px 0px;
   cursor: pointer;
   font-weight: 500;
 }
 @media (max-width: 767px) {
-  .s-faq__spoller-btn {
+  .s-faq__btn {
     padding: 20px 0px;
   }
 }
 @media (any-hover: hover) {
-  .s-faq__spoller-btn:hover span {
+  .s-faq__btn:hover span {
     background-size: 100% 100%;
   }
 }
 @media (hover: none) {
-  .s-faq__spoller-btn:active span {
+  .s-faq__btn:active span {
     background-size: 100% 100%;
   }
 }
-.s-faq__spoller-btn._spoller-active svg {
+.s-faq__btn._spoller-active svg {
   transform: rotate(45deg);
 }
-.s-faq__spoller-btn span {
+.s-faq__btn span {
   display: inline !important;
   background-repeat: no-repeat;
   background-image: linear-gradient(transparent calc(100% - 1px), currentColor 1px);
@@ -3482,7 +3481,7 @@ textarea.input {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.s-faq__spoller-btn svg {
+.s-faq__btn svg {
   width: 17px;
   height: 17px;
   flex-shrink: 0;
@@ -3505,7 +3504,7 @@ textarea.input {
   }
 }
 .s-useful__slider {
-  margin: 0 -20px;
+  margin: -20px;
   padding: 20px;
 }
 @media (max-width: 991px) {
@@ -3606,7 +3605,7 @@ textarea.input {
   inset: -4px;
   background-color: white;
   border-radius: 50%;
-  border: 1px solid var(--primary);
+  border: 1px solid #cc853b;
   z-index: -1;
 }
 .s-history__line-item .name {
@@ -3640,7 +3639,7 @@ textarea.input {
   right: -20px;
   left: 50%;
   height: 1px;
-  background-color: var(--primary);
+  background-color: #cc853b;
 }
 @media (max-width: 991px) {
   .s-history__line-item .circle::after {
@@ -3664,7 +3663,7 @@ textarea.input {
   content: "";
   inset: 0;
   border-radius: 50%;
-  background-color: var(--primary);
+  background-color: #cc853b;
   z-index: 1;
 }
 .s-history__line-item .year {

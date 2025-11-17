@@ -2,18 +2,14 @@
 @use "../base/media" as *;
 
 .s-faq {
-  &__spollers {
+  &__body {
     width: 615px;
     max-width: 100%;
   }
-  &__spoller {
+  &__wrapper-btn {
     border-bottom: 1px solid var(--silver);
-
-    .content {
-      padding-bottom: 20px;
-    }
   }
-  &__spoller-btn {
+  &__btn {
     @include flex-between;
     @include selectNone;
     gap: 10px;

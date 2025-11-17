@@ -171,6 +171,11 @@ function burger() {
       document.body.classList.add("body-hidden");
     };
     var handlerBurgerOpen = handlerBurgerOpen2;
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(min-width: 992px)").matches && burger2.classList.contains("_open")) {
+        handlerBurgerClose();
+      }
+    });
     burger2.addEventListener("click", (e) => e.stopPropagation());
     burgerOverlay.addEventListener("click", handlerBurgerClose);
     burgerOpen.addEventListener("click", (e) => {

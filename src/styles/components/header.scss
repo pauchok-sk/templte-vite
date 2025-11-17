@@ -210,7 +210,7 @@
     }
   }
   &__main-container {
-    padding: 24px;
+    padding: 24px 19px 24px 24px;
     width: 100%;
     overflow-y: auto;
     height: 100%;
@@ -222,11 +222,12 @@
     }
 
     &::-webkit-scrollbar {
-      width: 5px; /* Ширина всего элемента навигации */
+      width: 11px; /* Ширина всего элемента навигации */
     }
-
+    
     &::-webkit-scrollbar-thumb {
       border: 1px solid rgba(69, 69, 69, 0.7);
+      border: 3px solid var(--black);
       background-color: #535252;
       border-radius: 10px;
     }
@@ -382,13 +383,14 @@
     flex-direction: column;
     gap: 13px;
     padding: 15px 0px 0px 15px;
-    color: rgba(255, 255, 255, 0.75);
-
+    color: rgba(255, 255, 255, 0.7);
+    
     & > li {
       padding-right: 20px;
     }
-
+    
     a {
+      font-size: 14px;
       text-transform: none;
     }
   }

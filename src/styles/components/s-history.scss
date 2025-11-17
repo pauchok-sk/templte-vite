@@ -78,7 +78,7 @@
             inset: -4px;
             background-color: white;
             border-radius: 50%;
-            border: 1px solid var(--primary);
+            border: 1px solid #cc853b;
             z-index: -1;
           }
         }
@@ -112,7 +112,7 @@
         right: -20px;
         left: 50%;
         height: 1px;
-        background-color: var(--primary);
+        background-color: #cc853b;
 
         @include laptop-min {
           left: 0;
@@ -135,7 +135,7 @@
           content: "";
           inset: 0;
           border-radius: 50%;
-          background-color: var(--primary);
+          background-color: #cc853b;
           z-index: 1;
         }
       }
