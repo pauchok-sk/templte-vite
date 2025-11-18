@@ -8,11 +8,6 @@
   }
   &__slider-wrapper {
     position: relative;
-
-    @include tablet {
-      width: calc(100% - 50px);
-      margin: 0 auto;
-    }
   }
   &__slider {
     padding: 20px !important;
@@ -30,13 +25,14 @@
 
       @include laptop-min {
         width: 375px !important;
+        max-width: 100%;
 
         .card-useful {
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
         }
       }
       @include mobile {
-        width: 100% !important;
+        width: 290px !important;
       }
 
       &.swiper-slide-prev,

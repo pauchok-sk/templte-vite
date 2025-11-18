@@ -493,7 +493,7 @@ body {
 .simple-btn._mob {
   margin: 15px 0px 0px auto;
 }
-@media (min-width: 680px) {
+@media (min-width: 580px) {
   .simple-btn._mob {
     display: none;
   }
@@ -583,7 +583,7 @@ body {
     margin-bottom: 40px;
   }
 }
-@media (max-width: 679px) {
+@media (max-width: 579px) {
   .sect-head .simple-btn {
     display: none;
   }
@@ -596,7 +596,13 @@ body {
   line-height: 111%;
   margin: 0;
 }
-@media (max-width: 479px) {
+@media (max-width: 991px) {
+  .s-title {
+    font-size: 46px;
+    line-height: 109%;
+  }
+}
+@media (max-width: 767px) {
   .s-title {
     font-size: 30px;
     line-height: 100%;
@@ -828,10 +834,10 @@ body {
     transform: translateX(0) !important;
   }
   .slider-btn._prev {
-    left: -23px;
+    left: -12px;
   }
   .slider-btn._next {
-    right: -23px;
+    right: -12px;
   }
 }
 .slider-btn.swiper-button-disabled {
@@ -2218,7 +2224,7 @@ textarea.input {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  gap: 10px;
+  gap: 20px;
 }
 @media (any-hover: hover) {
   .header__list .menu-item-has-children .btn:hover {
@@ -2778,12 +2784,6 @@ textarea.input {
 .s-news__slider-wrapper {
   position: relative;
 }
-@media (max-width: 767px) {
-  .s-news__slider-wrapper {
-    width: calc(100% - 50px);
-    margin: 0 auto;
-  }
-}
 .s-news__slider {
   padding: 20px !important;
   margin: -20px !important;
@@ -2802,6 +2802,7 @@ textarea.input {
 @media (max-width: 991px) {
   .s-news__slider .swiper-slide {
     width: 375px !important;
+    max-width: 100%;
   }
   .s-news__slider .swiper-slide .card-useful {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
@@ -2809,7 +2810,7 @@ textarea.input {
 }
 @media (max-width: 479px) {
   .s-news__slider .swiper-slide {
-    width: 100% !important;
+    width: 290px !important;
   }
 }
 .s-news__slider .swiper-slide.swiper-slide-prev .card-new, .s-news__slider .swiper-slide.swiper-slide-active .card-new, .s-news__slider .swiper-slide.swiper-slide-next .card-new {
@@ -2985,12 +2986,6 @@ textarea.input {
 .s-gallery__slider {
   overflow: visible !important;
 }
-@media (max-width: 767px) {
-  .s-gallery__slider {
-    width: calc(100% - 50px);
-    margin: 0 auto;
-  }
-}
 .s-gallery__slider .swiper-wrapper {
   will-change: transform;
   transform: translateZ(0);
@@ -3070,6 +3065,8 @@ textarea.input {
 }
 @media (max-width: 575px) {
   .s-gallery__slide {
+    width: 290px !important;
+    max-width: 100%;
     aspect-ratio: 1/1.4;
   }
 }
@@ -3117,12 +3114,6 @@ textarea.input {
 .s-clergy__slider-wrapper {
   position: relative;
 }
-@media (max-width: 767px) {
-  .s-clergy__slider-wrapper {
-    width: calc(100% - 50px);
-    margin: 0 auto;
-  }
-}
 .s-clergy__slider {
   padding: 20px;
   margin: 0 -20px;
@@ -3140,6 +3131,7 @@ textarea.input {
 @media (max-width: 991px) {
   .s-clergy__slider .swiper-slide {
     width: 375px !important;
+    max-width: 100%;
   }
   .s-clergy__slider .swiper-slide .card-useful {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
@@ -3147,14 +3139,22 @@ textarea.input {
 }
 @media (max-width: 479px) {
   .s-clergy__slider .swiper-slide {
-    width: 100% !important;
+    width: 290px !important;
   }
 }
 .s-clergy__slider .swiper-slide.swiper-slide-active .card-team, .s-clergy__slider .swiper-slide.swiper-slide-next .card-team, .s-clergy__slider .swiper-slide.swiper-slide-next + .swiper-slide .card-team {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
 }
+.s-clergy__slider .swiper-slide.swiper-slide-next + .s-clergy__slide {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
 .s-clergy__slider .card-team {
   height: 100%;
+}
+@media (max-width: 991px) {
+  .s-clergy__slider .card-team {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  }
 }
 .s-clergy__slide {
   position: relative;
@@ -3497,12 +3497,6 @@ textarea.input {
 .s-useful__slider-wrapper {
   position: relative;
 }
-@media (max-width: 767px) {
-  .s-useful__slider-wrapper {
-    width: calc(100% - 50px);
-    margin: 0 auto;
-  }
-}
 .s-useful__slider {
   margin: -20px;
   padding: 20px;
@@ -3523,6 +3517,7 @@ textarea.input {
 @media (max-width: 991px) {
   .s-useful__slider .swiper-slide {
     width: 375px !important;
+    max-width: 100%;
   }
   .s-useful__slider .swiper-slide .card-useful {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
@@ -3530,7 +3525,7 @@ textarea.input {
 }
 @media (max-width: 479px) {
   .s-useful__slider .swiper-slide {
-    width: 100% !important;
+    width: 290px !important;
   }
 }
 .s-useful__slider .card-useful {
@@ -3786,12 +3781,6 @@ textarea.input {
 .s-diocese__slider-wrapper {
   position: relative;
 }
-@media (max-width: 767px) {
-  .s-diocese__slider-wrapper {
-    width: calc(100% - 50px);
-    margin: 0 auto;
-  }
-}
 .s-diocese__slider-wrapper .slider-btn {
   top: calc(50% - 20px);
 }
@@ -3814,6 +3803,11 @@ textarea.input {
   .s-diocese__slider .swiper-slide {
     width: 375px !important;
     max-width: 100%;
+  }
+}
+@media (max-width: 479px) {
+  .s-diocese__slider .swiper-slide {
+    width: 290px !important;
   }
 }
 .s-diocese__slider .swiper-slide.swiper-slide-active .card-diocese, .s-diocese__slider .swiper-slide.swiper-slide-next .card-diocese, .s-diocese__slider .swiper-slide.swiper-slide-next + .swiper-slide .card-diocese {

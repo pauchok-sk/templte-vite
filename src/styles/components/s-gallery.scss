@@ -7,10 +7,10 @@
   &__slider {
     overflow: visible !important;
 
-    @include tablet {
-      width: calc(100% - 50px);
-      margin: 0 auto;
-    }
+    // @include tablet {
+    //   width: calc(100% - 50px);
+    //   margin: 0 auto;
+    // }
 
     .swiper-wrapper {
       // backface-visibility: hidden;
@@ -40,6 +40,8 @@
       }
     }
     @include tablet-min {
+      width: 290px !important;
+      max-width: 100%;
       aspect-ratio: 1/1.4;
     }
 

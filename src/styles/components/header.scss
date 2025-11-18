@@ -332,7 +332,7 @@
       .btn {
         @include flex-between;
         cursor: pointer;
-        gap: 10px;
+        gap: 20px;
         @include hover {
           color: var(--primary);
         }

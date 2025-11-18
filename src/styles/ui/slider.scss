@@ -92,10 +92,12 @@
 
     transform: translateX(0) !important;
     &._prev {
-      left: -23px;
+      // left: -23px;
+      left: -12px;
     }
     &._next {
-      right: -23px;
+      // right: -23px;
+      right: -12px;
     }
   }
 
