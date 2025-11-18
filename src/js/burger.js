@@ -35,24 +35,13 @@ export default function burger() {
       // burgerOverlay.classList.add("_active");
       document.body.classList.add("body-hidden");
     }
-
-    function updateHeightBurger() {
-      burger.style.maxHeight = `${window.visualViewport.height}px`;
-    }
-
-    // window.visualViewport.addEventListener("resize", updateHeightBurger);
-    // window.visualViewport.addEventListener("scroll", updateHeightBurger);
-
-    // updateHeightBurger();
   }
 }
 
 export function handlerBurgerClose() {
   const burger = document.querySelector("#burger");
-  const burgerOverlay = document.querySelector("#burger-overlay");
 
   burger.classList.remove("_open");
-  burgerOverlay.classList.remove("_active");
   document.body.classList.remove("body-hidden");
 
   closeHasChildrenMenu();

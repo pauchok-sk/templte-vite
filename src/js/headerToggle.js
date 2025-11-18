@@ -35,18 +35,5 @@ export default function headerToggle() {
       header.classList.add("_open");
       document.body.classList.add("body-hidden");
     }
-
-    function updateHeightHeader() {
-      if (window.matchMedia("(min-width: 992px)").matches) {
-        header.style.height = `${window.visualViewport.height}px`;
-      } else {
-        header.style.height = "auto";
-      }
-    }
-
-    window.visualViewport.addEventListener("resize", updateHeightHeader);
-    window.visualViewport.addEventListener("scroll", updateHeightHeader);
-
-    updateHeightHeader();
   }
 }

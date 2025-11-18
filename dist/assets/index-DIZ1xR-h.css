@@ -1830,7 +1830,7 @@ textarea.input {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100svh;
+  height: 100vh;
   color: rgba(255, 255, 255, 0.9);
   background-color: var(--black);
   flex-shrink: 0;
@@ -2090,7 +2090,7 @@ textarea.input {
   }
 }
 .header__main-container {
-  padding: 24px 19px 24px 24px;
+  padding: 24px 15px 24px 24px;
   width: 100%;
   overflow-y: auto;
   height: 100%;
