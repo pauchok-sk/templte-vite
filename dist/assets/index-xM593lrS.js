@@ -946,4 +946,5 @@ document.addEventListener("DOMContentLoaded", () => {
   Fancybox.bind("[data-fancybox]", {
     thumbs: false
   });
+  alert("JavaScript работает!");
 });
