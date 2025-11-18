@@ -163,11 +163,10 @@ function burger() {
   const burgerOpen = document.querySelector("#burger-open");
   const burgerClose = document.querySelector("#burger-close");
   const burger2 = document.querySelector("#burger");
-  const burgerOverlay = document.querySelector("#burger-overlay");
+  const burgerBody = document.querySelector("#burger-body");
   if (burger2) {
     let handlerBurgerOpen2 = function() {
       burger2.classList.add("_open");
-      burgerOverlay.classList.add("_active");
       document.body.classList.add("body-hidden");
     };
     var handlerBurgerOpen = handlerBurgerOpen2;
@@ -176,8 +175,8 @@ function burger() {
         handlerBurgerClose();
       }
     });
-    burger2.addEventListener("click", (e) => e.stopPropagation());
-    burgerOverlay.addEventListener("click", handlerBurgerClose);
+    burgerBody.addEventListener("click", (e) => e.stopPropagation());
+    burger2.addEventListener("click", handlerBurgerClose);
     burgerOpen.addEventListener("click", (e) => {
       e.stopPropagation();
       handlerBurgerOpen2();
@@ -243,9 +242,10 @@ function sliders() {
       speed: 900,
       spaceBetween: 15,
       slidesPerView: "auto",
-      loop: true,
-      loopedSlides: 3,
-      centeredSlides: true,
+      // loop: true,
+      // loopedSlides: 2,
+      // centeredSlides: true,
+      // initialSlide: 1,
       pagination: {
         el: ".s-news .slider-pagination",
         clickable: true
@@ -257,7 +257,8 @@ function sliders() {
       breakpoints: {
         992: {
           spaceBetween: 25,
-          slidesPerView: 3
+          slidesPerView: 3,
+          centeredSlides: false
         }
       }
     });

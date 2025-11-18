@@ -19,32 +19,37 @@
 }
 .burger {
   position: fixed;
-  padding: 10px 14px 20px 14px;
-  width: 320px;
-  max-width: 100%;
-  color: rgba(255, 228, 228, 0.9);
-  background-color: var(--black);
-  top: 0;
-  // bottom: 0;
-  height: 100vh;
-  left: 0;
-  overflow-y: auto;
-  z-index: 120;
-
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-100%);
+  z-index: 110;
 
-  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
-
+  transition: opacity 0.4s ease, visibility 0.4s ease;
   &._open {
     opacity: 1;
     visibility: visible;
-    transform: translateX(0);
+    .burger__body {
+      transform: translateX(0);
+    }
   }
-  @media (max-width: 469px) {
-    width: 100%;
-    transform: translateX(0) !important;
+  &__body {
+    padding: 10px 14px 20px 14px;
+    width: 320px;
+    max-width: 100%;
+    color: rgba(255, 228, 228, 0.9);
+    background-color: var(--black);
+    // bottom: 0;
+    height: 100%;
+    overflow-y: auto;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.4s ease;
+    @media (max-width: 469px) {
+      width: 100%;
+      transform: translateX(0) !important;
+    }
   }
 
   &__head {

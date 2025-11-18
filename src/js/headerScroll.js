@@ -4,6 +4,7 @@ export default function headerScroll() {
   if (header && window.matchMedia("(max-width: 991px)").matches) {
     let lastScrollTop = 0;
 
+
     window.addEventListener("scroll", () => {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 

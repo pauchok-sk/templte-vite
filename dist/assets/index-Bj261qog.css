@@ -1439,28 +1439,33 @@ textarea.input {
 
 .burger {
   position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 110;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.burger._open {
+  opacity: 1;
+  visibility: visible;
+}
+.burger._open .burger__body {
+  transform: translateX(0);
+}
+.burger__body {
   padding: 10px 14px 20px 14px;
   width: 320px;
   max-width: 100%;
   color: rgba(255, 228, 228, 0.9);
   background-color: var(--black);
-  top: 0;
-  height: 100vh;
-  left: 0;
+  height: 100%;
   overflow-y: auto;
-  z-index: 120;
-  opacity: 0;
-  visibility: hidden;
   transform: translateX(-100%);
-  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
-}
-.burger._open {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
+  transition: transform 0.4s ease;
 }
 @media (max-width: 469px) {
-  .burger {
+  .burger__body {
     width: 100%;
     transform: translateX(0) !important;
   }
@@ -1832,9 +1837,6 @@ textarea.input {
   transition: padding 0.4s ease, max-width 0.4s ease;
   z-index: 100;
 }
-.header._hide {
-  transform: translateY(-100%);
-}
 @media (min-width: 992px) and (max-width: 1680px) {
   .header._open .header__line-logo {
     max-height: 0px;
@@ -1844,6 +1846,9 @@ textarea.input {
     opacity: 1;
     visibility: visible;
   }
+}
+.header._hide {
+  transform: translateY(-100%);
 }
 @media (max-width: 991px) {
   .header {
@@ -2062,7 +2067,6 @@ textarea.input {
   width: 295px;
   height: 100%;
   z-index: 100;
-  padding-right: 10px;
 }
 @media (max-width: 1680px) {
   .header__main {
@@ -2102,11 +2106,11 @@ textarea.input {
   }
 }
 .header__main-container::-webkit-scrollbar {
-  width: 11px; /* Ширина всего элемента навигации */
+  width: 20px; /* Ширина всего элемента навигации */
 }
 .header__main-container::-webkit-scrollbar-thumb {
   border: 1px solid rgba(69, 69, 69, 0.7);
-  border: 3px solid var(--black);
+  border: 8px solid var(--black);
   background-color: #535252;
   border-radius: 10px;
 }
@@ -3330,8 +3334,27 @@ textarea.input {
     font-size: 14px;
   }
 }
+@media (any-hover: hover) {
+  .s-chart__spoller-btn:hover span {
+    background-size: 100% 100%;
+  }
+}
+@media (hover: none) {
+  .s-chart__spoller-btn:active span {
+    background-size: 100% 100%;
+  }
+}
 .s-chart__spoller-btn._spoller-active svg {
   transform: rotate(-90deg);
+}
+.s-chart__spoller-btn span {
+  display: inline !important;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(transparent calc(100% - 1px), currentColor 1px);
+  transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  background-size: 0 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .s-chart__spoller-btn svg {
   width: 10px;

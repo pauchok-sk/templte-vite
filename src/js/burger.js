@@ -4,7 +4,8 @@ export default function burger() {
   const burgerOpen = document.querySelector("#burger-open");
   const burgerClose = document.querySelector("#burger-close");
   const burger = document.querySelector("#burger");
-  const burgerOverlay = document.querySelector("#burger-overlay");
+  // const burgerOverlay = document.querySelector("#burger-overlay");
+  const burgerBody = document.querySelector("#burger-body");
 
   if (burger) {
     window.addEventListener("resize", () => {
@@ -16,9 +17,9 @@ export default function burger() {
       }
     });
 
-    burger.addEventListener("click", (e) => e.stopPropagation());
+    burgerBody.addEventListener("click", (e) => e.stopPropagation());
 
-    burgerOverlay.addEventListener("click", handlerBurgerClose);
+    burger.addEventListener("click", handlerBurgerClose);
 
     burgerOpen.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -31,7 +32,7 @@ export default function burger() {
 
     function handlerBurgerOpen() {
       burger.classList.add("_open");
-      burgerOverlay.classList.add("_active");
+      // burgerOverlay.classList.add("_active");
       document.body.classList.add("body-hidden");
     }
 

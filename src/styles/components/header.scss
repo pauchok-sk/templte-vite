@@ -6,7 +6,6 @@
   top: 0;
   left: 0;
   height: 100svh;
-  // bottom: 0;
   color: rgba(255, 255, 255, 0.9);
   background-color: var(--black);
   flex-shrink: 0;
@@ -14,9 +13,6 @@
   transition: padding 0.4s ease, max-width 0.4s ease;
   z-index: 100;
 
-  &._hide {
-    transform: translateY(-100%);
-  }
   @media (min-width: 992px) and (max-width: 1680px) {
     &._open {
       .header__line-logo {
@@ -28,6 +24,9 @@
         visibility: visible;
       }
     }
+  }
+  &._hide {
+    transform: translateY(-100%);
   }
 
   @include laptop-min {
@@ -189,7 +188,6 @@
     width: 295px;
     height: 100%;
     z-index: 100;
-    padding-right: 10px;
     @include desktop {
       position: absolute;
       top: 0;
@@ -222,12 +220,12 @@
     }
 
     &::-webkit-scrollbar {
-      width: 11px; /* Ширина всего элемента навигации */
+      width: 20px; /* Ширина всего элемента навигации */
     }
-    
+
     &::-webkit-scrollbar-thumb {
       border: 1px solid rgba(69, 69, 69, 0.7);
-      border: 3px solid var(--black);
+      border: 8px solid var(--black);
       background-color: #535252;
       border-radius: 10px;
     }
@@ -384,11 +382,11 @@
     gap: 13px;
     padding: 15px 0px 0px 15px;
     color: rgba(255, 255, 255, 0.7);
-    
+
     & > li {
       padding-right: 20px;
     }
-    
+
     a {
       font-size: 14px;
       text-transform: none;

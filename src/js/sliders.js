@@ -6,9 +6,10 @@ export default function sliders() {
       speed: 900,
       spaceBetween: 15,
       slidesPerView: "auto",
-      loop: true,
-      loopedSlides: 3,
-      centeredSlides: true,
+      // loop: true,
+      // loopedSlides: 2,
+      // centeredSlides: true,
+      // initialSlide: 1,
       pagination: {
         el: ".s-news .slider-pagination",
         clickable: true,
@@ -21,6 +22,7 @@ export default function sliders() {
         992: {
           spaceBetween: 25,
           slidesPerView: 3,
+          centeredSlides: false,
         },
       },
     });
