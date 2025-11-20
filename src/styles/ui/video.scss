@@ -5,9 +5,11 @@
   @include flex-center;
   position: relative;
   width: 100%;
-  height: 620px;
+  // height: 620px;
+  aspect-ratio: 1/0.401;
   @include laptop-min {
     height: 315px;
+    aspect-ratio: inherit;
   }
   @include mobile {
     height: 210px;

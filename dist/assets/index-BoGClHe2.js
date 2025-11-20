@@ -299,7 +299,6 @@ function sliders() {
       speed: 900,
       spaceBetween: 15,
       slidesPerView: "auto",
-      centeredSlides: true,
       pagination: {
         el: ".s-clergy .slider-pagination",
         clickable: true
@@ -311,25 +310,23 @@ function sliders() {
       breakpoints: {
         992: {
           spaceBetween: 25,
-          slidesPerView: 3,
-          centeredSlides: false
+          slidesPerView: 3
         },
         768: {
           spaceBetween: 15,
-          slidesPerView: "auto",
-          centeredSlides: true
-        }
-      },
-      on: {
-        resize: function() {
-          const isLaptop = window.matchMedia("(max-width: 991px)").matches;
-          if (isLaptop && this.activeIndex !== 1) {
-            setTimeout(() => {
-              this.slideTo(1, 300);
-            }, 50);
-          }
+          slidesPerView: "auto"
         }
       }
+      // on: {
+      //   resize: function () {
+      //     const isLaptop = window.matchMedia("(max-width: 991px)").matches;
+      //     if (isLaptop && this.activeIndex !== 1) {
+      //       setTimeout(() => {
+      //         this.slideTo(1, 300);
+      //       }, 50);
+      //     }
+      //   },
+      // },
     });
   }
   const usefulSlider = document.querySelector(".s-useful__slider");
@@ -338,9 +335,9 @@ function sliders() {
       speed: 900,
       spaceBetween: 15,
       slidesPerView: "auto",
-      loop: true,
-      loopedSlides: 4,
-      centeredSlides: true,
+      // loop: true,
+      // loopedSlides: 4,
+      // centeredSlides: true,
       pagination: {
         el: ".s-useful .slider-pagination",
         clickable: true
@@ -352,8 +349,8 @@ function sliders() {
       breakpoints: {
         992: {
           spaceBetween: 25,
-          slidesPerView: 3,
-          centeredSlides: false
+          slidesPerView: 3
+          // centeredSlides: false,
         }
       }
     });
@@ -364,8 +361,8 @@ function sliders() {
       speed: 900,
       spaceBetween: 15,
       slidesPerView: "auto",
-      loop: true,
-      centeredSlides: true,
+      // loop: true,
+      // centeredSlides: true,
       pagination: {
         el: ".s-diocese .slider-pagination",
         clickable: true
@@ -377,13 +374,13 @@ function sliders() {
       breakpoints: {
         1200: {
           spaceBetween: 25,
-          slidesPerView: 3,
-          centeredSlides: false
+          slidesPerView: 3
+          // centeredSlides: false,
         },
         992: {
           spaceBetween: 25,
-          slidesPerView: 2,
-          centeredSlides: false
+          slidesPerView: 2
+          // centeredSlides: false,
         }
       }
     });
