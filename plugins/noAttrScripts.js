@@ -2,37 +2,26 @@ const noAttrScripts = () => {
   return {
     name: "no-attribute-scripts",
     transformIndexHtml(html) {
-      // Сначала находим все script теги с type="module"
-      const scriptRegex =
-        /<script\s+type="module"\s+[^>]*src="([^"]*)"[^>]*><\/script>/g;
+      // Находим все script теги с type="module" и их атрибуты
+      const scriptRegex = /<script(\s+type="module"\s+[^>]*src="([^"]*)"[^>]*)><\/script>/g;
       let scripts = [];
       let match;
 
-      // Собираем все script теги и их src
+      // Собираем информацию о script тегах
       while ((match = scriptRegex.exec(html)) !== null) {
-        scripts.push(match[1]); // сохраняем только src
+        scripts.push({
+          fullTag: match[0],
+          src: match[2]
+        });
       }
 
-      // Удаляем все script теги из head
-      let newHtml = html.replace(
-        /<script\s+type="module"\s+[^>]*src="[^"]*"[^>]*><\/script>/g,
-        ""
-      );
+      let newHtml = html;
 
-      // Удаляем атрибуты
-      newHtml = newHtml
-        .replace(/ crossorigin=".*?"/g, "")
-        .replace(/ crossorigin/g, "")
-        .replace(/\s*type="module"/g, "");
-
-      // Добавляем скрипты перед закрывающим тегом body
-      if (scripts.length > 0) {
-        const scriptTags = scripts
-          .map((src) => `<script src="${src}"></script>`)
-          .join("\n  ");
-
-        newHtml = newHtml.replace("</body>", `  ${scriptTags}\n</body>`);
-      }
+      // Заменяем каждый script тег на упрощенную версию без атрибутов
+      scripts.forEach(script => {
+        const simplifiedTag = `<script src="${script.src}"></script>`;
+        newHtml = newHtml.replace(script.fullTag, simplifiedTag);
+      });
 
       return newHtml;
     },
