@@ -9,10 +9,11 @@
   &__slider-wrapper {
     position: relative;
 
-    // @include tablet {
-    //   width: calc(100% - 50px);
-    //   margin: 0 auto;
-    // }
+    @media (min-width: 992px) {
+      .slider-btn {
+        transform: translateY(0);
+      }
+    }
   }
   &__slider {
     margin: -20px;

@@ -8,6 +8,11 @@
   }
   &__slider-wrapper {
     position: relative;
+    @media (min-width: 992px) {
+      .slider-btn {
+        transform: translateY(0);
+      }
+    }
   }
   &__slider {
     padding: 20px !important;
@@ -35,9 +40,9 @@
         width: 290px !important;
       }
 
-      &.swiper-slide-prev,
       &.swiper-slide-active,
-      &.swiper-slide-next {
+      &.swiper-slide-next,
+      &.swiper-slide-next + .swiper-slide {
         .card-new {
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
         }

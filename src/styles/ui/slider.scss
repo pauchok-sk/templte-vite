@@ -58,11 +58,8 @@
   @include flex-center;
   cursor: pointer;
   position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   top: 50%;
   transform: translateY(-50%);
 
@@ -73,30 +70,31 @@
   user-select: none !important;
   outline: none !important;
 
-  transition: color 0.3s ease, opacity 0.3s ease, visibility .3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 
   z-index: 10;
 
   &._prev {
-    left: 0;
-    transform: translateX(-50%);
+    left: -30px;
   }
   &._next {
-    right: 0;
-    transform: translateX(50%);
+    right: -30px;
+  }
+
+  @include laptop {
+    &._prev {
+      left: 0;
+    }
+    &._next {
+      right: 0;
+    }
   }
 
   @include tablet {
-    width: 30px;
-    height: 30px;
-
-    transform: translateX(0) !important;
     &._prev {
-      // left: -23px;
       left: -12px;
     }
     &._next {
-      // right: -23px;
       right: -12px;
     }
   }
@@ -109,6 +107,19 @@
   &.swiper-button-lock {
     opacity: 0;
     visibility: hidden;
+  }
+
+  .inside {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    @include tablet {
+      width: 30px;
+      height: 30px;
+    }
   }
 
   svg {

@@ -7,14 +7,6 @@
   }
   &__slider-wrapper {
     position: relative;
-    // @include tablet {
-    //   width: calc(100% - 50px);
-    //   margin: 0 auto;
-    // }
-
-    .slider-btn {
-      top: calc(50% - 20px);
-    }
   }
   &__slider {
     padding: 20px;

@@ -803,11 +803,8 @@ body {
   justify-content: center;
   cursor: pointer;
   position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   top: 50%;
   transform: translateY(-50%);
   -webkit-tap-highlight-color: transparent !important;
@@ -820,19 +817,20 @@ body {
   z-index: 10;
 }
 .slider-btn._prev {
-  left: 0;
-  transform: translateX(-50%);
+  left: -30px;
 }
 .slider-btn._next {
-  right: 0;
-  transform: translateX(50%);
+  right: -30px;
+}
+@media (max-width: 1365px) {
+  .slider-btn._prev {
+    left: 0;
+  }
+  .slider-btn._next {
+    right: 0;
+  }
 }
 @media (max-width: 767px) {
-  .slider-btn {
-    width: 30px;
-    height: 30px;
-    transform: translateX(0) !important;
-  }
   .slider-btn._prev {
     left: -12px;
   }
@@ -848,6 +846,22 @@ body {
 .slider-btn.swiper-button-lock {
   opacity: 0;
   visibility: hidden;
+}
+.slider-btn .inside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+@media (max-width: 767px) {
+  .slider-btn .inside {
+    width: 30px;
+    height: 30px;
+  }
 }
 .slider-btn svg {
   width: 16px;
@@ -2790,6 +2804,11 @@ textarea.input {
 .s-news__slider-wrapper {
   position: relative;
 }
+@media (min-width: 992px) {
+  .s-news__slider-wrapper .slider-btn {
+    transform: translateY(0);
+  }
+}
 .s-news__slider {
   padding: 20px !important;
   margin: -20px !important;
@@ -2819,7 +2838,7 @@ textarea.input {
     width: 290px !important;
   }
 }
-.s-news__slider .swiper-slide.swiper-slide-prev .card-new, .s-news__slider .swiper-slide.swiper-slide-active .card-new, .s-news__slider .swiper-slide.swiper-slide-next .card-new {
+.s-news__slider .swiper-slide.swiper-slide-active .card-new, .s-news__slider .swiper-slide.swiper-slide-next .card-new, .s-news__slider .swiper-slide.swiper-slide-next + .swiper-slide .card-new {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
 }
 .s-news__slider .card-new {
@@ -3522,6 +3541,11 @@ textarea.input {
 .s-useful__slider-wrapper {
   position: relative;
 }
+@media (min-width: 992px) {
+  .s-useful__slider-wrapper .slider-btn {
+    transform: translateY(0);
+  }
+}
 .s-useful__slider {
   margin: -20px;
   padding: 20px;
@@ -3805,9 +3829,6 @@ textarea.input {
 }
 .s-diocese__slider-wrapper {
   position: relative;
-}
-.s-diocese__slider-wrapper .slider-btn {
-  top: calc(50% - 20px);
 }
 .s-diocese__slider {
   padding: 20px;
