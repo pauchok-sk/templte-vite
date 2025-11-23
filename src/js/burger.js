@@ -13,8 +13,12 @@ export default function burger() {
         window.matchMedia("(min-width: 992px)").matches &&
         burger.classList.contains("_open")
       ) {
-        handlerBurgerClose();
+        handlerBurgerClose;
       }
+    });
+
+    screen.orientation.addEventListener("change", function () {
+      handlerBurgerClose();
     });
 
     burgerBody.addEventListener("click", (e) => e.stopPropagation());

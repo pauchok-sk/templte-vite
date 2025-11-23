@@ -16,6 +16,9 @@
     opacity: 1;
     visibility: visible;
   }
+  @include mobile {
+    background-color: var(--black);
+  }
 }
 .burger {
   position: fixed;
@@ -26,6 +29,10 @@
   z-index: 110;
 
   transition: opacity 0.4s ease, visibility 0.4s ease;
+
+  @include mobile {
+    background-color: var(--black);
+  }
   &._open {
     opacity: 1;
     visibility: visible;

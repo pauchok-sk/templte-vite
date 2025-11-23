@@ -7,6 +7,14 @@
 
   overscroll-behavior: none;
   -webkit-overflow-scrolling: auto;
+
+  main {
+    overflow: hidden;
+    touch-action: none;
+
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: auto;
+  }
 }
 .body {
   padding-left: 360px;
@@ -16,6 +24,14 @@
   @include laptop-min {
     padding-left: 0;
   }
+
+  @media (min-width: 992px) {
+    overflow: hidden;
+    touch-action: none;
+
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: auto;
+  }
 }
 
 .site-content {
@@ -23,4 +39,10 @@
 }
 .main {
   width: 100%;
+}
+main {
+  @media (min-width: 992px) {
+    height: 100vh;
+    overflow-y: auto;
+  }
 }

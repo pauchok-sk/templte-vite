@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   burger();
   sliders();
   // headerScroll();
-  positionSliderButtons();
+  // positionSliderButtons();
   player();
   dropdown();
   scrollables();

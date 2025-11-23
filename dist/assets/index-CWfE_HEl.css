@@ -362,6 +362,12 @@ body {
   overscroll-behavior: none;
   -webkit-overflow-scrolling: auto;
 }
+.body-hidden main {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: auto;
+}
 
 .body {
   padding-left: 360px;
@@ -376,6 +382,14 @@ body {
     padding-left: 0;
   }
 }
+@media (min-width: 992px) {
+  .body {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: auto;
+  }
+}
 
 .site-content {
   width: 100%;
@@ -383,6 +397,13 @@ body {
 
 .main {
   width: 100%;
+}
+
+@media (min-width: 992px) {
+  main {
+    height: 100vh;
+    overflow-y: auto;
+  }
 }
 
 .container {
@@ -1452,6 +1473,11 @@ textarea.input {
   opacity: 1;
   visibility: visible;
 }
+@media (max-width: 479px) {
+  .burger-overlay {
+    background-color: var(--black);
+  }
+}
 
 .burger {
   position: fixed;
@@ -1461,6 +1487,11 @@ textarea.input {
   visibility: hidden;
   z-index: 110;
   transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+@media (max-width: 479px) {
+  .burger {
+    background-color: var(--black);
+  }
 }
 .burger._open {
   opacity: 1;

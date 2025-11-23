@@ -171,9 +171,10 @@ function burger() {
     };
     var handlerBurgerOpen = handlerBurgerOpen2;
     window.addEventListener("resize", () => {
-      if (window.matchMedia("(min-width: 992px)").matches && burger2.classList.contains("_open")) {
-        handlerBurgerClose();
-      }
+      if (window.matchMedia("(min-width: 992px)").matches && burger2.classList.contains("_open")) ;
+    });
+    screen.orientation.addEventListener("change", function() {
+      handlerBurgerClose();
     });
     burgerBody.addEventListener("click", (e) => e.stopPropagation());
     burger2.addEventListener("click", handlerBurgerClose);
@@ -600,44 +601,6 @@ function spoller() {
     });
   }
 }
-function positionSliderButtons() {
-  const sliderButtonsNews = document.querySelectorAll(".s-news .slider-btn");
-  if (sliderButtonsNews.length) {
-    handelePosition(".s-news .card-new__img", sliderButtonsNews);
-    window.addEventListener(
-      "resize",
-      () => handelePosition(".s-news .card-new__img", sliderButtonsNews)
-    );
-  }
-  const sliderButtonsClergy = document.querySelectorAll(
-    ".s-clergy .slider-btn"
-  );
-  if (sliderButtonsClergy.length) {
-    handelePosition(".s-clergy .card-team__gallery", sliderButtonsClergy);
-    window.addEventListener(
-      "resize",
-      () => handelePosition(".s-clergy .card-team__gallery", sliderButtonsClergy)
-    );
-  }
-  const sliderButtonsUseful = document.querySelectorAll(
-    ".s-useful .slider-btn"
-  );
-  if (sliderButtonsUseful.length) {
-    handelePosition(".s-useful .card-useful__gallery", sliderButtonsUseful);
-    window.addEventListener("resize", () => {
-      handelePosition(".s-useful .card-useful__gallery", sliderButtonsUseful);
-    });
-  }
-  function handelePosition(targetSelector, arr) {
-    setTimeout(() => {
-      const target = document.querySelector(`${targetSelector}`);
-      arr.forEach((btn) => {
-        const offsetTop = target.clientHeight / 2;
-        btn.style.top = `${offsetTop}px`;
-      });
-    }, 10);
-  }
-}
 function player() {
   const players = document.querySelectorAll(".player");
   if (players.length) {
@@ -920,7 +883,6 @@ document.addEventListener("DOMContentLoaded", () => {
   headerToggle();
   burger();
   sliders();
-  positionSliderButtons();
   player();
   dropdown();
   scrollables();
