@@ -362,7 +362,7 @@ body {
   overscroll-behavior: none;
   -webkit-overflow-scrolling: auto;
 }
-.body-hidden main {
+.body-hidden .main-wrapper {
   overflow: hidden;
   touch-action: none;
   overscroll-behavior: none;
@@ -395,15 +395,18 @@ body {
   width: 100%;
 }
 
-.main {
+.main-wrapper {
   width: 100%;
 }
-
 @media (min-width: 992px) {
-  main {
+  .main-wrapper {
     height: 100vh;
     overflow-y: auto;
   }
+}
+
+main {
+  width: 100%;
 }
 
 .container {
