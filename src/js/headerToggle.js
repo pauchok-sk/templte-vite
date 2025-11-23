@@ -7,6 +7,10 @@ export default function headerToggle() {
   if (header) {
     const btn = document.querySelector("#header-toggle-btn");
 
+    screen.orientation.addEventListener("change", function () {
+      handleClose();
+    });
+
     header.addEventListener("click", (e) => e.stopPropagation());
 
     document.body.addEventListener("click", () => {

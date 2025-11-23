@@ -13,7 +13,7 @@ export default function burger() {
         window.matchMedia("(min-width: 992px)").matches &&
         burger.classList.contains("_open")
       ) {
-        handlerBurgerClose;
+        handlerBurgerClose();
       }
     });
 

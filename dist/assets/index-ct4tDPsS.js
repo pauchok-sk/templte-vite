@@ -171,7 +171,9 @@ function burger() {
     };
     var handlerBurgerOpen = handlerBurgerOpen2;
     window.addEventListener("resize", () => {
-      if (window.matchMedia("(min-width: 992px)").matches && burger2.classList.contains("_open")) ;
+      if (window.matchMedia("(min-width: 992px)").matches && burger2.classList.contains("_open")) {
+        handlerBurgerClose();
+      }
     });
     screen.orientation.addEventListener("change", function() {
       handlerBurgerClose();
@@ -210,6 +212,9 @@ function headerToggle() {
     };
     var handleClose = handleClose2, handleOpen = handleOpen2;
     const btn = document.querySelector("#header-toggle-btn");
+    screen.orientation.addEventListener("change", function() {
+      handleClose2();
+    });
     header.addEventListener("click", (e) => e.stopPropagation());
     document.body.addEventListener("click", () => {
       if (header.classList.contains("_open")) {
