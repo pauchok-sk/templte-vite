@@ -30,7 +30,7 @@
 
   transition: opacity 0.4s ease, visibility 0.4s ease;
 
-  @include mobile {
+  @media (max-width: 469px) {
     background-color: var(--black);
   }
   &._open {
@@ -62,7 +62,6 @@
   &__head {
     @include flex-between;
     margin-bottom: 40px;
-    padding-top: 7px;
     gap: 20px;
   }
   &__logo {
@@ -72,9 +71,13 @@
 
     color: var(--primary);
 
+    @media (min-width: 470px) {
+      display: none;
+    }
+
     img {
       display: block;
-      width: 30px;
+      width: 40px;
     }
     .title {
       font-size: 10px;

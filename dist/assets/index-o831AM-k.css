@@ -1491,7 +1491,7 @@ textarea.input {
   z-index: 110;
   transition: opacity 0.4s ease, visibility 0.4s ease;
 }
-@media (max-width: 479px) {
+@media (max-width: 469px) {
   .burger {
     background-color: var(--black);
   }
@@ -1525,7 +1525,6 @@ textarea.input {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 40px;
-  padding-top: 7px;
   gap: 20px;
 }
 .burger__logo {
@@ -1534,9 +1533,14 @@ textarea.input {
   gap: 7px;
   color: var(--primary);
 }
+@media (min-width: 470px) {
+  .burger__logo {
+    display: none;
+  }
+}
 .burger__logo img {
   display: block;
-  width: 30px;
+  width: 40px;
 }
 .burger__logo .title {
   font-size: 10px;
