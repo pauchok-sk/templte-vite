@@ -7,7 +7,15 @@ export default function galleryClickedSlide() {
       .querySelectorAll("a");
     slides.forEach((slide, index) => {
       slide.addEventListener("click", () => {
-        buttons[index].click();
+        // buttons[index].click();
+        const id = slide.dataset.gallery;
+        const btn = Array.from(buttons).find(btn => btn.dataset.gallery === id);
+
+        console.log(btn)
+
+        if (btn) {
+          btn.click();
+        }
       });
     });
   }

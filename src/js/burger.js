@@ -39,6 +39,15 @@ export default function burger() {
       // burgerOverlay.classList.add("_active");
       document.body.classList.add("body-hidden");
     }
+
+    function updateHeightBurger() {
+      burger.style.maxHeight = `${window.visualViewport.height}px`;
+    }
+
+    window.visualViewport.addEventListener("resize", updateHeightBurger);
+    window.visualViewport.addEventListener("scroll", updateHeightBurger);
+
+    updateHeightBurger();
   }
 }
 

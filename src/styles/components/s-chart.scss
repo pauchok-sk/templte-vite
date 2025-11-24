@@ -58,9 +58,11 @@
     @include tablet-min {
       font-size: 14px;
     }
-    @include hover {
-      span {
-        background-size: 100% 100%;
+    @media (min-width: 992px) {
+      @include hover {
+        span {
+          background-size: 100% 100%;
+        }
       }
     }
 

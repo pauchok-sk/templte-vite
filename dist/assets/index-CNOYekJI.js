@@ -168,8 +168,10 @@ function burger() {
     let handlerBurgerOpen2 = function() {
       burger2.classList.add("_open");
       document.body.classList.add("body-hidden");
+    }, updateHeightBurger2 = function() {
+      burger2.style.maxHeight = `${window.visualViewport.height}px`;
     };
-    var handlerBurgerOpen = handlerBurgerOpen2;
+    var handlerBurgerOpen = handlerBurgerOpen2, updateHeightBurger = updateHeightBurger2;
     window.addEventListener("resize", () => {
       if (window.matchMedia("(min-width: 992px)").matches && burger2.classList.contains("_open")) {
         handlerBurgerClose();
@@ -188,6 +190,9 @@ function burger() {
       e.stopPropagation();
       handlerBurgerClose();
     });
+    window.visualViewport.addEventListener("resize", updateHeightBurger2);
+    window.visualViewport.addEventListener("scroll", updateHeightBurger2);
+    updateHeightBurger2();
   }
 }
 function handlerBurgerClose() {
@@ -742,6 +747,7 @@ class Scrollable {
     this.childrensSize = Array.from(this.container.children).reduce((sum, item) => sum + item.offsetWidth, 0);
     this.container.classList.add("_scrollable");
     if (this.container.clientWidth < this.childrensSize) {
+      console.log("fa");
       this.container.style = "cursor: grab";
     }
     this.isDragging = false;
@@ -750,7 +756,7 @@ class Scrollable {
     this.events();
   }
   events() {
-    if (this.container) {
+    if (this.container && this.container.clientWidth < this.childrensSize) {
       this.container.addEventListener("mousedown", (e) => {
         this.isDragging = true;
         this.container.style.cursor = "grabbing";
@@ -826,7 +832,12 @@ function galleryClickedSlide() {
     const buttons = document.querySelector("#gallery-buttons").querySelectorAll("a");
     slides.forEach((slide, index) => {
       slide.addEventListener("click", () => {
-        buttons[index].click();
+        const id = slide.dataset.gallery;
+        const btn = Array.from(buttons).find((btn2) => btn2.dataset.gallery === id);
+        console.log(btn);
+        if (btn) {
+          btn.click();
+        }
       });
     });
   }

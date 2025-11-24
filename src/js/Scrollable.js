@@ -15,6 +15,7 @@ export default class Scrollable {
     this.container.classList.add("_scrollable")
 
     if (this.container.clientWidth < this.childrensSize) {
+      console.log("fa")
       this.container.style = "cursor: grab";
     }
 
@@ -26,7 +27,7 @@ export default class Scrollable {
   }
 
   events() {
-    if (this.container) {
+    if (this.container && this.container.clientWidth < this.childrensSize) {
       this.container.addEventListener("mousedown", (e) => {
         this.isDragging = true;
         this.container.style.cursor = "grabbing";
