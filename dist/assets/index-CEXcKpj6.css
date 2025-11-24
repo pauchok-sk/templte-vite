@@ -350,7 +350,7 @@ body {
   font-size: 16px;
   line-height: 120%;
 }
-@media (max-width: 479px) {
+@media (max-width: 991px) {
   body {
     font-size: 14px;
   }
@@ -1269,12 +1269,7 @@ main {
     background-size: 100% 100%;
   }
 }
-@media (max-width: 767px) {
-  .card-useful__title {
-    font-size: 16px;
-  }
-}
-@media (max-width: 575px) {
+@media (max-width: 991px) {
   .card-useful__title {
     font-size: 14px;
   }
