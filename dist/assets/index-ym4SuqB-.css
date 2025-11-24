@@ -382,14 +382,6 @@ body {
     padding-left: 0;
   }
 }
-@media (min-width: 992px) {
-  .body {
-    overflow: hidden;
-    touch-action: none;
-    overscroll-behavior: none;
-    -webkit-overflow-scrolling: auto;
-  }
-}
 
 .site-content {
   width: 100%;
@@ -407,6 +399,7 @@ body {
 
 main {
   width: 100%;
+  flex: 1;
 }
 
 .container {
