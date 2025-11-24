@@ -54,8 +54,6 @@
 
     @include tablet {
       padding: 15px 0px;
-    }
-    @include tablet-min {
       font-size: 14px;
     }
     @media (min-width: 992px) {

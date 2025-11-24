@@ -51,13 +51,13 @@
 
     transition: color 0.3s ease;
 
+    @include tablet {
+      font-size: 14px;
+    }
     @include hover {
       span {
         background-size: 100% 100%;
       }
-    }
-    @include tablet-min {
-      font-size: 14px;
     }
 
     span {
@@ -78,7 +78,7 @@
     font-weight: 500;
     font-size: 14px;
     color: var(--gray);
-    @include tablet-min {
+    @include tablet {
       font-size: 12px;
     }
   }

@@ -49,11 +49,13 @@
     font-weight: 500;
     display: block;
     width: fit-content;
-    font-size: 16px;
     margin-bottom: 15px;
+    font-size: 16px;
 
-    @include tablet-min {
+    @include tablet {
       font-size: 14px;
+    }
+    @include tablet-min {
       margin-bottom: 10px;
     }
 
@@ -82,7 +84,7 @@
     font-size: 14px;
     color: rgba(23, 23, 23, 0.4);
     margin-bottom: 15px;
-    @include tablet-min {
+    @include tablet {
       font-size: 12px;
       margin-bottom: 5px;
     }

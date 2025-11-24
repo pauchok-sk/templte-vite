@@ -42,13 +42,14 @@
     width: fit-content;
 
     font-weight: 500;
+    font-size: 16px;
 
     @include hover {
       span {
         background-size: 100% 100%;
       }
     }
-    @include laptop-min {
+    @include tablet {
       font-size: 14px;
     }
 

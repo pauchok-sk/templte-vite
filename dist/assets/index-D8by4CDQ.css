@@ -509,7 +509,7 @@ main {
     color: rgba(23, 23, 23, 0.5);
   }
 }
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .simple-btn {
     font-size: 14px;
   }
@@ -704,12 +704,16 @@ main {
   font-weight: 500;
   display: block;
   width: fit-content;
-  font-size: 16px;
   margin-bottom: 15px;
+  font-size: 16px;
+}
+@media (max-width: 767px) {
+  .card-new__title {
+    font-size: 14px;
+  }
 }
 @media (max-width: 575px) {
   .card-new__title {
-    font-size: 14px;
     margin-bottom: 10px;
   }
 }
@@ -739,7 +743,7 @@ main {
   color: rgba(23, 23, 23, 0.4);
   margin-bottom: 15px;
 }
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .card-new__date {
     font-size: 12px;
     margin-bottom: 5px;
@@ -1110,6 +1114,11 @@ main {
   margin: 0px 0px 12px 0px;
   transition: color 0.3s ease;
 }
+@media (max-width: 767px) {
+  .card-team__title {
+    font-size: 14px;
+  }
+}
 @media (any-hover: hover) {
   .card-team__title:hover span {
     background-size: 100% 100%;
@@ -1118,11 +1127,6 @@ main {
 @media (hover: none) {
   .card-team__title:active span {
     background-size: 100% 100%;
-  }
-}
-@media (max-width: 575px) {
-  .card-team__title {
-    font-size: 14px;
   }
 }
 .card-team__title span {
@@ -1140,7 +1144,7 @@ main {
   font-size: 14px;
   color: var(--gray);
 }
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .card-team__status {
     font-size: 12px;
   }
@@ -1194,7 +1198,7 @@ main {
   font-weight: 500;
   font-size: 14px;
 }
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .content-min {
     font-size: 12px;
   }
@@ -1258,6 +1262,7 @@ main {
 .card-useful__title {
   width: fit-content;
   font-weight: 500;
+  font-size: 16px;
 }
 @media (any-hover: hover) {
   .card-useful__title:hover span {
@@ -1269,7 +1274,7 @@ main {
     background-size: 100% 100%;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .card-useful__title {
     font-size: 14px;
   }
@@ -2936,13 +2941,18 @@ textarea.input {
 }
 .s-offer__date {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
+}
+@media (max-width: 767px) {
+  .s-offer__date {
+    font-size: 14px;
+  }
 }
 .s-offer__title {
   font-weight: 500;
   font-size: 16px;
 }
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .s-offer__title {
     font-size: 14px;
   }
@@ -3272,7 +3282,7 @@ textarea.input {
   font-weight: 500;
   font-size: 16px;
 }
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .s-clergy__slide-title {
     font-size: 14px;
   }
@@ -3378,10 +3388,6 @@ textarea.input {
 @media (max-width: 767px) {
   .s-chart__spoller-btn {
     padding: 15px 0px;
-  }
-}
-@media (max-width: 575px) {
-  .s-chart__spoller-btn {
     font-size: 14px;
   }
 }

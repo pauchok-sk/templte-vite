@@ -107,7 +107,7 @@
   &__slide-title {
     font-weight: 500;
     font-size: 16px;
-    @include tablet-min {
+    @include tablet {
       font-size: 14px;
     }
 
