@@ -8,11 +8,6 @@
   }
   &__slider-wrapper {
     position: relative;
-    @media (min-width: 992px) {
-      .slider-btn {
-        transform: translateY(0);
-      }
-    }
   }
   &__slider {
     padding: 20px !important;

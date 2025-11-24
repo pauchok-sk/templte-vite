@@ -2844,11 +2844,6 @@ textarea.input {
 .s-news__slider-wrapper {
   position: relative;
 }
-@media (min-width: 992px) {
-  .s-news__slider-wrapper .slider-btn {
-    transform: translateY(0);
-  }
-}
 .s-news__slider {
   padding: 20px !important;
   margin: -20px !important;
@@ -3581,11 +3576,6 @@ textarea.input {
 }
 .s-useful__slider-wrapper {
   position: relative;
-}
-@media (min-width: 992px) {
-  .s-useful__slider-wrapper .slider-btn {
-    transform: translateY(0);
-  }
 }
 .s-useful__slider {
   margin: -20px;
