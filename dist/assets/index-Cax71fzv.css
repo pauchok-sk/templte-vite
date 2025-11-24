@@ -2864,7 +2864,7 @@ textarea.input {
     width: 375px !important;
     max-width: 100%;
   }
-  .s-news__slider .swiper-slide .card-useful {
+  .s-news__slider .swiper-slide .card-new {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
   }
 }
